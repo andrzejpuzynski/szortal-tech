@@ -12,9 +12,8 @@ import EPub from './components/EPub';
 
 import logo from './img/logo_biale.png';
 
-import './App.css';
-
 import {
+    AppContainer,
 	HeaderContainer,
 	HeaderLogoContainer,
 	HeaderLogo,
@@ -22,35 +21,36 @@ import {
 	HeaderButton
 } from './styled/App';
 
+
 class App extends Component {
   render() {
     return (
-    	<div className="App">
-    	<Router history={createHistory({ basename: process.env.PUBLIC_URL })}>
-    		<div>
-     		<HeaderContainer>
-     			<HeaderLogoContainer>
-     				<Link to="/">
-     					<HeaderLogo src={logo} alt="Szortal logo"/>
-     				</Link>
-     			</HeaderLogoContainer>
-     			<HeaderLinks>
-     				<HeaderButton>
-     					<Link to="/layout">Layout</Link>
-     				</HeaderButton>
-     				<HeaderButton>
-     					<Link to="/epub">EPub</Link>
-     				</HeaderButton>
-     			</HeaderLinks>
-     		</HeaderContainer>
-
-     		<Route exact path="/" component={Intro} />
-          	<Route path="/layout" component={Layout} />
-          	<Route path="/epub" component={EPub} />
-
-     		</div>
-     	</Router>
-     	</div>
+        <AppContainer>
+    	   <Router history={createHistory({ basename: process.env.PUBLIC_URL })}>
+    	       <div>
+     	  	       <HeaderContainer>
+     	  	       	<HeaderLogoContainer>
+     	  	       		<Link to="/">
+     	  	       			<HeaderLogo src={logo} alt="Szortal logo"/>
+     	  	       		</Link>
+     	  	       	</HeaderLogoContainer>
+     	  	       	<HeaderLinks>
+     	  	       		<HeaderButton>
+     	  	       			<Link to="/layout">Layout</Link>
+     	  	       		</HeaderButton>
+     	  	       		<HeaderButton>
+     	  	       			<Link to="/epub">EPub</Link>
+     	  	       		</HeaderButton>
+     	  	       	</HeaderLinks>
+     	  	       </HeaderContainer>
+  
+     	  	   <Route exact path="/" component={Intro} />
+                <Route path="/layout" component={Layout} />
+                <Route path="/epub" component={EPub} />
+  
+     	      </div>
+     	  </Router>
+     	</AppContainer>
     );
   }
 }

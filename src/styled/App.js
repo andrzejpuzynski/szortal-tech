@@ -1,7 +1,12 @@
 import styled from 'styled-components';
  
+export const AppContainer = styled.div`
+	min-height: 100vh;
+	background-color: #efefef;
+`
+
 export const HeaderContainer = styled.header`
-	background-color: #cc0000;
+	background-color: #bb0000;
  	height: 60px;
  	box-sizing: border-box;
 `;
@@ -35,13 +40,18 @@ export const HeaderButton = styled.li`
 	height: 60px;
 	font-size: 24px;
 	padding: 0px 20px;
+	box-sizing: border-box;
 
 	:hover {
-		border-bottom: white 3px solid;
+		border-bottom: white 4px solid;
 	}
 
 	a {
 		text-decoration: none;
-		color: white;
+		color: #dddddd;
+
+	:hover {
+		color: #ffffff;
+	}
 	}
 `
