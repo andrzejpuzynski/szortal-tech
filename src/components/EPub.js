@@ -7,13 +7,18 @@ import {
 	EPubInfo,
 	EPubText,
 	EPubCode,
+	EPubDownloadButton,
 	IntroSocial,
 	IntroSocialButton
 } from '../styled/EPub';
 
+
 import {
   Link
 } from 'react-router-dom';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDownload } from '@fortawesome/free-solid-svg-icons';
 
 
 class EPub extends React.Component {
@@ -45,17 +50,18 @@ class EPub extends React.Component {
 				<EPubText>Tekst źródłowy należy wkleić do okna edycji czystego dokumentu
 				HTML w edytorze Brackets. Następnie tagujemy całość przy użyciu komendy
 				Find/Replace.</EPubText>
-				<EPubText>W polu Find należy wpisać:</EPubText>
-				<EPubCode>(\s)^([–„A-Ż].*)(\b[^\n]*)$</EPubCode>
+				<EPubText>W polu Find należy wpisać:
+					<EPubCode>(\s)^([–„A-Ż].*)(\b[^\n]*)$</EPubCode>
+				</EPubText>
 
 				<EPubText>W polu Replace dla tekstów do sekcji: 
 				Szortownia, Stusłówka, Rymowisko, Wywiad - wpisujemy:
+					<EPubCode>{`$1<p class="text">$2$3</p>`}</EPubCode>
 				</EPubText>
-				<EPubCode>{`$1<p class="text">$2$3</p>`}</EPubCode>
 
 				<EPubText>W polu Replace dla tekstów do sekcji:	Subiektywnie - wpisujemy:
+					<EPubCode>{`$1<p class="review">$2$3</p>`}</EPubCode>
 				</EPubText>
-				<EPubCode>{`$1<p class="review">$2$3</p>`}</EPubCode>
 
 				<EPubSubtitle>
 					Edycja plików HTML - stylowanie
@@ -66,90 +72,117 @@ class EPub extends React.Component {
 				</EPubInfo>	
 
 				<EPubText>W sekcji nagłówka dokumentu &lt;head&gt; &lt;/head&gt;
-				należy załączyć zewnętrzny plik ze stylami (stylesheet.css) wpisując poniższy kod:</EPubText>
+				należy załączyć zewnętrzny plik ze stylami (stylesheet.css) wpisując poniższy kod:
 				<EPubCode>{`<link rel="stylesheet" href="stylesheet.css">`}</EPubCode>
+					    <EPubDownloadButton
+            	    	 	href="/download/szortal.css"
+            	    	 	download="stylesheet"
+            	    	>
+            	    		<FontAwesomeIcon
+                                    icon={ faDownload }
+                                    size="2x"
+                                    color="#777777"
+                              />
+            	    	</EPubDownloadButton>
+					Aktualny plik stylesheet.css do wydania.
+				</EPubText>
+
 
 				<EPubInfo>
 					Opis stylowania działów Szortownia, Stusłówka, Rymowisko, Wywiad.
 				</EPubInfo>
 
-				<EPubText>Tytuł (w Wywiadzie - imię i nazwisko osoby,
-				z którą wywiad jest przeprowadzany)</EPubText>
-				<EPubCode>{`<h2 class="title">Tytuł tekstu</h2>`}</EPubCode>
+				<EPubText>Tytuł (w wywiadzie - imię i nazwisko osoby,
+				z którą wywiad jest przeprowadzany)
+					<EPubCode>{`<h2 class="title">Tytuł tekstu</h2>`}</EPubCode>
+				</EPubText>
 
-				<EPubText>Podtytuł w wywiadzie umieszczany przed tytułem</EPubText>
-				<EPubCode>{`<h3>"7 pytań do...", czyli gdzie diabeł nie może tam „Szortal” pośle</h3>`}</EPubCode>
+				<EPubText>Podtytuł w wywiadzie umieszczany przed tytułem
+					<EPubCode>{`<h3>"7 pytań do...", czyli gdzie diabeł nie może tam „Szortal” pośle</h3>`}</EPubCode>
+				</EPubText>
 
-				<EPubText>Autor</EPubText>
-				<EPubCode>{`<p class="author">Autor tekstu</p>`}</EPubCode>
+				<EPubText>Autor
+					<EPubCode>{`<p class="author">Autor tekstu</p>`}</EPubCode>
+				</EPubText>
 
-				<EPubText>Tekst</EPubText>
+				<EPubText>Tekst
 				<EPubCode>{`<p class="text">text dokumentu</p>`}</EPubCode>
+				</EPubText>
 
 
-				<EPubText>Gwiazdki *** rozdzielające części tekstu</EPubText>
-				<EPubCode>{`<p class="textcenter">***</p>`}</EPubCode>
+				<EPubText>Gwiazdki *** rozdzielające części tekstu
+					<EPubCode>{`<p class="textcenter">***</p>`}</EPubCode>
+				</EPubText>
 
 
-				<EPubText>Przypis</EPubText>
-				<EPubCode>{`<div class="annotation">\n`}
-				{`  <p class="text">linijka tekstu</p>\n`}
-				{`  <p class="text">linijka tekstu</p>\n`}
-				{`</div>`}</EPubCode>
+				<EPubText>Przypis
+					<EPubCode>{`<div class="annotation">\n`}
+					{`  <p class="text">linijka tekstu</p>\n`}
+					{`  <p class="text">linijka tekstu</p>\n`}
+					{`</div>`}</EPubCode>
+				</EPubText>
 
 
-				<EPubText>Poezja</EPubText>
-				<EPubCode>{`<div class="poetry">\n`}
-				{`  <p class="text">linijka tekstu</p>\n`}
-				{`  <p class="text">linijka tekstu</p>\n`}
-				{`</div>`}</EPubCode>
+				<EPubText>Poezja
+					<EPubCode>{`<div class="poetry">\n`}
+					{`  <p class="text">linijka tekstu</p>\n`}
+					{`  <p class="text">linijka tekstu</p>\n`}
+					{`</div>`}</EPubCode>
+				</EPubText>
 
-				<EPubText>Motto (po autorze opowiadania)</EPubText>
-				<EPubCode>{`<div class="motto">\n`}
-				{`  <p class="text">linijka tekstu</p>\n`}
-				{`  <p class="text">linijka tekstu</p>\n`}
-				{`</div>`}</EPubCode>
+				<EPubText>Motto (po autorze opowiadania)
+					<EPubCode>{`<div class="motto">\n`}
+					{`  <p class="text">linijka tekstu</p>\n`}
+					{`  <p class="text">linijka tekstu</p>\n`}
+					{`</div>`}</EPubCode>
+				</EPubText>
 
 				<EPubInfo>
 					Opis stylowania działu Subiektywnie.
 				</EPubInfo>
 
-				<EPubText>Tytuł</EPubText>
-				<EPubCode>{`<h2 class="title">Tytuł recenzji</h2>`}</EPubCode>
+				<EPubText>Tytuł
+					<EPubCode>{`<h2 class="title">Tytuł recenzji</h2>`}</EPubCode>
+				</EPubText>
 
-				<EPubText>Autor</EPubText>
-				<EPubCode>{`<p class="author">Autor recenzji</p>`}</EPubCode>
+				<EPubText>Autor
+					<EPubCode>{`<p class="author">Autor recenzji</p>`}</EPubCode>
+				</EPubText>
 
-				<EPubText>Lead (pierwszy pogrubiony akapit po autorze)</EPubText>
-				<EPubCode>{`<p class="lead">text leadu</p>`}</EPubCode>
+				<EPubText>Lead (pierwszy pogrubiony akapit po autorze)
+					<EPubCode>{`<p class="lead">text leadu</p>`}</EPubCode>
+				</EPubText>
 
-				<EPubText>Tekst</EPubText>
-				<EPubCode>{`<p class="review">text recenzji</p>`}</EPubCode>
+				<EPubText>Tekst
+					<EPubCode>{`<p class="review">text recenzji</p>`}</EPubCode>
+				</EPubText>
 
-				<EPubText>ISBN (sekcja końcowa)</EPubText>
-				<EPubCode>{`<div class="isbn">\n`}
-				{`  <p class="review">Tytuł: </p>\n`}
-				{`  <p class="review">Seria: </p>\n`}
-				{`  <p class="review">Tom: </p>\n`}
-				{`  <p class="review">Scenariusz: </p>\n`}
-				{`  <p class="review">Rysunki: </p>\n`}
-				{`  <p class="review">Kolory: </p>\n`}
-				{`  <p class="review">Tłumaczenie: </p>\n`}
-				{`  <p class="review">Tytuł oryginału: </p>\n`}
-				{`  <p class="review">Wydawnictwo: </p>\n`}
-				{`  <p class="review">Wydawca oryginału: </p>\n`}
-				{`  <p class="review">Liczba stron: </p>\n`}
-				{`  <p class="review">Oprawa: </p>\n`}
-				{`  <p class="review">Format: </p>\n`}
-				{`  <p class="review">Wydanie: </p>\n`}
-				{`  <p class="review">ISBN: </p>\n`}
-				{`</div>`}</EPubCode>
+				<EPubText>ISBN (sekcja końcowa)
+					<EPubCode>{`<div class="isbn">\n`}
+					{`  <p class="review">Tytuł: </p>\n`}
+					{`  <p class="review">Seria: </p>\n`}
+					{`  <p class="review">Tom: </p>\n`}
+					{`  <p class="review">Scenariusz: </p>\n`}
+					{`  <p class="review">Rysunki: </p>\n`}
+					{`  <p class="review">Kolory: </p>\n`}
+					{`  <p class="review">Tłumaczenie: </p>\n`}
+					{`  <p class="review">Tytuł oryginału: </p>\n`}
+					{`  <p class="review">Wydawnictwo: </p>\n`}
+					{`  <p class="review">Wydawca oryginału: </p>\n`}
+					{`  <p class="review">Liczba stron: </p>\n`}
+					{`  <p class="review">Oprawa: </p>\n`}
+					{`  <p class="review">Format: </p>\n`}
+					{`  <p class="review">Wydanie: </p>\n`}
+					{`  <p class="review">ISBN: </p>\n`}
+					{`</div>`}</EPubCode>
+				</EPubText>
 
-				<EPubText>Przypis</EPubText>
-				<EPubCode>{`<div class="annotation">\n`}
-				{`  <p class="text">linijka tekstu</p>\n`}
-				{`  <p class="text">linijka tekstu</p>\n`}
-				{`</div>`}</EPubCode>
+				<EPubText>Przypis
+					<EPubCode>{`<div class="annotation">\n`}
+					{`  <p class="text">linijka tekstu</p>\n`}
+					{`  <p class="text">linijka tekstu</p>\n`}
+					{`</div>`}</EPubCode>
+				</EPubText>
 
 
 				<EPubSubtitle>
@@ -195,6 +228,35 @@ class EPub extends React.Component {
 				na stronie <a href="https://cloudconvert.com/png-to-jpg" target="blank">
 				Cloudconvert.</a>
 				</EPubText>
+
+				<EPubSubtitle>
+					Makietowanie wydania w formacie EPub
+				</EPubSubtitle>
+
+				<EPubInfo>
+				Import pustej makiety do Calibre
+				</EPubInfo>
+
+				<EPubText>Dobrym startem do makietowania może być ściągnięcie pustej makiety.
+
+					<EPubDownloadButton
+            	    	 href="/download/makieta.epub"
+            	    	 download="makieta_Szortal na wynos (nr 64) październik 2018"
+            	    >
+            	    	<FontAwesomeIcon
+                        	icon={ faDownload }
+                        	size="2x"
+                        	color="#777777"
+                        />
+            	    </EPubDownloadButton>
+
+				Po ściągnięciu nazwę pliku należy zmodyfikować o aktualny numer wydania 
+				oraz miesiąca i dopiero wtedy zaimportować do Calibre.
+				</EPubText>
+
+				<EPubInfo>
+				Makietowanie w Calibre
+				</EPubInfo>
 
 			</EPubContainer>
 

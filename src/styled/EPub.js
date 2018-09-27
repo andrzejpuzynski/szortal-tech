@@ -19,7 +19,7 @@ export const EPubSubtitle = styled.h2`
 	font-size: 32px;
 	font-weight: 600;
 	margin-top: 100px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 `
 
 export const EPubInfo = styled.p`
@@ -27,14 +27,15 @@ export const EPubInfo = styled.p`
 	font-weight: 100;
 	letter-spacing: 1px;
 	line-height: 32px;
-	margin-top: 20px;
-	margin-bottom: 40px;
+	margin-top: 30px;
+	margin-bottom: 30px;
 	color: grey;
 `
 
 export const EPubText = styled.p`
 	font-size: 21px;
 	line-height: 32px;
+	margin-bottom: 30px;
 `
 
 export const EPubCode = styled.pre`
@@ -46,20 +47,11 @@ export const EPubCode = styled.pre`
 	width: 100%;
 	padding: 10px;
 	font-size: 21px;
-	margin: -15px 0 20px 0;
+	margin: 8px 0 0 0;
 	overflow: auto;
 `
 
-export const IntroSocial = styled.div`
-	display: flex;
-	justify-content: center;
-`
-
-export const IntroSocialLink = styled.img`
-	margin: 10px;
-`
-
-export const IntroSocialButton = styled.a`
+export const EPubDownloadButton = styled.a`
 	display: inline-block;
 	margin: 10px;
 `
