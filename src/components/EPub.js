@@ -18,7 +18,7 @@ import {
 } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDownload } from '@fortawesome/free-solid-svg-icons';
+import { faDownload, faCheck, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 
 
 class EPub extends React.Component {
@@ -75,7 +75,7 @@ class EPub extends React.Component {
 				należy załączyć zewnętrzny plik ze stylami (stylesheet.css) wpisując poniższy kod:
 				<EPubCode>{`<link rel="stylesheet" href="stylesheet.css">`}</EPubCode>
 					    <EPubDownloadButton
-            	    	 	href="/download/szortal.css"
+            	    	 	href="szortal.css"
             	    	 	download="stylesheet"
             	    	>
             	    		<FontAwesomeIcon
@@ -240,7 +240,7 @@ class EPub extends React.Component {
 				<EPubText>Dobrym startem do makietowania może być ściągnięcie pustej makiety.
 
 					<EPubDownloadButton
-            	    	 href="/download/makieta.epub"
+            	    	 href="makieta.epub"
             	    	 download="makieta_Szortal na wynos (nr 64) październik 2018"
             	    >
             	    	<FontAwesomeIcon
@@ -257,6 +257,135 @@ class EPub extends React.Component {
 				<EPubInfo>
 				Makietowanie w Calibre
 				</EPubInfo>
+
+				<EPubText>
+				Przejdź do edycji ePuba (Edit book) i zaimportuj wszystkie pliki html i jpg. 
+				Następnie w oknie File browser ułóż poszczególne pliki html w takiej kolejności, 
+				w jakiej mają się pojawić w ePubie.  
+				</EPubText>
+
+				<EPubText>
+				Kiedy makieta jest gotowa, w dalszej kolejności należy sprawdzić punkty kontrolne
+				i przygotować ePuba gotowego do konwersji na format MOBI i umieszczenie na stronie www.
+				</EPubText>
+
+
+				<EPubSubtitle>
+					Sprawdzanie EPuba i przygotowanie wersji finalnej
+				</EPubSubtitle>
+
+				<EPubInfo>
+				Lista kontrolna
+				</EPubInfo>
+
+				<EPubText>
+					Lista kontrolna ma na celu wyeliminowanie wszelkich błędów i przygotowanie makiety
+					do drugiego sprawdzenia oraz przygotowania finalnego ePuba.
+				</EPubText>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> aktualizacja metadanych pliku: numer wydania, nazwa miesiąca oraz rok
+
+				</EPubText>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> aktualizacja strony redakcyjnej wydania
+
+				</EPubText>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> zgodność prefiksów plików html wydania z kluczem:
+                    <ul>
+                    	<li>"szort_" - Szortownia</li>
+						<li>"stu_" - Stusłówka</li>
+						<li>"rym_" - Rymowisko</li>
+						<li>"zagr_" - Zagraniczniak</li>
+						<li>"pub_" - Publicystyka</li>
+						<li>"wywiad_" - Wywiad</li>
+						<li>"s_" - Subiektywnie</li>
+						<li>"komiks_" - pliki do komiksu</li>
+						<li>"reklama_" - reklama</li>
+						<li>"patronat_" - reklama Partonat</li>
+					</ul>
+				</EPubText>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> poprawność ścieżki linkowania plików jpg: img src="../Images/
+				</EPubText>
+				
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> wyświetlanie wszystkich grafik przy przeglądaniu ePuba
+				</EPubText>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> w sekcji &lt;head&gt; każdego dokumentu zastosowane tylko tagi &lt;title&gt; i &lt;link&gt;
+				</EPubText>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> w sekcji &lt;head&gt; każdego dokumentu zastosowane tylko tagi &lt;title&gt; i &lt;link&gt;
+				</EPubText>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faExclamationTriangle }
+                    	size="2x"
+                    	color="#f00"
+                    /> dalsza część listy jest w trakcie tworzenia
+				</EPubText>
+
+				<EPubInfo>
+				Przygotowanie wersji finalnej EPub
+				</EPubInfo>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faExclamationTriangle }
+                    	size="2x"
+                    	color="#f00"
+                    /> ta część opisu jest w trakcie tworzenia
+				</EPubText>
+
+
+				<EPubSubtitle>
+					Kowersja wydania z formatu EPub do MOBI 
+				</EPubSubtitle>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faExclamationTriangle }
+                    	size="2x"
+                    	color="#f00"
+                    /> ta część opisu jest w trakcie tworzenia
+				</EPubText>
+
 
 			</EPubContainer>
 
