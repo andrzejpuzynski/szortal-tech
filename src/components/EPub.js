@@ -347,16 +347,8 @@ class EPub extends React.Component {
 
 				<EPubText>	
 					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> w sekcji &lt;head&gt; każdego dokumentu zastosowane tylko tagi &lt;title&gt; i &lt;link&gt;
-				</EPubText>
-
-				<EPubText>	
-					<FontAwesomeIcon
                     	icon={ faExclamationTriangle }
-                    	size="2x"
+                    	size="1x"
                     	color="#f00"
                     /> dalsza część listy jest w trakcie tworzenia
 				</EPubText>
@@ -368,7 +360,7 @@ class EPub extends React.Component {
 				<EPubText>	
 					<FontAwesomeIcon
                     	icon={ faExclamationTriangle }
-                    	size="2x"
+                    	size="1x"
                     	color="#f00"
                     /> ta część opisu jest w trakcie tworzenia
 				</EPubText>
@@ -381,7 +373,7 @@ class EPub extends React.Component {
 				<EPubText>	
 					<FontAwesomeIcon
                     	icon={ faExclamationTriangle }
-                    	size="2x"
+                    	size="1"
                     	color="#f00"
                     /> ta część opisu jest w trakcie tworzenia
 				</EPubText>
