@@ -9,20 +9,22 @@ import {
     LayoutDimensionsContainer,
     LayoutDimensionsWidth,
     LayoutDimensionsHeight,
-    LayoutDimensionsDpi
+    LayoutDimensionsDpi,
+    LayoutSocialButton
 } from '../styled/Layout';
 
-class Layout extends React.Component {
+class Graphics extends React.Component {
 	render() {
 		return (
 			<LayoutContainer>
-				<LayoutTitle>Layout</LayoutTitle>
+				<LayoutTitle>Wymiary grafik</LayoutTitle>
 
 				<LayoutText>
 				Podstawowe dane techniczne dla plików graficznych:
 					<ul>
-						<li>Przestrzeń kolorystyczna: RGB</li>
+						<li>przestrzeń kolorystyczna: RGB</li>
 						<li>format pliku: PNG-24</li>
+						<li>preferowana rozdzielczość: 220 dpi</li>
 					</ul>
 				</LayoutText>
 
@@ -116,4 +118,4 @@ class Layout extends React.Component {
 	}
 }
 
-export default Layout;
+export default Graphics;

@@ -7,7 +7,8 @@ import {
 import createHistory from "history/createBrowserHistory";
 
 import Intro from './components/Intro';
-import Layout from './components/Layout';
+import Adds from './components/Adds';
+import Graphics from './components/Graphics';
 import EPub from './components/EPub';
 
 import logo from './img/logo_biale.png';
@@ -36,16 +37,20 @@ class App extends Component {
      	  	       	</HeaderLogoContainer>
      	  	       	<HeaderLinks>
      	  	       		<HeaderButton>
-     	  	       			<Link to="/layout">Layout</Link>
+     	  	       			<Link to="/adds">Reklamy</Link>
      	  	       		</HeaderButton>
+                        <HeaderButton>
+                            <Link to="/graphics">Grafiki</Link>
+                        </HeaderButton>
      	  	       		<HeaderButton>
      	  	       			<Link to="/epub">EPub</Link>
      	  	       		</HeaderButton>
      	  	       	</HeaderLinks>
      	  	       </HeaderContainer>
   
-     	  	   <Route exact path="/" component={Intro} />
-                <Route path="/layout" component={Layout} />
+     	  	    <Route exact path="/" component={Intro} />
+                <Route path="/adds" component={Adds} />
+                <Route path="/graphics" component={Graphics} />
                 <Route path="/epub" component={EPub} />
   
      	      </div>

@@ -67,13 +67,10 @@ export const LayoutDimensionsHeight = styled.div`
 	width: 300px;
 	font-size: 21px;
 	transform: rotate(90deg) translateX(150px)translateY(-65px);
-
 `
 
 export const LayoutDimensionsDpi = styled.div`
 	font-size: 32px;
 	line-height: 300px;
 	color: #fff;
-
 `
-
