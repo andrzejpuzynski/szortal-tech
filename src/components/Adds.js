@@ -57,7 +57,7 @@ class Adds extends React.Component {
 
                 <LayoutText>
                 	<LayoutDownloadButton
-            	    	 href="http://pdfmyurl.com/saveaspdf"
+            	    	 href="https://www.htm2pdf.co.uk/display?url=https://htm2pdf.co.uk/adds"
             	    >
             	    	<FontAwesomeIcon
                     	   	icon={ faFilePdf }
