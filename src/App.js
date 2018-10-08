@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {
   Router,
   Route,
-  Link
+  Link,
+  NavLink
 } from 'react-router-dom';
 import createHistory from "history/createBrowserHistory";
 
@@ -19,11 +20,18 @@ import {
 	HeaderLogoContainer,
 	HeaderLogo,
 	HeaderLinks,
-	HeaderButton
+    HeaderButton
 } from './styled/App';
-
+ 
 
 class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            aktiv: 'null',
+        };
+    }
+
   render() {
     return (
         <AppContainer>
@@ -31,20 +39,30 @@ class App extends Component {
     	       <div>
      	  	       <HeaderContainer>
      	  	       	<HeaderLogoContainer>
-     	  	       		<Link to="/">
+     	  	       		<NavLink to="/" onClick={() => this.setState({aktiv: 'null'})}>
      	  	       			<HeaderLogo src={logo} alt="Szortal logo"/>
-     	  	       		</Link>
+     	  	       		</NavLink>
      	  	       	</HeaderLogoContainer>
      	  	       	<HeaderLinks>
-     	  	       		<HeaderButton>
-     	  	       			<Link to="/adds">Reklamy</Link>
-     	  	       		</HeaderButton>
-                        <HeaderButton>
-                            <Link to="/graphics">Grafiki</Link>
-                        </HeaderButton>
-     	  	       		<HeaderButton>
-     	  	       			<Link to="/epub">EPub</Link>
-     	  	       		</HeaderButton>
+
+     	  	       		<NavLink to="/adds" onClick={() => this.setState({aktiv: 'adds'})}> 
+                            <HeaderButton aktiv={this.state.aktiv === 'adds'}>
+                                Reklamy
+                            </HeaderButton>
+                        </NavLink>
+
+                        <NavLink to="/graphics" onClick={() => this.setState({aktiv: 'graphics'})}> 
+                            <HeaderButton aktiv={this.state.aktiv === 'graphics'}>
+                                Grafiki
+                            </HeaderButton>
+                        </NavLink>
+
+                        <NavLink to="/epub" onClick={() => this.setState({aktiv: 'epub'})}> 
+                            <HeaderButton aktiv={this.state.aktiv === 'epub'}>
+                                EPub
+                            </HeaderButton>
+                        </NavLink>
+
      	  	       	</HeaderLinks>
      	  	       </HeaderContainer>
   
