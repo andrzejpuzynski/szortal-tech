@@ -21,7 +21,7 @@ class Adds extends React.Component {
 	render() {
 		return (
 			<LayoutContainer>
-				<LayoutTitle>Reklamy</LayoutTitle>
+				<LayoutTitle>Specyfikacja reklam</LayoutTitle>
 
 				<LayoutText>
 				Podstawowe dane techniczne dla plików graficznych:
@@ -56,15 +56,16 @@ class Adds extends React.Component {
 
 
                 <LayoutText>
-                	<LayoutDownloadButton
-            	    	 href="https://www.htm2pdf.co.uk/display?url=https://htm2pdf.co.uk/adds"
-            	    >
-            	    	<FontAwesomeIcon
-                    	   	icon={ faFilePdf }
-                    	   	size="2x"
-                    	   	color="#777777"
-                    	/>  
-					</LayoutDownloadButton>
+					    <LayoutDownloadButton
+            	    	 	href="Szortal na Wynos - specyfikacja reklam.pdf"
+            	    	 	download="Szortal na Wynos - specyfikacja reklam.pdf"
+            	    	>
+            	    		<FontAwesomeIcon
+                                    icon={ faFilePdf }
+                                    size="2x"
+                                    color="#777777"
+                              />
+            	    	</LayoutDownloadButton>
 					Kliknij aby ściągnąć tę stronę w formacie PDF.
                 </LayoutText>
 				

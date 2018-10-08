@@ -10,14 +10,18 @@ import {
     LayoutDimensionsWidth,
     LayoutDimensionsHeight,
     LayoutDimensionsDpi,
-    LayoutSocialButton
+    LayoutSocialButton,
+    LayoutDownloadButton
 } from '../styled/Layout';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDownload, faFilePdf } from '@fortawesome/free-solid-svg-icons';
 
 class Graphics extends React.Component {
 	render() {
 		return (
 			<LayoutContainer>
-				<LayoutTitle>Wymiary grafik</LayoutTitle>
+				<LayoutTitle>Specyfikacja grafik</LayoutTitle>
 
 				<LayoutText>
 				Podstawowe dane techniczne dla plików graficznych:
@@ -27,29 +31,6 @@ class Graphics extends React.Component {
 						<li>preferowana rozdzielczość: 220 dpi</li>
 					</ul>
 				</LayoutText>
-
-
-				<LayoutSubtitle>
-					Wymiary reklam
-				</LayoutSubtitle>
-
-				<LayoutDimensionsContainer >
-					<LayoutDimensionsWidth>1240 px</LayoutDimensionsWidth>
-					<LayoutDimensionsHeight>1754 px</LayoutDimensionsHeight>
-					<LayoutDimensionsDpi>150 dpi</LayoutDimensionsDpi>
-				</LayoutDimensionsContainer>
-
-				<LayoutDimensionsContainer >
-					<LayoutDimensionsWidth>1818 px</LayoutDimensionsWidth>
-					<LayoutDimensionsHeight>2572 px</LayoutDimensionsHeight>
-					<LayoutDimensionsDpi>220 dpi</LayoutDimensionsDpi>
-				</LayoutDimensionsContainer>
-
-
-
-				<LayoutSubtitle>
-					Wymiary grafik
-				</LayoutSubtitle>
 
 				<LayoutInfo>
 					Okładka, ilustracja całostronicowa do WS.
@@ -112,7 +93,21 @@ class Graphics extends React.Component {
 				<LayoutDimensionsContainer >
 					<LayoutDimensionsHeight>587 px</LayoutDimensionsHeight>
 					<LayoutDimensionsDpi>220 dpi</LayoutDimensionsDpi>
-				</LayoutDimensionsContainer>			
+				</LayoutDimensionsContainer>
+
+				<LayoutText>
+					    <LayoutDownloadButton
+            	    	 	href="Grafiki - bardzo wstepnie.pdf"
+            	    	 	download="Grafiki - bardzo wstepnie.pdf"
+            	    	>
+            	    		<FontAwesomeIcon
+                                    icon={ faFilePdf }
+                                    size="2x"
+                                    color="#777777"
+                              />
+            	    	</LayoutDownloadButton>
+					Kliknij aby ściągnąć tę stronę w formacie PDF.
+                </LayoutText>			
 			</LayoutContainer>
 		)
 	}
