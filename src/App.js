@@ -23,42 +23,53 @@ import {
     HeaderButton
 } from './styled/App';
  
-
 class App extends Component {
     constructor(props) {
         super(props);
+        this.history = createHistory({ basename: process.env.PUBLIC_URL });
+        this.initialHistory = this.history.location.pathname.replace(/\//, '');
+
         this.state = {
-            aktiv: 'null',
+            active: this.initialHistory,
         };
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick() {
+        this.setState(state => ({
+            active: this.history.location.pathname.replace(/\//, '')
+        })
+        );
     }
 
   render() {
+    
     return (
         <AppContainer>
-    	   <Router history={createHistory({ basename: process.env.PUBLIC_URL })}>
+    	   <Router history={this.history}>
     	       <div>
      	  	       <HeaderContainer>
      	  	       	<HeaderLogoContainer>
-     	  	       		<NavLink to="/" onClick={() => this.setState({aktiv: 'null'})}>
+     	  	       		<NavLink to="/" onClick={this.handleClick}>
      	  	       			<HeaderLogo src={logo} alt="Szortal logo"/>
      	  	       		</NavLink>
      	  	       	</HeaderLogoContainer>
      	  	       	<HeaderLinks>
 
-     	  	       		<NavLink to="/adds" onClick={() => this.setState({aktiv: 'adds'})}> 
-                            <HeaderButton aktiv={this.state.aktiv === 'adds'}>
+     	  	       		<NavLink to="/adds" onClick={this.handleClick}> 
+                            <HeaderButton aktiv={this.state.active === 'adds'}>
                                 Reklamy
                             </HeaderButton>
                         </NavLink>
 
-                        <NavLink to="/graphics" onClick={() => this.setState({aktiv: 'graphics'})}> 
-                            <HeaderButton aktiv={this.state.aktiv === 'graphics'}>
+                        <NavLink to="/graphics" onClick={this.handleClick}> 
+                            <HeaderButton aktiv={this.state.active === 'graphics'}>
                                 Grafiki
                             </HeaderButton>
                         </NavLink>
 
-                        <NavLink to="/epub" onClick={() => this.setState({aktiv: 'epub'})}> 
-                            <HeaderButton aktiv={this.state.aktiv === 'epub'}>
+                        <NavLink to="/epub" onClick={this.handleClick}> 
+                            <HeaderButton aktiv={this.state.active === 'epub'}>
                                 EPub
                             </HeaderButton>
                         </NavLink>

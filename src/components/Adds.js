@@ -18,6 +18,7 @@ import { faDownload, faFilePdf } from '@fortawesome/free-solid-svg-icons';
 
 
 class Adds extends React.Component {
+
 	render() {
 		return (
 			<LayoutContainer>
