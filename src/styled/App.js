@@ -42,9 +42,9 @@ export const HeaderButton = styled.li`
     padding: 0px 20px;
     box-sizing: border-box;
     text-decoration: none;
-    color: ${props => props.aktiv ? "#fff" : "#ccc"};
-    border-bottom: ${props => props.aktiv ? "white 4px solid" : "#b00"};
-    background-color: ${props => props.aktiv ? "#c00" : "#b00"};
+    color: ${props => props.active ? "#fff" : "#ccc"};
+    border-bottom: ${props => props.active ? "white 4px solid" : "#b00"};
+    background-color: ${props => props.active ? "#c00" : "#b00"};
 
     :hover {
         border-bottom: #fff 4px solid;

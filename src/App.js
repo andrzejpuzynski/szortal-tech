@@ -57,19 +57,19 @@ class App extends Component {
      	  	       	<HeaderLinks>
 
      	  	       		<NavLink to="/adds" onClick={this.handleClick}> 
-                            <HeaderButton aktiv={this.state.active === 'adds'}>
+                            <HeaderButton active={this.state.active === 'adds'}>
                                 Reklamy
                             </HeaderButton>
                         </NavLink>
 
                         <NavLink to="/graphics" onClick={this.handleClick}> 
-                            <HeaderButton aktiv={this.state.active === 'graphics'}>
+                            <HeaderButton active={this.state.active === 'graphics'}>
                                 Grafiki
                             </HeaderButton>
                         </NavLink>
 
                         <NavLink to="/epub" onClick={this.handleClick}> 
-                            <HeaderButton aktiv={this.state.active === 'epub'}>
+                            <HeaderButton active={this.state.active === 'epub'}>
                                 EPub
                             </HeaderButton>
                         </NavLink>
