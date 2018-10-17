@@ -230,6 +230,31 @@ class EPub extends React.Component {
 				</EPubText>
 
 				<EPubSubtitle>
+					Stylowanie plików graficznych
+				</EPubSubtitle>
+
+				<EPubText>Reklama całostronicowa, komiks
+					<EPubCode>{`<div class="fullpage">\n`}
+					{`  <img src="../Images/nazwa_pliku.jpg" alt="nazwa_pliku.jpg" />\n`}
+					{`</div>`}</EPubCode>
+				</EPubText>
+
+				<EPubText>Ilustracja do tekstu
+					<EPubCode>{`<div class="imagetext">\n`}
+					{`  <img src="../Images/nazwa_pliku.jpg" alt="nazwa_pliku.jpg" />\n`}
+					{`  <p class="author-photo">Ilustracja: Autor ilustracji</p>\n`}
+					{`</div>`}</EPubCode>
+				</EPubText>
+
+				<EPubText>Okładka do recenzji
+					<EPubCode>{`<div class="imagetext">\n`}
+					{`  <img src="../Images/nazwa_pliku.jpg" alt="nazwa_pliku.jpg" />\n`}
+					{`</div>`}</EPubCode>
+				</EPubText>
+
+
+
+				<EPubSubtitle>
 					Makietowanie wydania w formacie EPub
 				</EPubSubtitle>
 
@@ -328,13 +353,13 @@ class EPub extends React.Component {
                     	color="#d66"
                     /> poprawność ścieżki linkowania plików jpg: img src="../Images/
 				</EPubText>
-				
+
 				<EPubText>	
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
-                    /> wyświetlanie wszystkich grafik przy przeglądaniu ePuba
+                    /> sprawdź strony z reklamą i komiksem (właściwa nazwa klasy w tagu div)
 				</EPubText>
 
 				<EPubText>	
@@ -342,7 +367,55 @@ class EPub extends React.Component {
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
-                    /> w sekcji &lt;head&gt; każdego dokumentu zastosowane tylko tagi &lt;title&gt; i &lt;link&gt;
+                    /> sprawdź strony ilustracji do tekstów (właściwa nazwa klasy w tagu div) i uzupełnij autora ilustracji (właściwa nazwa klasy w tagu div)
+				</EPubText>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> sprawdź okładki do recenzji, czy w kodzie jest zastosowana właściwa nazwa klasy
+				</EPubText>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> sprawdź czy ilustracje do tekstów znajdują się w tym samym pliku do tekst
+				</EPubText>
+				
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> sprawdź wyświetlanie wszystkich grafik przy przeglądaniu ePuba
+				</EPubText>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> sprawdź, czy w sekcji &lt;head&gt; każdego dokumentu zastosowane są tylko tagi &lt;title&gt; i &lt;link&gt;
+				</EPubText>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Uruchom z Menu: TOOLS: Fix HTML - all files
+				</EPubText>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Uruchom z Menu: TOOLS: Beautify all files
 				</EPubText>
 
 				<EPubText>	

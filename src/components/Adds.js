@@ -14,7 +14,7 @@ import {
 } from '../styled/Layout';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDownload, faFilePdf } from '@fortawesome/free-solid-svg-icons';
+import { faFilePdf } from '@fortawesome/free-solid-svg-icons';
 
 
 class Adds extends React.Component {

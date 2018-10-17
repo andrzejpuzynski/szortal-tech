@@ -73,7 +73,7 @@ body {
 }
 
 .poetry > p {
-	line-height: 0.5em;
+	line-height: 1.0em;
 }
 
 .motto {
@@ -84,7 +84,7 @@ body {
 }
 
 .motto > p {
-	line-height: 0.5em;
+	line-height: 1.0em;
 	text-align: right;
 	font-style: italic;
 }
@@ -109,7 +109,7 @@ body {
 
 .imagetext img { 
 	max-width: 100%;
-	max-height: 100%;
+	max-height: 90%;
 }
 
 .imagetext { 
