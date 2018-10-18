@@ -283,55 +283,29 @@ class EPub extends React.Component {
 				Makietowanie w Calibre
 				</EPubInfo>
 
-				<EPubText>
-				Przejdź do edycji ePuba (Edit book) i zaimportuj wszystkie pliki html i jpg. 
-				Następnie w oknie File browser ułóż poszczególne pliki html w takiej kolejności, 
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Przejdź do edycji ePuba (Edit book) i zaimportuj wszystkie pliki html i jpg. 
+				</EPubText>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> W oknie File browser ułóż poszczególne pliki html w takiej kolejności, 
 				w jakiej mają się pojawić w ePubie.  
 				</EPubText>
 
-				<EPubText>
-				Kiedy makieta jest gotowa, w dalszej kolejności należy sprawdzić punkty kontrolne
-				i przygotować ePuba gotowego do konwersji na format MOBI i umieszczenie na stronie www.
-				</EPubText>
-
-
-				<EPubSubtitle>
-					Sprawdzanie EPuba i przygotowanie wersji finalnej
-				</EPubSubtitle>
-
-				<EPubInfo>
-				Lista kontrolna
-				</EPubInfo>
-
-				<EPubText>
-					Lista kontrolna ma na celu wyeliminowanie wszelkich błędów i przygotowanie makiety
-					do drugiego sprawdzenia oraz przygotowania finalnego ePuba.
-				</EPubText>
-
 				<EPubText>	
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
-                    /> aktualizacja metadanych pliku: numer wydania, nazwa miesiąca oraz rok
-
-				</EPubText>
-
-				<EPubText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> aktualizacja strony redakcyjnej wydania
-
-				</EPubText>
-
-				<EPubText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> zgodność prefiksów plików html wydania z kluczem:
+                    /> sprawdź zgodność prefiksów plików html wydania z kluczem:
                     <ul>
                     	<li>"szort_" - Szortownia</li>
 						<li>"stu_" - Stusłówka</li>
@@ -346,12 +320,17 @@ class EPub extends React.Component {
 					</ul>
 				</EPubText>
 
+
+				<EPubInfo>
+				Sprawdzenie podstawowych informacji o pliku
+				</EPubInfo>
+
 				<EPubText>	
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
-                    /> poprawność ścieżki linkowania plików jpg: img src="../Images/
+                    /> zaktualizuj metadane pliku: numer wydania, nazwa miesiąca oraz rok
 				</EPubText>
 
 				<EPubText>	
@@ -359,7 +338,31 @@ class EPub extends React.Component {
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
-                    /> sprawdź strony z reklamą i komiksem (właściwa nazwa klasy w tagu div)
+                    /> zaktualizuj stronę redakcyjną wydania
+				</EPubText>
+
+				<EPubInfo>
+				Sprawdzenie sekcji "Head"
+				</EPubInfo>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> sprawdź, czy w sekcji &lt;head&gt; każdego dokumentu zastosowane są tylko tagi &lt;title&gt; i &lt;link&gt;
+				</EPubText>
+
+				<EPubInfo>
+				Poprawianie i sprawdzenie linków do plików graficznych
+				</EPubInfo>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> sprawdź (i popraw) ścieżki linkowania plików jpg: img src="../Images/"
 				</EPubText>
 
 				<EPubText>	
@@ -367,15 +370,7 @@ class EPub extends React.Component {
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
-                    /> sprawdź strony ilustracji do tekstów (właściwa nazwa klasy w tagu div) i uzupełnij autora ilustracji (właściwa nazwa klasy w tagu div)
-				</EPubText>
-
-				<EPubText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> sprawdź okładki do recenzji, czy w kodzie jest zastosowana właściwa nazwa klasy
+                    /> sprawdź na stronach z reklamą i komiksem nazwę klasy w tagu div
 				</EPubText>
 
 				<EPubText>	
@@ -384,6 +379,22 @@ class EPub extends React.Component {
                     	size="1x"
                     	color="#d66"
                     /> sprawdź czy ilustracje do tekstów znajdują się w tym samym pliku do tekst
+				</EPubText>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> sprawdź w tekstach ilustracjdo nich (właściwą nazwę klasy w tagu div) i uzupełnij autora ilustracji (właściwa nazwa klasy w tagu div)
+				</EPubText>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> sprawdź okładki do recenzji, czy w kodzie jest zastosowana właściwa nazwa klasy
 				</EPubText>
 				
 				<EPubText>	
@@ -394,13 +405,11 @@ class EPub extends React.Component {
                     /> sprawdź wyświetlanie wszystkich grafik przy przeglądaniu ePuba
 				</EPubText>
 
-				<EPubText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> sprawdź, czy w sekcji &lt;head&gt; każdego dokumentu zastosowane są tylko tagi &lt;title&gt; i &lt;link&gt;
-				</EPubText>
+
+				<EPubInfo>
+				Poprawianie i sprawdzenie kodu w plikach
+				</EPubInfo>
+
 
 				<EPubText>	
 					<FontAwesomeIcon
@@ -418,24 +427,56 @@ class EPub extends React.Component {
                     /> Uruchom z Menu: TOOLS: Beautify all files
 				</EPubText>
 
-				<EPubText>	
-					<FontAwesomeIcon
-                    	icon={ faExclamationTriangle }
-                    	size="1x"
-                    	color="#f00"
-                    /> dalsza część listy jest w trakcie tworzenia
-				</EPubText>
-
 				<EPubInfo>
-				Przygotowanie wersji finalnej EPub
+				Przygotowanie spisu treści
 				</EPubInfo>
 
 				<EPubText>	
 					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Uruchom z Menu: TOOLS: TABLE OF CONTENTS: Edit Table of Contents
+				</EPubText>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Wyczyść aktualny spis treści (po prawej stronie) a następnie uruchom: Generate TOC from all headings
+				</EPubText>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Przejdź na koniec spisu treści i dodaj pozycję (po prawej stronie): New entry below this entry. Z listy wybierz okładkę html komiksu. W okienku "Name of the TOC entry" wpisz "Komiks"
+				</EPubText>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Uruchom z Menu: TOOLS: TABLE OF CONTENTS: Instert inline Table of Contents. 
+				</EPubText>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Sprawdź, czy spis treści działa, i czy jest kompletny. 
+				</EPubText>
+
+				<EPubText>	
+					<FontAwesomeIcon
                     	icon={ faExclamationTriangle }
                     	size="1x"
                     	color="#f00"
-                    /> ta część opisu jest w trakcie tworzenia
+                    /> dalsza część opisu jest w trakcie tworzenia
 				</EPubText>
 
 
