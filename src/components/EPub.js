@@ -247,9 +247,9 @@ class EPub extends React.Component {
 				</EPubText>
 
 				<EPubText>Okładka do recenzji
-					<EPubCode>{`<div class="imagetext">\n`}
+					<EPubCode>{`<p>\n`}
 					{`  <img src="../Images/nazwa_pliku.jpg" alt="nazwa_pliku.jpg" />\n`}
-					{`</div>`}</EPubCode>
+					{`</p>`}</EPubCode>
 				</EPubText>
 
 
