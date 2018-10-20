@@ -1,131 +1,138 @@
 /* text */
 body {
-	margin: 0;
-	padding: 0;
-	border-width: 0;
-	/* DO NOT CHANGE */
-	font-family: "Times New Roman";
-	font-size : 1em;
-	/* END DO NOT CHANGE */
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  /* DO NOT CHANGE */
+  font-family: "Times New Roman";
+  font-size: 1em;
+  /* END DO NOT CHANGE */
 }
 
 .title {
-	margin-bottom: 0.5em;
-	font-family: "Times New Roman";
-	font-size : 2em;
+  margin-bottom: 0.5em;
+  font-family: "Times New Roman";
+  font-size: 2em;
 }
 
 .author {
-    margin-bottom: 24px;
-    font-family: "Times New Roman", serif;
-    font-weight: normal;
-    font-style: italic;
-    font-size: 1.4em;
-    text-indent: 0em;
+  margin-bottom: 24px;
+  font-family: "Times New Roman", serif;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 1.4em;
+  text-indent: 0;
 }
 
-.text,
-.review {
-    margin-top: 0em;
-    margin-bottom: 0.5em;
-    font-family: "Times New Roman";
-    font-weight: normal;
-    font-size: 1em;
+.text, .review {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-family: "Times New Roman";
+  font-weight: normal;
+  font-size: 1em;
 }
 
 .textcenter {
-    margin-top: 0.2em;
-    margin-bottom: 0.2em;
-    text-align: center;
-    font-family: "Times New Roman";
-    font-weight: normal;
-    font-size: 1em;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+  text-align: center;
+  font-family: "Times New Roman";
+  font-weight: normal;
+  font-size: 1em;
 }
 
 .annotation {
-    margin-top: 2em;
-    padding-top: 0.5em;
-    border-top: 1px lightgrey solid;
-    
+  margin-top: 2em;
+  padding-top: 0.5em;
+  border-top: 1px lightgrey solid;
 }
 
 .annotation > p {
-   font-size: 0.85em;
-    
+  font-size: 0.85em;
 }
 
 .lead {
-    margin-bottom: 20px;
-	font-weight: bold;
+  margin-bottom: 20px;
+  font-weight: bold;
 }
-        
-.isbn {
-     margin-top: 36px;
-    }
 
-.isbn>p {
-    margin-bottom: 0px;
+.isbn {
+  margin-top: 36px;
+}
+
+.isbn > p {
+  margin-bottom: 0;
 }
 
 .poetry {
-	margin-top: 2.4em;	
-	margin-bottom: 2.4em;
+  margin-top: 2.4em;
+  margin-bottom: 2.4em;
 }
 
 .poetry > p {
-	line-height: 1.0em;
+  line-height: 1em;
 }
 
 .motto {
-	margin-top: 2.4em;	
-	margin-bottom: 2.4em;
-	text-align: right;
-	font-style: italic;
+  margin-top: 2.4em;
+  margin-bottom: 2.4em;
+  text-align: right;
+  font-style: italic;
 }
 
 .motto > p {
-	line-height: 1.0em;
-	text-align: right;
-	font-style: italic;
-}
-
-.broken {
-    font-family : "Broken 15";	
-    font-size: 36pt;
-    color: #000000;
+  line-height: 1em;
+  text-align: right;
+  font-style: italic;
 }
 
 .redakcyjna {
-	font-family : "Times New Roman", serif;
-	font-weight : normal;
-	text-align : center;
+  font-family: "Times New Roman", serif;
+  font-weight: normal;
+  text-align: center;
 }
 
 /* Images */
-.fullpage img { 
+.fullpage img {
   width: 100%;
   height: auto;
 }
 
-.imagetext img { 
-	max-width: 100%;
-	max-height: 90%;
+.imagetext img {
+  max-width: 100%;
+  max-height: 90%;
 }
 
-.imagetext { 
-	text-align: center;
+.imagetext {
+  text-align: center;
 }
 
 .author-photo {
-    font-family: "Times New Roman", serif;
-    font-weight: normal;
-    font-style: italic;
-    font-size: 1em;
-    line-height: 1.4;
-    text-decoration: none;
-    font-variant: normal;
-    text-align: center;
-    text-indent: 0px;
-    margin-bottom: 1em;
+  font-family: "Times New Roman", serif;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 1em;
+  line-height: 1.4;
+  text-decoration: none;
+  font-variant: normal;
+  text-align: center;
+  text-indent: 0;
+  margin-bottom: 1.2em;
 }
 
+/* toc */
+.sgc-toc-chapter {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 0.2em;
+}
+
+.sgc-toc-level-1 {
+  margin-bottom: 0em;
+  font-style: italic;
+  font-size: 1.1em;
+}
+
+.sgc-toc-level-1 a {
+  font-style: normal;
+}

@@ -18,7 +18,7 @@ import {
 } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDownload, faCheck, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
+import { faDownload, faCheck, faExclamationTriangle, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 
 class EPub extends React.Component {
@@ -182,6 +182,32 @@ class EPub extends React.Component {
 					{`  <p class="text">linijka tekstu</p>\n`}
 					{`  <p class="text">linijka tekstu</p>\n`}
 					{`</div>`}</EPubCode>
+				</EPubText>
+
+				<EPubSubtitle>
+					Nazwy plików HTML
+				</EPubSubtitle>
+
+				<EPubText>
+					Nazwy plików html nie mogą zawierać spacji.
+				</EPubText>
+
+				<EPubText>
+					<FontAwesomeIcon
+                    	icon={ faTimes }
+                    	size="1x"
+                    	color="#d66"
+                    /> 
+					 &nbsp;patronat_Skafander i melonik.xhtml 
+				</EPubText>
+
+				<EPubText>
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#0b0"
+                    />
+					&nbsp;patronat_Skafander_i_melonik.xhtml
 				</EPubText>
 
 
@@ -407,7 +433,7 @@ class EPub extends React.Component {
 
 
 				<EPubInfo>
-				Poprawianie i sprawdzenie kodu w plikach
+				Poprawianie i sprawdzenie kodu w plikacho tym jest
 				</EPubInfo>
 
 
@@ -491,6 +517,10 @@ class EPub extends React.Component {
                     	color="#f00"
                     /> ta część opisu jest w trakcie tworzenia
 				</EPubText>
+
+
+
+				
 
 
 			</EPubContainer>
