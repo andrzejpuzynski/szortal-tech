@@ -159,7 +159,7 @@ class EPub extends React.Component {
 
 				<EPubText>ISBN (sekcja końcowa)
 					<EPubCode>{`<div class="isbn">\n`}
-					{`  <p class="review">Tytuł: </p>\n`}
+				 	{`  <p class="review">Tytuł: </p>\n`}
 					{`  <p class="review">Seria: </p>\n`}
 					{`  <p class="review">Tom: </p>\n`}
 					{`  <p class="review">Scenariusz: </p>\n`}
@@ -522,7 +522,7 @@ class EPub extends React.Component {
                     	size="1x"
                     	color="#d66"
                     /> W sekcji head spisu treści usuń całą definicję sytles i w to miejsce wstaw 
-					<EPubCode>{`<link rel="stylesheet" href="OEBPS/Styles/stylesheet.css"/>`}</EPubCode>
+					<EPubCode>{`<link rel="stylesheet" href="OEBPS/stylesheet.css"/>`}</EPubCode>
 				</EPubText>
 
 				<EPubText>	
@@ -541,7 +541,7 @@ class EPub extends React.Component {
                     	color="#d66"
                     /> W oknie kodu spisu treści uruchom Find / Replace 
 					<EPubCode>{`Find: <li>`}</EPubCode>
-					<EPubCode>{`Replace <div style=“sgc-toc-level1”>`}</EPubCode>
+					<EPubCode>{`Replace <div class=“sgc-toc-level-1”>`}</EPubCode>
 				</EPubText>
 
 				<EPubText>	
@@ -581,6 +581,37 @@ class EPub extends React.Component {
                     	size="1x"
                     	color="#d66"
                     /> Sprawdź, czy spis treści działa, i czy jest kompletny. 
+				</EPubText>
+
+				<EPubInfo>
+					Okładka
+				</EPubInfo>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Zaimportuj plik okładki o nazwie podobnej do wzorca: 
+                    Szortal-na-wynos-(nr60)-czerwiec-2018.jpg
+                     (łączniki w nazwie)
+				</EPubText>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Osadź plik jpg w pliku okładka.html
+				</EPubText>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Zaznacz plik jpg okładki, kliknij na nim prawym (lub lewym)
+                    klawiszem myszy i wybierz opcję "Mark cover.jgp as cover image"
 				</EPubText>
 
 
