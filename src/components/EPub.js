@@ -396,7 +396,7 @@ class EPub extends React.Component {
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
-                    /> sprawdź na stronach z reklamą i komiksem nazwę klasy w tagu div
+                    /> sprawdź na stronach z reklamą i komiksem nazwę klasy (class="fullpage") w tagu div
 				</EPubText>
 
 				<EPubText>	
@@ -412,7 +412,10 @@ class EPub extends React.Component {
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
-                    /> sprawdź w tekstach ilustracjdo nich (właściwą nazwę klasy w tagu div) i uzupełnij autora ilustracji (właściwa nazwa klasy w tagu div)
+                    /> sprawdź w tekstach z ilustracją nazwę klasy 
+                    dla kontenera div ilustracji (class="imagetext")
+                    i uzupełnij autora ilustracji oraz uzupełnij nazwę klasy
+                    dla tagu p (class="author-photo")
 				</EPubText>
 
 				<EPubText>	
@@ -420,7 +423,7 @@ class EPub extends React.Component {
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
-                    /> sprawdź okładki do recenzji, czy w kodzie jest zastosowana właściwa nazwa klasy
+                    /> sprawdź kod okładek do recenzji
 				</EPubText>
 				
 				<EPubText>	
@@ -433,7 +436,7 @@ class EPub extends React.Component {
 
 
 				<EPubInfo>
-				Poprawianie i sprawdzenie kodu w plikacho tym jest
+					Poprawianie i sprawdzenie kodu w plikach
 				</EPubInfo>
 
 
@@ -454,8 +457,16 @@ class EPub extends React.Component {
 				</EPubText>
 
 				<EPubInfo>
-				Przygotowanie spisu treści
+					Przygotowanie spisu treści
 				</EPubInfo>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Jeśli w dokumencie znajduje się jakiś spis treśći to go usuń. 
+				</EPubText>
 
 				<EPubText>	
 					<FontAwesomeIcon
@@ -494,15 +505,82 @@ class EPub extends React.Component {
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
+                    /> Przesuń w makiecie spis treści za stronę redakcyjną. 
+				</EPubText>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
                     /> Sprawdź, czy spis treści działa, i czy jest kompletny. 
 				</EPubText>
 
 				<EPubText>	
 					<FontAwesomeIcon
-                    	icon={ faExclamationTriangle }
+                    	icon={ faCheck }
                     	size="1x"
-                    	color="#f00"
-                    /> dalsza część opisu jest w trakcie tworzenia
+                    	color="#d66"
+                    /> W sekcji head spisu treści usuń całą definicję sytles i w to miejsce wstaw 
+					<EPubCode>{`<link rel="stylesheet" href="OEBPS/Styles/stylesheet.css"/>`}</EPubCode>
+				</EPubText>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Zamień linijkę z tytułem na 
+					<EPubCode>{`<h2 class="title">Treściospis</h2>`}</EPubCode>
+				</EPubText>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> W oknie kodu spisu treści uruchom Find / Replace 
+					<EPubCode>{`Find: <li>`}</EPubCode>
+					<EPubCode>{`Replace <div style=“sgc-toc-level1”>`}</EPubCode>
+				</EPubText>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> W oknie kodu spisu treści uruchom Find / Replace 
+					<EPubCode>{`Find: </li>`}</EPubCode>
+					<EPubCode>{`Replace: </div>`}</EPubCode>
+				</EPubText>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Usuń z kodu linie 
+					<EPubCode>{`<ul>`}</EPubCode>
+					<EPubCode>{`</ul>`}</EPubCode>
+				</EPubText>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> w każdej linijce wpisz podwójną spację,
+                     a następnie imię i nazwisko autora tekstu
+                    pomiędzy tagami /a /div
+					<EPubCode>{`</a>  Imię Nazwisko</div>`}</EPubCode> 
+				</EPubText>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Sprawdź, czy spis treści działa, i czy jest kompletny. 
 				</EPubText>
 
 
