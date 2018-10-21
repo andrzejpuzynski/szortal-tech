@@ -36,7 +36,7 @@ class EPub extends React.Component {
 					<li>konwersji źródłowych grafik do formatu PNG z korektą rozmiaru (resize)</li>
 					<li>konwersji plików PNG do formatu JPG</li>
 					<li>makietowania wydania w formacie EPUB</li>
-					<li>sprawdzania pliku EPUB i przygotowania wersji finalnej</li>
+					<li>sprawdzania pliku EPUB, stworzenia spisu treści i zamarkowania okładki</li>
 					<li>konwersji formatu EPUB do formatu MOBI</li>
 				</ul>
 				</EPubText>
@@ -73,7 +73,7 @@ class EPub extends React.Component {
 
 				<EPubText>W sekcji nagłówka dokumentu &lt;head&gt; &lt;/head&gt;
 				należy załączyć zewnętrzny plik ze stylami (stylesheet.css) wpisując poniższy kod:
-				<EPubCode>{`<link rel="stylesheet" href="stylesheet.css">`}</EPubCode>
+				<EPubCode>{`  <link href="../Styles/stylesheet.css" rel="stylesheet" type="text/css"/>`}</EPubCode>
 					    <EPubDownloadButton
             	    	 	href="szortal.css"
             	    	 	download="stylesheet"
@@ -87,6 +87,23 @@ class EPub extends React.Component {
 					Aktualny plik stylesheet.css do wydania.
 				</EPubText>
 
+				<EPubInfo>
+					Strona redakcyjna.
+				</EPubInfo>
+
+				<EPubText>
+						<EPubDownloadButton
+            	    	 	href="redakcyjna.html"
+            	    	 	download="redakcyjna"
+            	    	>
+            	    		<FontAwesomeIcon
+                                    icon={ faDownload }
+                                    size="2x"
+                                    color="#777777"
+                              />
+            	    	</EPubDownloadButton>
+            	    	Plik redakcyjna.html do wydania z października 2018.
+				</EPubText>
 
 				<EPubInfo>
 					Opis stylowania działów Szortownia, Stusłówka, Rymowisko, Wywiad.
@@ -188,6 +205,22 @@ class EPub extends React.Component {
 					Nazwy plików HTML
 				</EPubSubtitle>
 
+				<EPubText>	
+					Nazwy plików html do poszczególnych działów rozpoczynamy prefixem według klucza:
+                    <ul>
+                    	<li>"szort_" - Szortownia</li>
+						<li>"stu_" - Stusłówka</li>
+						<li>"rym_" - Rymowisko</li>
+						<li>"zagr_" - Zagraniczniak</li>
+						<li>"pub_" - Publicystyka</li>
+						<li>"wywiad_" - Wywiad</li>
+						<li>"s_" - Subiektywnie</li>
+						<li>"komiks_" - pliki do komiksu</li>
+						<li>"reklama_" - reklama</li>
+						<li>"patronat_" - reklama Partonat</li>
+					</ul>
+				</EPubText>
+
 				<EPubText>
 					Nazwy plików html nie mogą zawierać spacji.
 				</EPubText>
@@ -281,14 +314,19 @@ class EPub extends React.Component {
 
 
 				<EPubSubtitle>
-					Makietowanie wydania w formacie EPub
+					Przygotowanie wydania w formacie EPub
 				</EPubSubtitle>
 
 				<EPubInfo>
-				Import pustej makiety do Calibre
+				Makietowanie w Calibre
 				</EPubInfo>
 
-				<EPubText>Dobrym startem do makietowania może być ściągnięcie pustej makiety.
+				<EPubText>
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Ściągnij pustą makietę.
 
 					<EPubDownloadButton
             	    	 href="makieta.epub"
@@ -300,14 +338,23 @@ class EPub extends React.Component {
                         	color="#777777"
                         />
             	    </EPubDownloadButton>
-
-				Po ściągnięciu nazwę pliku należy zmodyfikować o aktualny numer wydania 
-				oraz miesiąca i dopiero wtedy zaimportować do Calibre.
 				</EPubText>
 
-				<EPubInfo>
-				Makietowanie w Calibre
-				</EPubInfo>
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Zaktualizuj nazwę pliku i zaimportuj go do Calibre.
+				</EPubText>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Zaktualizuj metadane pliku: numer wydania, nazwę miesiąca oraz rok.
+				</EPubText>
 
 				<EPubText>	
 					<FontAwesomeIcon
@@ -326,29 +373,8 @@ class EPub extends React.Component {
 				w jakiej mają się pojawić w ePubie.  
 				</EPubText>
 
-				<EPubText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> sprawdź zgodność prefiksów plików html wydania z kluczem:
-                    <ul>
-                    	<li>"szort_" - Szortownia</li>
-						<li>"stu_" - Stusłówka</li>
-						<li>"rym_" - Rymowisko</li>
-						<li>"zagr_" - Zagraniczniak</li>
-						<li>"pub_" - Publicystyka</li>
-						<li>"wywiad_" - Wywiad</li>
-						<li>"s_" - Subiektywnie</li>
-						<li>"komiks_" - pliki do komiksu</li>
-						<li>"reklama_" - reklama</li>
-						<li>"patronat_" - reklama Partonat</li>
-					</ul>
-				</EPubText>
-
-
 				<EPubInfo>
-				Sprawdzenie podstawowych informacji o pliku
+					Poprawianie i sprawdzenie kodu w plikach
 				</EPubInfo>
 
 				<EPubText>	
@@ -356,7 +382,7 @@ class EPub extends React.Component {
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
-                    /> zaktualizuj metadane pliku: numer wydania, nazwa miesiąca oraz rok
+                    /> Sprawdź, czy w sekcji &lt;head&gt; każdego dokumentu zastosowane są tylko tagi &lt;title&gt; i &lt;link&gt;.
 				</EPubText>
 
 				<EPubText>	
@@ -364,31 +390,7 @@ class EPub extends React.Component {
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
-                    /> zaktualizuj stronę redakcyjną wydania
-				</EPubText>
-
-				<EPubInfo>
-				Sprawdzenie sekcji "Head"
-				</EPubInfo>
-
-				<EPubText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> sprawdź, czy w sekcji &lt;head&gt; każdego dokumentu zastosowane są tylko tagi &lt;title&gt; i &lt;link&gt;
-				</EPubText>
-
-				<EPubInfo>
-				Poprawianie i sprawdzenie linków do plików graficznych
-				</EPubInfo>
-
-				<EPubText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> sprawdź (i popraw) ścieżki linkowania plików jpg: img src="../Images/"
+                    /> Uruchom z Menu: TOOLS: Fix HTML - all files.
 				</EPubText>
 
 				<EPubText>	
@@ -396,7 +398,7 @@ class EPub extends React.Component {
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
-                    /> sprawdź na stronach z reklamą i komiksem nazwę klasy (class="fullpage") w tagu div
+                    /> Uruchom z Menu: TOOLS: Beautify all files.
 				</EPubText>
 
 				<EPubText>	
@@ -404,7 +406,7 @@ class EPub extends React.Component {
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
-                    /> sprawdź czy ilustracje do tekstów znajdują się w tym samym pliku do tekst
+                    /> Popraw ścieżki linkowania plików jpg: img src="../Images/" we wszystkich plikach.
 				</EPubText>
 
 				<EPubText>	
@@ -412,10 +414,24 @@ class EPub extends React.Component {
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
-                    /> sprawdź w tekstach z ilustracją nazwę klasy 
-                    dla kontenera div ilustracji (class="imagetext")
-                    i uzupełnij autora ilustracji oraz uzupełnij nazwę klasy
-                    dla tagu p (class="author-photo")
+                    /> Sprawdź na stronach z reklamą i komiksem nazwę klasy (class="fullpage") w tagu div
+.				</EPubText>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Sprawdź czy ilustracje do tekstów znajdują się w tym samym pliku co tekst.
+				</EPubText>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                        	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Sprawdź w tekstach z ilustracją nazwę klasy dla kontenera div ilustracji (class="imagetext")
+                    i uzupełnij autora ilustracji oraz uzupełnij nazwę klasy dla tagu p (class="author-photo").
 				</EPubText>
 
 				<EPubText>	
@@ -423,7 +439,7 @@ class EPub extends React.Component {
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
-                    /> sprawdź kod okładek do recenzji
+                    /> Sprawdź kod okładek do recenzji.
 				</EPubText>
 				
 				<EPubText>	
@@ -431,29 +447,7 @@ class EPub extends React.Component {
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
-                    /> sprawdź wyświetlanie wszystkich grafik przy przeglądaniu ePuba
-				</EPubText>
-
-
-				<EPubInfo>
-					Poprawianie i sprawdzenie kodu w plikach
-				</EPubInfo>
-
-
-				<EPubText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Uruchom z Menu: TOOLS: Fix HTML - all files
-				</EPubText>
-
-				<EPubText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Uruchom z Menu: TOOLS: Beautify all files
+                    /> Sprawdź wyświetlanie wszystkich grafik przy przeglądaniu ePuba.
 				</EPubText>
 
 				<EPubInfo>
@@ -465,7 +459,7 @@ class EPub extends React.Component {
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
-                    /> Jeśli w dokumencie znajduje się jakiś spis treśći to go usuń. 
+                    /> Jeśli w dokumencie znajduje się jakiś spis treści to go usuń. 
 				</EPubText>
 
 				<EPubText>	
@@ -473,7 +467,7 @@ class EPub extends React.Component {
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
-                    /> Uruchom z Menu: TOOLS: TABLE OF CONTENTS: Edit Table of Contents
+                    /> Uruchom z Menu: TOOLS > TABLE OF CONTENTS > Edit Table of Contents.
 				</EPubText>
 
 				<EPubText>	
@@ -481,7 +475,7 @@ class EPub extends React.Component {
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
-                    /> Wyczyść aktualny spis treści (po prawej stronie) a następnie uruchom: Generate TOC from all headings
+                    /> Wyczyść aktualny spis treści (po prawej stronie) a następnie uruchom: Generate TOC from all headings.
 				</EPubText>
 
 				<EPubText>	
@@ -489,7 +483,8 @@ class EPub extends React.Component {
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
-                    /> Przejdź na koniec spisu treści i dodaj pozycję (po prawej stronie): New entry below this entry. Z listy wybierz okładkę html komiksu. W okienku "Name of the TOC entry" wpisz "Komiks"
+                    /> Przejdź na koniec spisu treści i dodaj pozycję (New entry below this entry). 
+                    Z listy wybierz okładkę html komiksu. W okienku "Name of the TOC entry" wpisz "Komiks".
 				</EPubText>
 
 				<EPubText>	
@@ -497,7 +492,7 @@ class EPub extends React.Component {
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
-                    /> Uruchom z Menu: TOOLS: TABLE OF CONTENTS: Instert inline Table of Contents. 
+                    /> Uruchom z Menu: TOOLS > TABLE OF CONTENTS > Instert inline Table of Contents. 
 				</EPubText>
 
 				<EPubText>	
@@ -593,8 +588,7 @@ class EPub extends React.Component {
                     	size="1x"
                     	color="#d66"
                     /> Zaimportuj plik okładki o nazwie podobnej do wzorca: 
-                    Szortal-na-wynos-(nr60)-czerwiec-2018.jpg
-                     (łączniki w nazwie)
+                    Szortal-na-wynos-nr60-czerwiec-2018.jpg (łączniki w nazwie).
 				</EPubText>
 
 				<EPubText>	
@@ -602,7 +596,7 @@ class EPub extends React.Component {
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
-                    /> Osadź plik jpg w pliku okładka.html
+                    /> Osadź plik jpg okładki w pliku okładka.html
 				</EPubText>
 
 				<EPubText>	
@@ -611,7 +605,7 @@ class EPub extends React.Component {
                     	size="1x"
                     	color="#d66"
                     /> Zaznacz plik jpg okładki, kliknij na nim prawym (lub lewym)
-                    klawiszem myszy i wybierz opcję "Mark cover.jgp as cover image"
+                    klawiszem myszy i wybierz opcję "Mark cover.jgp as cover image".
 				</EPubText>
 
 
