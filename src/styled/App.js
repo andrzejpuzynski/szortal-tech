@@ -6,9 +6,14 @@ export const AppContainer = styled.div`
 `
 
 export const HeaderContainer = styled.header`
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 60px;
 	background-color: #bb0000;
- 	height: 60px;
  	box-sizing: border-box;
+  z-index: 10;
 `
 
 export const HeaderLogoContainer = styled.div`
