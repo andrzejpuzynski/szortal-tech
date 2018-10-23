@@ -12,7 +12,7 @@ import Adds from './components/Adds';
 import Graphics from './components/Graphics';
 import EPub from './components/EPub';
 
-import logo from './img/logo_biale.png';
+import logo from './img/Szortal_logo_vectors_RGB.svg';
 
 import {
     AppContainer,

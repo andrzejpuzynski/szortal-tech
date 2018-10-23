@@ -56,3 +56,8 @@ export const EPubDownloadButton = styled.a`
 	margin: 10px;
 `
 
+export const EPubWorkflow = styled.img`
+  display: block;
+  max-width: 1200px;
+`
+

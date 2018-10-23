@@ -8,6 +8,7 @@ import {
 	EPubText,
 	EPubCode,
 	EPubDownloadButton,
+	EPubWorkflow,
 	IntroSocial,
 	IntroSocialButton
 } from '../styled/EPub';
@@ -20,6 +21,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faCheck, faExclamationTriangle, faTimes } from '@fortawesome/free-solid-svg-icons';
 
+import workflow from '../img/SzortalNaWynos_Workflow_20181023.svg';
 
 class EPub extends React.Component {
 	render() {
@@ -30,41 +32,140 @@ class EPub extends React.Component {
 				<EPubText>EPub „Szortal na&nbsp;Wynos” składany jest w edytorze Calibre.
 				Cały proces przygotowania pliku obejmuje etapy:
 				<ul>
-					<li>konwersji źródłowych tekstów do formatu HTML</li>
-					<li>edycji plików HTML (stylowanie)</li>
-					<li>konwersji plików do formatu DOCX</li>
+					<li>makietowania i edycji plików HTML w Calibre (stylowanie)</li>
 					<li>konwersji źródłowych grafik do formatu PNG z korektą rozmiaru (resize)</li>
 					<li>konwersji plików PNG do formatu JPG</li>
 					<li>makietowania wydania w formacie EPUB</li>
 					<li>sprawdzania pliku EPUB, stworzenia spisu treści i zamarkowania okładki</li>
 					<li>konwersji formatu EPUB do formatu MOBI</li>
 				</ul>
+				Poniżej aktualny Workflow (2018.10.23).
+				<EPubWorkflow src={workflow} alt="workflow" />
+				</EPubText>
+
+				<EPubInfo>
+				Makietowanie w Calibre
+				</EPubInfo>
+
+				<EPubText>
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Ściągnij pustą makietę.
+
+					<EPubDownloadButton
+            	    	 href="makieta.epub"
+            	    	 download="makieta_Szortal na wynos (nr 64) październik 2018"
+            	    >
+            	    	<FontAwesomeIcon
+                        	icon={ faDownload }
+                        	size="2x"
+                        	color="#777777"
+                        />
+            	    </EPubDownloadButton>
+				</EPubText>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Zaktualizuj metadane pliku: numer wydania, nazwę miesiąca oraz rok.
+				</EPubText>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Przejdź do edycji ePuba (Edit book) i zaimportuj wszystkie pliki jpg. 
+				</EPubText>
+
+				<EPubText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Rozpocznij makietowanie plik po pliku, konwertując źródłowe teksty w Calibre.  
 				</EPubText>
 
 				
 				<EPubSubtitle>
-					Konwersja źródłowych tekstów do formatu HTML
+					Nazwy plików HTML
 				</EPubSubtitle>
 
+				<EPubText>	
+					Nazwy plików html do poszczególnych działów rozpoczynamy prefixem według klucza:
+                    <ul>
+                    	<li>"szort_" - Szortownia</li>
+						<li>"stu_" - Stusłówka</li>
+						<li>"rym_" - Rymowisko</li>
+						<li>"zagr_" - Zagraniczniak</li>
+						<li>"pub_" - Publicystyka</li>
+						<li>"wywiad_" - Wywiad</li>
+						<li>"s_" - Subiektywnie</li>
+						<li>"komiks_" - pliki do komiksu</li>
+						<li>"reklama_" - reklama</li>
+						<li>"patronat_" - reklama Partonat</li>
+					</ul>
+				</EPubText>
+
+				<EPubText>
+					Nazwy plików html nie mogą zawierać spacji.
+				</EPubText>
+
+				<EPubText>
+					<FontAwesomeIcon
+                    	icon={ faTimes }
+                    	size="1x"
+                    	color="#d66"
+                    /> 
+					 &nbsp;patronat_Skafander i melonik.xhtml 
+				</EPubText>
+
+				<EPubText>
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#0b0"
+                    />
+					&nbsp;patronat_Skafander_i_melonik.xhtml
+				</EPubText>
 				
-				<EPubText>Tekst źródłowy należy wkleić do okna edycji czystego dokumentu
-				HTML w edytorze Brackets. Następnie tagujemy całość przy użyciu komendy
-				Find/Replace.</EPubText>
+				<EPubSubtitle>
+					Konwersja źródłowych tekstów do formatu HTML (w Calibre)
+				</EPubSubtitle>
+
+				<EPubText>
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Dodaj nowy dokument *.html w Calibre. Jednocześnie zaznacz automatyczne załączanie styli.
+				</EPubText>
+				<EPubText>
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Tekst źródłowy wklej pomiędzy tagami body. Następnie otaguj całość przy użyciu komendy
+				Find/Replace. Sprawdź opcje podmiany (Mode: Regex; Current File; Wrap).</EPubText>
 				<EPubText>W polu Find należy wpisać:
-					<EPubCode>(\s)^([–„A-Ż].*)(\b[^\n]*)$</EPubCode>
+					<EPubCode>^([\–\-„A-Ż].*)(\b[^\n]*)$</EPubCode>
 				</EPubText>
 
 				<EPubText>W polu Replace dla tekstów do sekcji: 
 				Szortownia, Stusłówka, Rymowisko, Wywiad - wpisujemy:
-					<EPubCode>{`$1<p class="text">$2$3</p>`}</EPubCode>
+					<EPubCode>{`<p class="text">`}\1\2{`</p>`}</EPubCode>
 				</EPubText>
 
 				<EPubText>W polu Replace dla tekstów do sekcji:	Subiektywnie - wpisujemy:
-					<EPubCode>{`$1<p class="review">$2$3</p>`}</EPubCode>
+					<EPubCode>{`<p class="review">`}\1\2{`</p>`}</EPubCode>
 				</EPubText>
 
 				<EPubSubtitle>
-					Edycja plików HTML - stylowanie
+					Edycja plików HTML w Calibre - stylowanie
 				</EPubSubtitle>
 
 				<EPubInfo>
@@ -72,7 +173,8 @@ class EPub extends React.Component {
 				</EPubInfo>	
 
 				<EPubText>W sekcji nagłówka dokumentu &lt;head&gt; &lt;/head&gt;
-				należy załączyć zewnętrzny plik ze stylami (stylesheet.css) wpisując poniższy kod:
+				należy załączyć plik ze stylami (stylesheet.css) jeśli go tam nie ma.
+				Poniżej kod do skopiowania:
 				<EPubCode>{`  <link href="../Styles/stylesheet.css" rel="stylesheet" type="text/css"/>`}</EPubCode>
 					    <EPubDownloadButton
             	    	 	href="szortal.css"
@@ -84,7 +186,7 @@ class EPub extends React.Component {
                                     color="#777777"
                               />
             	    	</EPubDownloadButton>
-					Aktualny plik stylesheet.css do wydania.
+					Kliknij aby pobrać aktualny plik stylesheet.css.
 				</EPubText>
 
 				<EPubInfo>
@@ -202,60 +304,6 @@ class EPub extends React.Component {
 				</EPubText>
 
 				<EPubSubtitle>
-					Nazwy plików HTML
-				</EPubSubtitle>
-
-				<EPubText>	
-					Nazwy plików html do poszczególnych działów rozpoczynamy prefixem według klucza:
-                    <ul>
-                    	<li>"szort_" - Szortownia</li>
-						<li>"stu_" - Stusłówka</li>
-						<li>"rym_" - Rymowisko</li>
-						<li>"zagr_" - Zagraniczniak</li>
-						<li>"pub_" - Publicystyka</li>
-						<li>"wywiad_" - Wywiad</li>
-						<li>"s_" - Subiektywnie</li>
-						<li>"komiks_" - pliki do komiksu</li>
-						<li>"reklama_" - reklama</li>
-						<li>"patronat_" - reklama Partonat</li>
-					</ul>
-				</EPubText>
-
-				<EPubText>
-					Nazwy plików html nie mogą zawierać spacji.
-				</EPubText>
-
-				<EPubText>
-					<FontAwesomeIcon
-                    	icon={ faTimes }
-                    	size="1x"
-                    	color="#d66"
-                    /> 
-					 &nbsp;patronat_Skafander i melonik.xhtml 
-				</EPubText>
-
-				<EPubText>
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#0b0"
-                    />
-					&nbsp;patronat_Skafander_i_melonik.xhtml
-				</EPubText>
-
-
-				<EPubSubtitle>
-					Konwersja plików do formatu DOCX
-				</EPubSubtitle>
-
-				<EPubText>Ostylowane pliki HTML są plikami źródłowymi do stworzenia EPuba
-				w Calibre. Aby stały się plikami źródłowymi do stworzenia PDFa
-				należy przekonwertować je do formatu DOCX. Konwersję można wykonać 
-				na stronie <a href="https://cloudconvert.com/html-to-docx" target="blank">
-				Cloudconvert.</a>
-				</EPubText>
-
-				<EPubSubtitle>
 					Konwersja źródłowych grafik do formatu PNG
 				</EPubSubtitle>
 
@@ -316,62 +364,7 @@ class EPub extends React.Component {
 				<EPubSubtitle>
 					Przygotowanie wydania w formacie EPub
 				</EPubSubtitle>
-
-				<EPubInfo>
-				Makietowanie w Calibre
-				</EPubInfo>
-
-				<EPubText>
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Ściągnij pustą makietę.
-
-					<EPubDownloadButton
-            	    	 href="makieta.epub"
-            	    	 download="makieta_Szortal na wynos (nr 64) październik 2018"
-            	    >
-            	    	<FontAwesomeIcon
-                        	icon={ faDownload }
-                        	size="2x"
-                        	color="#777777"
-                        />
-            	    </EPubDownloadButton>
-				</EPubText>
-
-				<EPubText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Zaktualizuj nazwę pliku i zaimportuj go do Calibre.
-				</EPubText>
-
-				<EPubText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Zaktualizuj metadane pliku: numer wydania, nazwę miesiąca oraz rok.
-				</EPubText>
-
-				<EPubText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Przejdź do edycji ePuba (Edit book) i zaimportuj wszystkie pliki html i jpg. 
-				</EPubText>
-
-				<EPubText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> W oknie File browser ułóż poszczególne pliki html w takiej kolejności, 
-				w jakiej mają się pojawić w ePubie.  
-				</EPubText>
+			
 
 				<EPubInfo>
 					Poprawianie i sprawdzenie kodu w plikach
