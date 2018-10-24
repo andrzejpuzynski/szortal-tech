@@ -22,16 +22,6 @@ export const EPubSubtitle = styled.h2`
 	margin-bottom: 10px;
 `
 
-export const EPubInfo = styled.p`
-	font-size: 28px;
-	font-weight: 100;
-	letter-spacing: 1px;
-	line-height: 32px;
-	margin-top: 30px;
-	margin-bottom: 30px;
-	color: grey;
-`
-
 export const EPubText = styled.p`
 	font-size: 21px;
 	line-height: 32px;

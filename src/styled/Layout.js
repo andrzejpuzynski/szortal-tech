@@ -2,7 +2,7 @@ import styled from 'styled-components';
  
 export const LayoutContainer = styled.div`
 	min-height: 100vh;
-	padding: 0 60px 0 60px;
+	padding: 0 60px 20px 60px;
 `
 
 export const LayoutTitle = styled.h1`
@@ -10,7 +10,7 @@ export const LayoutTitle = styled.h1`
 	width: 100%;
 	font-size: 60px;
 	text-align: center;
-	margin-top: 60px;
+	margin-top: 100px;
 `
 
 export const LayoutSubtitle = styled.h2`

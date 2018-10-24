@@ -1,10 +1,7 @@
 import React from 'react';
 
 import {
-    EPubContainer,
-	EPubTitle,
 	EPubSubtitle,
-	EPubInfo,
 	EPubText,
 	EPubCode,
 	EPubDownloadButton,
@@ -12,6 +9,19 @@ import {
 	IntroSocial,
 	IntroSocialButton
 } from '../styled/EPub';
+
+import {
+    LayoutContainer,
+    LayoutTitle,
+    LayoutSubtitle,
+    LayoutInfo,
+    LayoutText,
+    LayoutDimensionsContainer,
+    LayoutDimensionsWidth,
+    LayoutDimensionsHeight,
+    LayoutDimensionsDpi,
+    LayoutDownloadButton
+} from '../styled/Layout';
 
 
 import {
@@ -26,9 +36,9 @@ import workflow from '../img/SzortalNaWynos_Workflow_20181023.svg';
 class EPub extends React.Component {
 	render() {
 		return (
-			<EPubContainer>
-				<EPubTitle>„Szortal na&nbsp;Wynos” w&nbsp;formacie EPUB</EPubTitle>
-				<EPubInfo>Ta podstrona zawiera opis przygotowania pliku w formacie EPUB.</EPubInfo>
+			<LayoutContainer>
+				<LayoutTitle>„Szortal na&nbsp;Wynos” w&nbsp;formacie EPUB</LayoutTitle>
+				<LayoutInfo>Ta podstrona zawiera opis przygotowania pliku w formacie EPUB.</LayoutInfo>
 				<EPubText>EPub „Szortal na&nbsp;Wynos” składany jest w edytorze Calibre.
 				Cały proces przygotowania pliku obejmuje etapy:
 				<ul>
@@ -43,9 +53,9 @@ class EPub extends React.Component {
 				<EPubWorkflow src={workflow} alt="workflow" />
 				</EPubText>
 
-				<EPubInfo>
+				<LayoutInfo>
 				Makietowanie w Calibre
-				</EPubInfo>
+				</LayoutInfo>
 
 				<EPubText>
 					<FontAwesomeIcon
@@ -168,9 +178,9 @@ class EPub extends React.Component {
 					Edycja plików HTML w Calibre - stylowanie
 				</EPubSubtitle>
 
-				<EPubInfo>
+				<LayoutInfo>
 					Załączanie pliku ze stylami.
-				</EPubInfo>	
+				</LayoutInfo>	
 
 				<EPubText>W sekcji nagłówka dokumentu &lt;head&gt; &lt;/head&gt;
 				należy załączyć plik ze stylami (stylesheet.css) jeśli go tam nie ma.
@@ -189,9 +199,9 @@ class EPub extends React.Component {
 					Kliknij aby pobrać aktualny plik stylesheet.css.
 				</EPubText>
 
-				<EPubInfo>
+				<LayoutInfo>
 					Strona redakcyjna.
-				</EPubInfo>
+				</LayoutInfo>
 
 				<EPubText>
 						<EPubDownloadButton
@@ -207,9 +217,9 @@ class EPub extends React.Component {
             	    	Plik redakcyjna.html do wydania z października 2018.
 				</EPubText>
 
-				<EPubInfo>
+				<LayoutInfo>
 					Opis stylowania działów Szortownia, Stusłówka, Rymowisko, Wywiad.
-				</EPubInfo>
+				</LayoutInfo>
 
 				<EPubText>Tytuł (w wywiadzie - imię i nazwisko osoby,
 				z którą wywiad jest przeprowadzany)
@@ -256,9 +266,9 @@ class EPub extends React.Component {
 					{`</div>`}</EPubCode>
 				</EPubText>
 
-				<EPubInfo>
+				<LayoutInfo>
 					Opis stylowania działu Subiektywnie.
-				</EPubInfo>
+				</LayoutInfo>
 
 				<EPubText>Tytuł
 					<EPubCode>{`<h2 class="title">Tytuł recenzji</h2>`}</EPubCode>
@@ -366,9 +376,9 @@ class EPub extends React.Component {
 				</EPubSubtitle>
 			
 
-				<EPubInfo>
+				<LayoutInfo>
 					Poprawianie i sprawdzenie kodu w plikach
-				</EPubInfo>
+				</LayoutInfo>
 
 				<EPubText>	
 					<FontAwesomeIcon
@@ -443,9 +453,9 @@ class EPub extends React.Component {
                     /> Sprawdź wyświetlanie wszystkich grafik przy przeglądaniu ePuba.
 				</EPubText>
 
-				<EPubInfo>
+				<LayoutInfo>
 					Przygotowanie spisu treści
-				</EPubInfo>
+				</LayoutInfo>
 
 				<EPubText>	
 					<FontAwesomeIcon
@@ -571,9 +581,9 @@ class EPub extends React.Component {
                     /> Sprawdź, czy spis treści działa, i czy jest kompletny. 
 				</EPubText>
 
-				<EPubInfo>
+				<LayoutInfo>
 					Okładka
-				</EPubInfo>
+				</LayoutInfo>
 
 				<EPubText>	
 					<FontAwesomeIcon
@@ -614,12 +624,7 @@ class EPub extends React.Component {
                     /> ta część opisu jest w trakcie tworzenia
 				</EPubText>
 
-
-
-				
-
-
-			</EPubContainer>
+			</LayoutContainer>
 
 
 		)
