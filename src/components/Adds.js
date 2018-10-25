@@ -1,17 +1,17 @@
 import React from 'react';
 
 import {
-    LayoutContainer,
-    LayoutTitle,
-    LayoutSubtitle,
-    LayoutInfo,
-    LayoutText,
-    LayoutDimensionsContainer,
-    LayoutDimensionsWidth,
-    LayoutDimensionsHeight,
-    LayoutDimensionsDpi,
-    LayoutDownloadButton
-} from '../styled/Layout';
+    SectionContainer,
+    SectionTitle,
+    SectionSubtitle,
+    SectionInfo,
+    SectionText,
+    SectionDimensionsContainer,
+    SectionDimensionsWidth,
+    SectionDimensionsHeight,
+    SectionDimensionsDpi,
+    SectionDownloadButton
+} from '../styled/Section';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilePdf } from '@fortawesome/free-solid-svg-icons';
@@ -21,43 +21,43 @@ class Adds extends React.Component {
 
 	render() {
 		return (
-			<LayoutContainer>
-				<LayoutTitle>Specyfikacja reklam</LayoutTitle>
+			<SectionContainer>
+				<SectionTitle>Specyfikacja reklam</SectionTitle>
 
-				<LayoutText>
+				<SectionText>
 				Podstawowe dane techniczne dla plików graficznych:
 					<ul>
 						<li>przestrzeń kolorystyczna: RGB</li>
 						<li>format pliku: PNG-24</li>
 						<li>preferowana rozdzielczość: 220 dpi</li>
 					</ul>
-				</LayoutText>
+				</SectionText>
 
 
-				<LayoutInfo>
+				<SectionInfo>
 					Wymiary reklamy całostronicowej
-				</LayoutInfo>
+				</SectionInfo>
 
-				<LayoutDimensionsContainer >
-					<LayoutDimensionsWidth>1240 px</LayoutDimensionsWidth>
-					<LayoutDimensionsHeight>1754 px</LayoutDimensionsHeight>
-					<LayoutDimensionsDpi>150 dpi</LayoutDimensionsDpi>
-				</LayoutDimensionsContainer>
+				<SectionDimensionsContainer >
+					<SectionDimensionsWidth>1240 px</SectionDimensionsWidth>
+					<SectionDimensionsHeight>1754 px</SectionDimensionsHeight>
+					<SectionDimensionsDpi>150 dpi</SectionDimensionsDpi>
+				</SectionDimensionsContainer>
 
-				<LayoutDimensionsContainer >
-					<LayoutDimensionsWidth>1818 px</LayoutDimensionsWidth>
-					<LayoutDimensionsHeight>2572 px</LayoutDimensionsHeight>
-					<LayoutDimensionsDpi>220 dpi</LayoutDimensionsDpi>
-				</LayoutDimensionsContainer>
+				<SectionDimensionsContainer >
+					<SectionDimensionsWidth>1818 px</SectionDimensionsWidth>
+					<SectionDimensionsHeight>2572 px</SectionDimensionsHeight>
+					<SectionDimensionsDpi>220 dpi</SectionDimensionsDpi>
+				</SectionDimensionsContainer>
 
-				<LayoutText>
+				<SectionText>
 				W przypadku reklamy zajmującej część strony należy zachować 
 				rozmiar wysokości lub szerokości.
-				</LayoutText> 
+				</SectionText> 
 
 
-                <LayoutText>
-					    <LayoutDownloadButton
+                <SectionText>
+					    <SectionDownloadButton
             	    	 	href="Szortal na Wynos - specyfikacja reklam.pdf"
             	    	 	download="Szortal na Wynos - specyfikacja reklam.pdf"
             	    	>
@@ -66,12 +66,12 @@ class Adds extends React.Component {
                                     size="2x"
                                     color="#777777"
                               />
-            	    	</LayoutDownloadButton>
+            	    	</SectionDownloadButton>
 					Kliknij aby ściągnąć tę stronę w formacie PDF.
-                </LayoutText>
+                </SectionText>
 				
 			
-			</LayoutContainer>
+			</SectionContainer>
 		)
 	}
 }

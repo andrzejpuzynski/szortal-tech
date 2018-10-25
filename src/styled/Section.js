@@ -1,11 +1,11 @@
 import styled from 'styled-components';
  
-export const LayoutContainer = styled.div`
+export const SectionContainer = styled.div`
 	min-height: 100vh;
 	padding: 0 60px 20px 60px;
 `
 
-export const LayoutTitle = styled.h1`
+export const SectionTitle = styled.h1`
 	display: inline-block;
 	width: 100%;
 	font-size: 60px;
@@ -13,16 +13,15 @@ export const LayoutTitle = styled.h1`
 	margin-top: 100px;
 `
 
-export const LayoutSubtitle = styled.h2`
+export const SectionSubtitle = styled.h2`
 	display: inline-block;
 	width: 100%;
-
 	font-weight: 600;
 	margin-top: 100px;
 	margin-bottom: 10px;
 `
 
-export const LayoutInfo = styled.p`
+export const SectionInfo = styled.p`
 	font-size: 28px;
 	font-weight: 100;
 	letter-spacing: 1px;
@@ -32,18 +31,36 @@ export const LayoutInfo = styled.p`
 	color: grey;
 `
 
-export const LayoutText = styled.p`
+export const SectionText = styled.p`
 	font-size: 21px;
 	line-height: 32px;
 	margin-bottom: 30px;
 `
 
-export const LayoutDownloadButton = styled.a`
+export const SectionCode = styled.pre`
+	display: inline-block;
+	white-spaces: normal;
+	background-color: #edd;
+	border-radius: 8px;
+	color: #d66;
+	width: 100%;
+	padding: 10px;
+	font-size: 21px;
+	margin: 8px 0 0 0;
+	overflow: auto;
+`
+
+export const SectionDownloadButton = styled.a`
 	display: inline-block;
 	margin: 10px;
 `
 
-export const LayoutDimensionsContainer = styled.div`
+export const SectionFullWidthImage = styled.img`
+  display: block;
+  max-width: 1200px;
+`
+
+export const SectionDimensionsContainer = styled.div`
 	position: relative;
 	display: inline-block;
 	width: 200px;
@@ -55,21 +72,21 @@ export const LayoutDimensionsContainer = styled.div`
 	margin: 30px 40px;
 `
 
-export const LayoutDimensionsWidth = styled.div`
+export const SectionDimensionsWidth = styled.div`
 	position: absolute;
 	width: 200px;
 	font-size: 21px;	
 	transform: translateY(-24px)
 `
 
-export const LayoutDimensionsHeight = styled.div`
+export const SectionDimensionsHeight = styled.div`
 	position: absolute
 	width: 300px;
 	font-size: 21px;
 	transform: rotate(90deg) translateX(150px)translateY(-65px);
 `
 
-export const LayoutDimensionsDpi = styled.div`
+export const SectionDimensionsDpi = styled.div`
 	font-size: 32px;
 	line-height: 300px;
 	color: #fff;

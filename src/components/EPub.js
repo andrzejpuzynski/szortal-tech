@@ -1,27 +1,19 @@
 import React from 'react';
 
 import {
-	EPubSubtitle,
-	EPubText,
-	EPubCode,
-	EPubDownloadButton,
-	EPubWorkflow,
-	IntroSocial,
-	IntroSocialButton
-} from '../styled/EPub';
-
-import {
-    LayoutContainer,
-    LayoutTitle,
-    LayoutSubtitle,
-    LayoutInfo,
-    LayoutText,
-    LayoutDimensionsContainer,
-    LayoutDimensionsWidth,
-    LayoutDimensionsHeight,
-    LayoutDimensionsDpi,
-    LayoutDownloadButton
-} from '../styled/Layout';
+    SectionContainer,
+    SectionTitle,
+    SectionSubtitle,
+    SectionInfo,
+    SectionText,
+    SectionCode,
+    SectionFullWidthImage,
+    SectionDimensionsContainer,
+    SectionDimensionsWidth,
+    SectionDimensionsHeight,
+    SectionDimensionsDpi,
+    SectionDownloadButton
+} from '../styled/Section';
 
 
 import {
@@ -36,10 +28,10 @@ import workflow from '../img/SzortalNaWynos_Workflow_20181023.svg';
 class EPub extends React.Component {
 	render() {
 		return (
-			<LayoutContainer>
-				<LayoutTitle>„Szortal na&nbsp;Wynos” w&nbsp;formacie EPUB</LayoutTitle>
-				<LayoutInfo>Ta podstrona zawiera opis przygotowania pliku w formacie EPUB.</LayoutInfo>
-				<EPubText>EPub „Szortal na&nbsp;Wynos” składany jest w edytorze Calibre.
+			<SectionContainer>
+				<SectionTitle>„Szortal na&nbsp;Wynos” w&nbsp;formacie EPUB</SectionTitle>
+				<SectionInfo>Ta podstrona zawiera opis przygotowania pliku w formacie EPUB.</SectionInfo>
+				<SectionText>EPub „Szortal na&nbsp;Wynos” składany jest w edytorze Calibre.
 				Cały proces przygotowania pliku obejmuje etapy:
 				<ul>
 					<li>makietowania i edycji plików HTML w Calibre (stylowanie)</li>
@@ -50,21 +42,21 @@ class EPub extends React.Component {
 					<li>konwersji formatu EPUB do formatu MOBI</li>
 				</ul>
 				Poniżej aktualny Workflow (2018.10.23).
-				<EPubWorkflow src={workflow} alt="workflow" />
-				</EPubText>
+				<SectionFullWidthImage src={workflow} alt="workflow" />
+				</SectionText>
 
-				<LayoutInfo>
+				<SectionInfo>
 				Makietowanie w Calibre
-				</LayoutInfo>
+				</SectionInfo>
 
-				<EPubText>
+				<SectionText>
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
                     /> Ściągnij pustą makietę.
 
-					<EPubDownloadButton
+					<SectionDownloadButton
             	    	 href="makieta.epub"
             	    	 download="makieta_Szortal na wynos (nr 64) październik 2018"
             	    >
@@ -73,39 +65,39 @@ class EPub extends React.Component {
                         	size="2x"
                         	color="#777777"
                         />
-            	    </EPubDownloadButton>
-				</EPubText>
+            	    </SectionDownloadButton>
+				</SectionText>
 
-				<EPubText>	
+				<SectionText>	
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
                     /> Zaktualizuj metadane pliku: numer wydania, nazwę miesiąca oraz rok.
-				</EPubText>
+				</SectionText>
 
-				<EPubText>	
+				<SectionText>	
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
                     /> Przejdź do edycji ePuba (Edit book) i zaimportuj wszystkie pliki jpg. 
-				</EPubText>
+				</SectionText>
 
-				<EPubText>	
+				<SectionText>	
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
                     /> Rozpocznij makietowanie plik po pliku, konwertując źródłowe teksty w Calibre.  
-				</EPubText>
+				</SectionText>
 
 				
-				<EPubSubtitle>
+				<SectionSubtitle>
 					Nazwy plików HTML
-				</EPubSubtitle>
+				</SectionSubtitle>
 
-				<EPubText>	
+				<SectionText>	
 					Nazwy plików html do poszczególnych działów rozpoczynamy prefixem według klucza:
                     <ul>
                     	<li>"szort_" - Szortownia</li>
@@ -119,74 +111,74 @@ class EPub extends React.Component {
 						<li>"reklama_" - reklama</li>
 						<li>"patronat_" - reklama Partonat</li>
 					</ul>
-				</EPubText>
+				</SectionText>
 
-				<EPubText>
+				<SectionText>
 					Nazwy plików html nie mogą zawierać spacji.
-				</EPubText>
+				</SectionText>
 
-				<EPubText>
+				<SectionText>
 					<FontAwesomeIcon
                     	icon={ faTimes }
                     	size="1x"
                     	color="#d66"
                     /> 
 					 &nbsp;patronat_Skafander i melonik.xhtml 
-				</EPubText>
+				</SectionText>
 
-				<EPubText>
+				<SectionText>
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
                     	color="#0b0"
                     />
 					&nbsp;patronat_Skafander_i_melonik.xhtml
-				</EPubText>
+				</SectionText>
 				
-				<EPubSubtitle>
+				<SectionSubtitle>
 					Konwersja źródłowych tekstów do formatu HTML (w Calibre)
-				</EPubSubtitle>
+				</SectionSubtitle>
 
-				<EPubText>
+				<SectionText>
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
                     /> Dodaj nowy dokument *.html w Calibre. Jednocześnie zaznacz automatyczne załączanie styli.
-				</EPubText>
-				<EPubText>
+				</SectionText>
+				<SectionText>
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
                     /> Tekst źródłowy wklej pomiędzy tagami body. Następnie otaguj całość przy użyciu komendy
-				Find/Replace. Sprawdź opcje podmiany (Mode: Regex; Current File; Wrap).</EPubText>
-				<EPubText>W polu Find należy wpisać:
-					<EPubCode>^([\–\-„A-Ż].*)(\b[^\n]*)$</EPubCode>
-				</EPubText>
+				Find/Replace. Sprawdź opcje podmiany (Mode: Regex; Current File; Wrap).</SectionText>
+				<SectionText>W polu Find należy wpisać:
+					<SectionCode>^([\–\-„A-Ż].*)(\b[^\n]*)$</SectionCode>
+				</SectionText>
 
-				<EPubText>W polu Replace dla tekstów do sekcji: 
+				<SectionText>W polu Replace dla tekstów do sekcji: 
 				Szortownia, Stusłówka, Rymowisko, Wywiad - wpisujemy:
-					<EPubCode>{`<p class="text">`}\1\2{`</p>`}</EPubCode>
-				</EPubText>
+					<SectionCode>{`<p class="text">`}\1\2{`</p>`}</SectionCode>
+				</SectionText>
 
-				<EPubText>W polu Replace dla tekstów do sekcji:	Subiektywnie - wpisujemy:
-					<EPubCode>{`<p class="review">`}\1\2{`</p>`}</EPubCode>
-				</EPubText>
+				<SectionText>W polu Replace dla tekstów do sekcji:	Subiektywnie - wpisujemy:
+					<SectionCode>{`<p class="review">`}\1\2{`</p>`}</SectionCode>
+				</SectionText>
 
-				<EPubSubtitle>
+				<SectionSubtitle>
 					Edycja plików HTML w Calibre - stylowanie
-				</EPubSubtitle>
+				</SectionSubtitle>
 
-				<LayoutInfo>
+				<SectionInfo>
 					Załączanie pliku ze stylami.
-				</LayoutInfo>	
+				</SectionInfo>	
 
-				<EPubText>W sekcji nagłówka dokumentu &lt;head&gt; &lt;/head&gt;
+				<SectionText>W sekcji nagłówka dokumentu &lt;head&gt; &lt;/head&gt;
 				należy załączyć plik ze stylami (stylesheet.css) jeśli go tam nie ma.
 				Poniżej kod do skopiowania:
-				<EPubCode>{`  <link href="../Styles/stylesheet.css" rel="stylesheet" type="text/css"/>`}</EPubCode>
-					    <EPubDownloadButton
+				<SectionCode>{`  <link href="../Styles/stylesheet.css" rel="stylesheet" type="text/css"/>`}</SectionCode>
+					    <SectionDownloadButton
             	    	 	href="szortal.css"
             	    	 	download="stylesheet"
             	    	>
@@ -195,16 +187,16 @@ class EPub extends React.Component {
                                     size="2x"
                                     color="#777777"
                               />
-            	    	</EPubDownloadButton>
+            	    	</SectionDownloadButton>
 					Kliknij aby pobrać aktualny plik stylesheet.css.
-				</EPubText>
+				</SectionText>
 
-				<LayoutInfo>
+				<SectionInfo>
 					Strona redakcyjna.
-				</LayoutInfo>
+				</SectionInfo>
 
-				<EPubText>
-						<EPubDownloadButton
+				<SectionText>
+						<SectionDownloadButton
             	    	 	href="redakcyjna.html"
             	    	 	download="redakcyjna"
             	    	>
@@ -213,81 +205,81 @@ class EPub extends React.Component {
                                     size="2x"
                                     color="#777777"
                               />
-            	    	</EPubDownloadButton>
+            	    	</SectionDownloadButton>
             	    	Plik redakcyjna.html do wydania z października 2018.
-				</EPubText>
+				</SectionText>
 
-				<LayoutInfo>
+				<SectionInfo>
 					Opis stylowania działów Szortownia, Stusłówka, Rymowisko, Wywiad.
-				</LayoutInfo>
+				</SectionInfo>
 
-				<EPubText>Tytuł (w wywiadzie - imię i nazwisko osoby,
+				<SectionText>Tytuł (w wywiadzie - imię i nazwisko osoby,
 				z którą wywiad jest przeprowadzany)
-					<EPubCode>{`<h2 class="title">Tytuł tekstu</h2>`}</EPubCode>
-				</EPubText>
+					<SectionCode>{`<h2 class="title">Tytuł tekstu</h2>`}</SectionCode>
+				</SectionText>
 
-				<EPubText>Podtytuł w wywiadzie umieszczany przed tytułem
-					<EPubCode>{`<h3>"7 pytań do...", czyli gdzie diabeł nie może tam „Szortal” pośle</h3>`}</EPubCode>
-				</EPubText>
+				<SectionText>Podtytuł w wywiadzie umieszczany przed tytułem
+					<SectionCode>{`<h3>"7 pytań do...", czyli gdzie diabeł nie może tam „Szortal” pośle</h3>`}</SectionCode>
+				</SectionText>
 
-				<EPubText>Autor
-					<EPubCode>{`<p class="author">Autor tekstu</p>`}</EPubCode>
-				</EPubText>
+				<SectionText>Autor
+					<SectionCode>{`<p class="author">Autor tekstu</p>`}</SectionCode>
+				</SectionText>
 
-				<EPubText>Tekst
-				<EPubCode>{`<p class="text">text dokumentu</p>`}</EPubCode>
-				</EPubText>
-
-
-				<EPubText>Gwiazdki *** rozdzielające części tekstu
-					<EPubCode>{`<p class="textcenter">***</p>`}</EPubCode>
-				</EPubText>
+				<SectionText>Tekst
+				<SectionCode>{`<p class="text">text dokumentu</p>`}</SectionCode>
+				</SectionText>
 
 
-				<EPubText>Przypis
-					<EPubCode>{`<div class="annotation">\n`}
+				<SectionText>Gwiazdki *** rozdzielające części tekstu
+					<SectionCode>{`<p class="textcenter">***</p>`}</SectionCode>
+				</SectionText>
+
+
+				<SectionText>Przypis
+					<SectionCode>{`<div class="annotation">\n`}
 					{`  <p class="text">linijka tekstu</p>\n`}
 					{`  <p class="text">linijka tekstu</p>\n`}
-					{`</div>`}</EPubCode>
-				</EPubText>
+					{`</div>`}</SectionCode>
+				</SectionText>
 
 
-				<EPubText>Poezja
-					<EPubCode>{`<div class="poetry">\n`}
+				<SectionText>Poezja
+					<SectionCode>{`<div class="poetry">\n`}
 					{`  <p class="text">linijka tekstu</p>\n`}
 					{`  <p class="text">linijka tekstu</p>\n`}
-					{`</div>`}</EPubCode>
-				</EPubText>
+					{`</div>`}</SectionCode>
+				</SectionText>
 
-				<EPubText>Motto (po autorze opowiadania)
-					<EPubCode>{`<div class="motto">\n`}
+				<SectionText>Motto (po autorze opowiadania)
+					<SectionCode>{`<div class="motto">\n`}
 					{`  <p class="text">linijka tekstu</p>\n`}
 					{`  <p class="text">linijka tekstu</p>\n`}
-					{`</div>`}</EPubCode>
-				</EPubText>
+					{`</div>`}</SectionCode>
+				</SectionText>
 
-				<LayoutInfo>
+				<SectionInfo>
 					Opis stylowania działu Subiektywnie.
-				</LayoutInfo>
+				</SectionInfo>
 
-				<EPubText>Tytuł
-					<EPubCode>{`<h2 class="title">Tytuł recenzji</h2>`}</EPubCode>
-				</EPubText>
+				<SectionText>Tytuł
+					<SectionCode>{`<h2 class="title">Tytuł recenzji</h2>`}</SectionCode>
+				</SectionText>
 
-				<EPubText>Autor
-					<EPubCode>{`<p class="author">Autor recenzji</p>`}</EPubCode>
-				</EPubText>
+				<SectionText>Autor
+					<SectionCode>{`<p class="author">Autor recenzji</p>`}</SectionCode>
+				</SectionText>
 
-				<EPubText>Lead (pierwszy pogrubiony akapit po autorze)
-					<EPubCode>{`<p class="lead">text leadu</p>`}</EPubCode>
-				</EPubText>
+				<SectionText>Lead (pierwszy pogrubiony akapit po autorze)
+					<SectionCode>{`<p class="lead">text leadu</p>`}</SectionCode>
+				</SectionText>
 
-				<EPubText>Tekst
-					<EPubCode>{`<p class="review">text recenzji</p>`}</EPubCode>
-				</EPubText>
+				<SectionText>Tekst
+					<SectionCode>{`<p class="review">text recenzji</p>`}</SectionCode>
+				</SectionText>
 
-				<EPubText>ISBN (sekcja końcowa)
-					<EPubCode>{`<div class="isbn">\n`}
+				<SectionText>ISBN (sekcja końcowa)
+					<SectionCode>{`<div class="isbn">\n`}
 				 	{`  <p class="review">Tytuł: </p>\n`}
 					{`  <p class="review">Seria: </p>\n`}
 					{`  <p class="review">Tom: </p>\n`}
@@ -303,25 +295,25 @@ class EPub extends React.Component {
 					{`  <p class="review">Format: </p>\n`}
 					{`  <p class="review">Wydanie: </p>\n`}
 					{`  <p class="review">ISBN: </p>\n`}
-					{`</div>`}</EPubCode>
-				</EPubText>
+					{`</div>`}</SectionCode>
+				</SectionText>
 
-				<EPubText>Przypis
-					<EPubCode>{`<div class="annotation">\n`}
+				<SectionText>Przypis
+					<SectionCode>{`<div class="annotation">\n`}
 					{`  <p class="text">linijka tekstu</p>\n`}
 					{`  <p class="text">linijka tekstu</p>\n`}
-					{`</div>`}</EPubCode>
-				</EPubText>
+					{`</div>`}</SectionCode>
+				</SectionText>
 
-				<EPubSubtitle>
+				<SectionSubtitle>
 					Konwersja źródłowych grafik do formatu PNG
-				</EPubSubtitle>
+				</SectionSubtitle>
 
-				<EPubText>Niezależnie od tego w jakim formacie dostarczony jest źródłowy
+				<SectionText>Niezależnie od tego w jakim formacie dostarczony jest źródłowy
 				plik grafiki (ilustracja, zdjęcie, reklama, okładka książki), pierwszym krokiem
 				jest konwersja tego pliku do formatu PNG. W trakcie tej konwersji można jednocześnie
-				zmienić docelowy wymiar grafiki (szerokość, wysokość).</EPubText>
-				<EPubText>Docelowe wymiary:
+				zmienić docelowy wymiar grafiki (szerokość, wysokość).</SectionText>
+				<SectionText>Docelowe wymiary:
 					<ul>
 						<li>Reklama, okładka główna: szerokość (width) 1818px</li>
 						<li>Okładki do recenzji: wysokość (height) 587px</li>
@@ -330,239 +322,239 @@ class EPub extends React.Component {
 				Pliki można konwertować wraz z jednoczesną zmianą rozmiarów 
 				na stronie <a href="https://imageresize.org/" target="blank">
 				Imageresize.</a> przy ustawieniu - Quality: Best.
-				</EPubText>
+				</SectionText>
 
 
-				<EPubSubtitle>
+				<SectionSubtitle>
 					Konwersja plików PNG do formatu JPG
-				</EPubSubtitle>
+				</SectionSubtitle>
 
 
-				<EPubText>Pliki PNG ze względu na bezstratność są plikami źródłowymi 
+				<SectionText>Pliki PNG ze względu na bezstratność są plikami źródłowymi 
 				do stworzenia wydania w formacie PDF. Aby stały się plikami źródłowymi 
 				do stworzenia EPuba należy przekonwertować je do formatu JPG. 
 				Konwersję można wykonać 
 				na stronie <a href="https://cloudconvert.com/png-to-jpg" target="blank">
 				Cloudconvert.</a>
-				</EPubText>
+				</SectionText>
 
-				<EPubSubtitle>
+				<SectionSubtitle>
 					Stylowanie plików graficznych
-				</EPubSubtitle>
+				</SectionSubtitle>
 
-				<EPubText>Reklama całostronicowa, komiks
-					<EPubCode>{`<div class="fullpage">\n`}
+				<SectionText>Reklama całostronicowa, komiks
+					<SectionCode>{`<div class="fullpage">\n`}
 					{`  <img src="../Images/nazwa_pliku.jpg" alt="nazwa_pliku.jpg" />\n`}
-					{`</div>`}</EPubCode>
-				</EPubText>
+					{`</div>`}</SectionCode>
+				</SectionText>
 
-				<EPubText>Ilustracja do tekstu
-					<EPubCode>{`<div class="imagetext">\n`}
+				<SectionText>Ilustracja do tekstu
+					<SectionCode>{`<div class="imagetext">\n`}
 					{`  <img src="../Images/nazwa_pliku.jpg" alt="nazwa_pliku.jpg" />\n`}
 					{`  <p class="author-photo">Ilustracja: Autor ilustracji</p>\n`}
-					{`</div>`}</EPubCode>
-				</EPubText>
+					{`</div>`}</SectionCode>
+				</SectionText>
 
-				<EPubText>Okładka do recenzji
-					<EPubCode>{`<p>\n`}
+				<SectionText>Okładka do recenzji
+					<SectionCode>{`<p>\n`}
 					{`  <img src="../Images/nazwa_pliku.jpg" alt="nazwa_pliku.jpg" />\n`}
-					{`</p>`}</EPubCode>
-				</EPubText>
+					{`</p>`}</SectionCode>
+				</SectionText>
 
 
 
-				<EPubSubtitle>
+				<SectionSubtitle>
 					Przygotowanie wydania w formacie EPub
-				</EPubSubtitle>
+				</SectionSubtitle>
 			
 
-				<LayoutInfo>
+				<SectionInfo>
 					Poprawianie i sprawdzenie kodu w plikach
-				</LayoutInfo>
+				</SectionInfo>
 
-				<EPubText>	
+				<SectionText>	
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
                     /> Sprawdź, czy w sekcji &lt;head&gt; każdego dokumentu zastosowane są tylko tagi &lt;title&gt; i &lt;link&gt;.
-				</EPubText>
+				</SectionText>
 
-				<EPubText>	
+				<SectionText>	
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
                     /> Uruchom z Menu: TOOLS: Fix HTML - all files.
-				</EPubText>
+				</SectionText>
 
-				<EPubText>	
+				<SectionText>	
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
                     /> Uruchom z Menu: TOOLS: Beautify all files.
-				</EPubText>
+				</SectionText>
 
-				<EPubText>	
+				<SectionText>	
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
                     /> Popraw ścieżki linkowania plików jpg: img src="../Images/" we wszystkich plikach.
-				</EPubText>
+				</SectionText>
 
-				<EPubText>	
+				<SectionText>	
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
                     /> Sprawdź na stronach z reklamą i komiksem nazwę klasy (class="fullpage") w tagu div
-.				</EPubText>
+.				</SectionText>
 
-				<EPubText>	
+				<SectionText>	
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
                     /> Sprawdź czy ilustracje do tekstów znajdują się w tym samym pliku co tekst.
-				</EPubText>
+				</SectionText>
 
-				<EPubText>	
+				<SectionText>	
 					<FontAwesomeIcon
                         	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
                     /> Sprawdź w tekstach z ilustracją nazwę klasy dla kontenera div ilustracji (class="imagetext")
                     i uzupełnij autora ilustracji oraz uzupełnij nazwę klasy dla tagu p (class="author-photo").
-				</EPubText>
+				</SectionText>
 
-				<EPubText>	
+				<SectionText>	
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
                     /> Sprawdź kod okładek do recenzji.
-				</EPubText>
+				</SectionText>
 				
-				<EPubText>	
+				<SectionText>	
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
                     /> Sprawdź wyświetlanie wszystkich grafik przy przeglądaniu ePuba.
-				</EPubText>
+				</SectionText>
 
-				<LayoutInfo>
+				<SectionInfo>
 					Przygotowanie spisu treści
-				</LayoutInfo>
+				</SectionInfo>
 
-				<EPubText>	
+				<SectionText>	
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
                     /> Jeśli w dokumencie znajduje się jakiś spis treści to go usuń. 
-				</EPubText>
+				</SectionText>
 
-				<EPubText>	
+				<SectionText>	
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
                     /> Uruchom z Menu: TOOLS > TABLE OF CONTENTS > Edit Table of Contents.
-				</EPubText>
+				</SectionText>
 
-				<EPubText>	
+				<SectionText>	
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
                     /> Wyczyść aktualny spis treści (po prawej stronie) a następnie uruchom: Generate TOC from all headings.
-				</EPubText>
+				</SectionText>
 
-				<EPubText>	
+				<SectionText>	
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
                     /> Przejdź na koniec spisu treści i dodaj pozycję (New entry below this entry). 
                     Z listy wybierz okładkę html komiksu. W okienku "Name of the TOC entry" wpisz "Komiks".
-				</EPubText>
+				</SectionText>
 
-				<EPubText>	
+				<SectionText>	
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
                     /> Uruchom z Menu: TOOLS > TABLE OF CONTENTS > Instert inline Table of Contents. 
-				</EPubText>
+				</SectionText>
 
-				<EPubText>	
+				<SectionText>	
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
                     /> Przesuń w makiecie spis treści za stronę redakcyjną. 
-				</EPubText>
+				</SectionText>
 
-				<EPubText>	
+				<SectionText>	
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
                     /> Sprawdź, czy spis treści działa, i czy jest kompletny. 
-				</EPubText>
+				</SectionText>
 
-				<EPubText>	
+				<SectionText>	
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
                     /> W sekcji head spisu treści usuń całą definicję sytles i w to miejsce wstaw 
-					<EPubCode>{`<link rel="stylesheet" href="OEBPS/stylesheet.css"/>`}</EPubCode>
-				</EPubText>
+					<SectionCode>{`<link rel="stylesheet" href="OEBPS/stylesheet.css"/>`}</SectionCode>
+				</SectionText>
 
-				<EPubText>	
+				<SectionText>	
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
                     /> Zamień linijkę z tytułem na 
-					<EPubCode>{`<h2 class="title">Treściospis</h2>`}</EPubCode>
-				</EPubText>
+					<SectionCode>{`<h2 class="title">Treściospis</h2>`}</SectionCode>
+				</SectionText>
 
-				<EPubText>	
+				<SectionText>	
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
                     /> W oknie kodu spisu treści uruchom Find / Replace 
-					<EPubCode>{`Find: <li>`}</EPubCode>
-					<EPubCode>{`Replace <div class=“sgc-toc-level-1”>`}</EPubCode>
-				</EPubText>
+					<SectionCode>{`Find: <li>`}</SectionCode>
+					<SectionCode>{`Replace <div class=“sgc-toc-level-1”>`}</SectionCode>
+				</SectionText>
 
-				<EPubText>	
+				<SectionText>	
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
                     /> W oknie kodu spisu treści uruchom Find / Replace 
-					<EPubCode>{`Find: </li>`}</EPubCode>
-					<EPubCode>{`Replace: </div>`}</EPubCode>
-				</EPubText>
+					<SectionCode>{`Find: </li>`}</SectionCode>
+					<SectionCode>{`Replace: </div>`}</SectionCode>
+				</SectionText>
 
-				<EPubText>	
+				<SectionText>	
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
                     /> Usuń z kodu linie 
-					<EPubCode>{`<ul>`}</EPubCode>
-					<EPubCode>{`</ul>`}</EPubCode>
-				</EPubText>
+					<SectionCode>{`<ul>`}</SectionCode>
+					<SectionCode>{`</ul>`}</SectionCode>
+				</SectionText>
 
-				<EPubText>	
+				<SectionText>	
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
@@ -570,61 +562,61 @@ class EPub extends React.Component {
                     /> w każdej linijce wpisz podwójną spację,
                      a następnie imię i nazwisko autora tekstu
                     pomiędzy tagami /a /div
-					<EPubCode>{`</a>  Imię Nazwisko</div>`}</EPubCode> 
-				</EPubText>
+					<SectionCode>{`</a>  Imię Nazwisko</div>`}</SectionCode> 
+				</SectionText>
 
-				<EPubText>	
+				<SectionText>	
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
                     /> Sprawdź, czy spis treści działa, i czy jest kompletny. 
-				</EPubText>
+				</SectionText>
 
-				<LayoutInfo>
+				<SectionInfo>
 					Okładka
-				</LayoutInfo>
+				</SectionInfo>
 
-				<EPubText>	
+				<SectionText>	
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
                     /> Zaimportuj plik okładki o nazwie podobnej do wzorca: 
                     Szortal-na-wynos-nr60-czerwiec-2018.jpg (łączniki w nazwie).
-				</EPubText>
+				</SectionText>
 
-				<EPubText>	
+				<SectionText>	
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
                     /> Osadź plik jpg okładki w pliku okładka.html
-				</EPubText>
+				</SectionText>
 
-				<EPubText>	
+				<SectionText>	
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
                     /> Zaznacz plik jpg okładki, kliknij na nim prawym (lub lewym)
                     klawiszem myszy i wybierz opcję "Mark cover.jgp as cover image".
-				</EPubText>
+				</SectionText>
 
 
-				<EPubSubtitle>
+				<SectionSubtitle>
 					Kowersja wydania z formatu EPub do MOBI 
-				</EPubSubtitle>
+				</SectionSubtitle>
 
-				<EPubText>	
+				<SectionText>	
 					<FontAwesomeIcon
                     	icon={ faExclamationTriangle }
                     	size="1"
                     	color="#f00"
                     /> ta część opisu jest w trakcie tworzenia
-				</EPubText>
+				</SectionText>
 
-			</LayoutContainer>
+			</SectionContainer>
 
 
 		)
