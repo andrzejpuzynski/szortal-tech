@@ -42,6 +42,16 @@ class App extends Component {
         );
     }
 
+    componentWillMount() {
+    // will trigger the callback function whenever a new Route renders
+    // a component(as long as this component stays mounted as routes change)
+      this.history.listen(() => {
+        this.setState(state => ({
+            active: this.history.location.pathname.replace(/\//, '')
+        }))
+      });
+    }
+
   render() {
     
     return (
