@@ -7,12 +7,12 @@ import {
 } from 'react-router-dom';
 import createHistory from "history/createBrowserHistory";
 
-import Intro from './components/Intro';
-import Adds from './components/Adds';
-import Graphics from './components/Graphics';
-import EPub from './components/EPub';
+import Intro from './Intro';
+import Adds from './Adds';
+import Graphics from './Graphics';
+import EPub from './EPub';
 
-import logo from './img/Szortal_logo_vectors_RGB.svg';
+import logo from '../img/Szortal_logo_vectors_RGB.svg';
 
 import {
     AppContainer,
@@ -21,7 +21,7 @@ import {
 	HeaderLogo,
 	HeaderLinks,
     HeaderButton
-} from './styled/App';
+} from '../styled/App';
  
 class App extends Component {
     constructor(props) {
