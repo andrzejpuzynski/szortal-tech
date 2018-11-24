@@ -30,24 +30,25 @@ class EPub extends React.Component {
 		return (
 			<SectionContainer>
 				<SectionTitle>„Szortal na&nbsp;Wynos” w&nbsp;formacie EPUB</SectionTitle>
-				<SectionInfo>Ta podstrona zawiera opis przygotowania pliku w formacie EPUB.</SectionInfo>
 				<SectionText>EPub „Szortal na&nbsp;Wynos” składany jest w edytorze Calibre.
-				Cały proces przygotowania pliku obejmuje etapy:
+				Proces przygotowania pliku obejmujenastępujące etapy:
 				<ul>
-					<li>makietowania i edycji plików HTML w Calibre (stylowanie)</li>
-					<li>konwersji źródłowych grafik do formatu PNG z korektą rozmiaru (resize)</li>
-					<li>konwersji plików PNG do formatu JPG</li>
-					<li>makietowania wydania w formacie EPUB</li>
-					<li>sprawdzania pliku EPUB, stworzenia spisu treści i zamarkowania okładki</li>
-					<li>konwersji formatu EPUB do formatu MOBI</li>
+					<li>aktualizacja pliku makiety</li>
+					<li>import źródłowych tekstów do formatu HTML i ich ostylowanie</li>
+					<li>importu grafik w formacie PNG i ich ostylowanie w kodzie HTML</li>
+					<li>makietowanie wydania w Calibre z wstępnym sprawdzaniem kodu HTML</li>
+					<li>stworzenie spisu treści</li>
+					<li>przypisanie okładki</li>
+					<li>sprawdzanie pliku EPUB (checklist)</li>
+					<li>konwersja formatu EPUB do formatu MOBI</li>
 				</ul>
 				Poniżej aktualny Workflow (2018.10.31).
 				<SectionFullWidthImage src={workflow} alt="workflow" />
 				</SectionText>
 
-				<SectionInfo>
-				Makietowanie w Calibre
-				</SectionInfo>
+				<SectionSubtitle>
+				Aktualizacja pliku makiety
+				</SectionSubtitle>
 
 				<SectionText>
 					<FontAwesomeIcon
@@ -81,21 +82,46 @@ class EPub extends React.Component {
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
-                    /> Przejdź do edycji ePuba (Edit book) i zaimportuj wszystkie pliki jpg. 
+                    /> Zaktualizuj stronę redakcyjną.
 				</SectionText>
 
-				<SectionText>	
+				<SectionSubtitle>
+				Import źródłowych tekstów do formatu HTML i ich stylowanie
+				</SectionSubtitle>
+
+				<SectionInfo>
+					Import tekstu źródłowego
+				</SectionInfo>
+
+				<SectionText>
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
-                    /> Rozpocznij makietowanie plik po pliku, konwertując źródłowe teksty w Calibre.  
+                    /> Dodaj nowy dokument *.html w Calibre. Jednocześnie zaznacz automatyczne załączanie styli.
+				</SectionText>
+				<SectionText>
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Tekst źródłowy wklej pomiędzy tagami body. Następnie otaguj całość przy użyciu komendy
+				Find/Replace. Sprawdź opcje podmiany (Mode: Regex; Current File; Wrap).</SectionText>
+				<SectionText>Find:
+					<SectionCode>^([\–\-„A-Ż].*)(\b[^\n]*)$</SectionCode>
 				</SectionText>
 
+				<SectionText>Replace (dla tekstów do sekcji Szortownia, Stusłówka, Rymowisko i Wywiad)
+					<SectionCode>{`<p class="text">`}\1\2{`</p>`}</SectionCode>
+				</SectionText>
+
+				<SectionText>Replace (dla tekstów do sekcji	Subiektywnie):
+					<SectionCode>{`<p class="review">`}\1\2{`</p>`}</SectionCode>
+				</SectionText>
 				
-				<SectionSubtitle>
+				<SectionInfo>
 					Nazwy plików HTML
-				</SectionSubtitle>
+				</SectionInfo>
 
 				<SectionText>	
 					Nazwy plików html do poszczególnych działów rozpoczynamy prefixem według klucza:
@@ -134,83 +160,10 @@ class EPub extends React.Component {
                     />
 					&nbsp;patronat_Skafander_i_melonik.xhtml
 				</SectionText>
-				
-				<SectionSubtitle>
-					Konwersja źródłowych tekstów do formatu HTML (w Calibre)
-				</SectionSubtitle>
-
-				<SectionText>
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Dodaj nowy dokument *.html w Calibre. Jednocześnie zaznacz automatyczne załączanie styli.
-				</SectionText>
-				<SectionText>
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Tekst źródłowy wklej pomiędzy tagami body. Następnie otaguj całość przy użyciu komendy
-				Find/Replace. Sprawdź opcje podmiany (Mode: Regex; Current File; Wrap).</SectionText>
-				<SectionText>W polu Find należy wpisać:
-					<SectionCode>^([\–\-„A-Ż].*)(\b[^\n]*)$</SectionCode>
-				</SectionText>
-
-				<SectionText>W polu Replace dla tekstów do sekcji: 
-				Szortownia, Stusłówka, Rymowisko, Wywiad - wpisujemy:
-					<SectionCode>{`<p class="text">`}\1\2{`</p>`}</SectionCode>
-				</SectionText>
-
-				<SectionText>W polu Replace dla tekstów do sekcji:	Subiektywnie - wpisujemy:
-					<SectionCode>{`<p class="review">`}\1\2{`</p>`}</SectionCode>
-				</SectionText>
-
-				<SectionSubtitle>
-					Edycja plików HTML w Calibre - stylowanie
-				</SectionSubtitle>
+			
 
 				<SectionInfo>
-					Załączanie pliku ze stylami.
-				</SectionInfo>	
-
-				<SectionText>W sekcji nagłówka dokumentu &lt;head&gt; &lt;/head&gt;
-				należy załączyć plik ze stylami (stylesheet.css) jeśli go tam nie ma.
-				Poniżej kod do skopiowania:
-				<SectionCode>{`  <link href="../Styles/stylesheet.css" rel="stylesheet" type="text/css"/>`}</SectionCode>
-					    <SectionDownloadButton
-            	    	 	href="szortal.css"
-            	    	 	download="stylesheet"
-            	    	>
-            	    		<FontAwesomeIcon
-                                    icon={ faDownload }
-                                    size="2x"
-                                    color="#777777"
-                              />
-            	    	</SectionDownloadButton>
-					Kliknij aby pobrać aktualny plik stylesheet.css.
-				</SectionText>
-
-				<SectionInfo>
-					Strona redakcyjna.
-				</SectionInfo>
-
-				<SectionText>
-						<SectionDownloadButton
-            	    	 	href="redakcyjna.html"
-            	    	 	download="redakcyjna"
-            	    	>
-            	    		<FontAwesomeIcon
-                                    icon={ faDownload }
-                                    size="2x"
-                                    color="#777777"
-                              />
-            	    	</SectionDownloadButton>
-            	    	Plik redakcyjna.html do wydania z października 2018.
-				</SectionText>
-
-				<SectionInfo>
-					Opis stylowania działów Szortownia, Stusłówka, Rymowisko, Wywiad.
+					Stylowanie plików HTML do działów Szortownia, Stusłówka, Rymowisko, Wywiad.
 				</SectionInfo>
 
 				<SectionText>Tytuł (w wywiadzie - imię i nazwisko osoby,
@@ -259,7 +212,7 @@ class EPub extends React.Component {
 				</SectionText>
 
 				<SectionInfo>
-					Opis stylowania działu Subiektywnie.
+					Stylowanie plików HTML do działu Subiektywnie.
 				</SectionInfo>
 
 				<SectionText>Tytuł
@@ -306,8 +259,12 @@ class EPub extends React.Component {
 				</SectionText>
 
 				<SectionSubtitle>
-					Konwersja źródłowych grafik do formatu PNG
+					Import grafik w formacie PNG i ich ostylowanie w kodzie HTML
 				</SectionSubtitle>
+
+				<SectionInfo>
+					Konwersja źródłowych grafik do formatu PNG
+				</SectionInfo>
 
 				<SectionText>Niezależnie od tego w jakim formacie dostarczony jest źródłowy
 				plik grafiki (ilustracja, zdjęcie, reklama, okładka książki), pierwszym krokiem
@@ -324,23 +281,18 @@ class EPub extends React.Component {
 				Imageresize.</a> przy ustawieniu - Quality: Best.
 				</SectionText>
 
+				<SectionInfo>
+					Import plików PNG do Calibre
+				</SectionInfo>
 
-				<SectionSubtitle>
-					Konwersja plików PNG do formatu JPG
-				</SectionSubtitle>
-
-
-				<SectionText>Pliki PNG ze względu na bezstratność są plikami źródłowymi 
-				do stworzenia wydania w formacie PDF. Aby stały się plikami źródłowymi 
-				do stworzenia EPuba należy przekonwertować je do formatu JPG. 
-				Konwersję można wykonać 
-				na stronie <a href="https://cloudconvert.com/png-to-jpg" target="blank">
-				Cloudconvert.</a>
+				<SectionText>
+					Wybierz z menu komendę: Import files into book.
 				</SectionText>
 
-				<SectionSubtitle>
+
+				<SectionInfo>
 					Stylowanie plików graficznych
-				</SectionSubtitle>
+				</SectionInfo>
 
 				<SectionText>Reklama całostronicowa, komiks
 					<SectionCode>{`<div class="fullpage">\n`}
@@ -364,12 +316,21 @@ class EPub extends React.Component {
 
 
 				<SectionSubtitle>
-					Przygotowanie wydania w formacie EPub
+					Makietowanie wydania z korektą kodu
 				</SectionSubtitle>
+
+				<SectionInfo>
+					Makietowanie
+				</SectionInfo>
+
+				<SectionText>
+					Kolejność plików HTML w EPUBie odpowiada za wyświetlanie tekstów.
+					Makietowanie polega na ustawieniu plików HTML we właściwej kolejności.
+				</SectionText>
 			
 
 				<SectionInfo>
-					Poprawianie i sprawdzenie kodu w plikach
+					Sprawdzenie kodu w plikach HTML
 				</SectionInfo>
 
 				<SectionText>	
@@ -401,7 +362,7 @@ class EPub extends React.Component {
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
-                    /> Popraw ścieżki linkowania plików jpg: img src="../Images/" we wszystkich plikach.
+                    /> Popraw ścieżki linkowania plików png, jeśli się nie wyświetlają w oknie Preview.
 				</SectionText>
 
 				<SectionText>	
@@ -422,7 +383,7 @@ class EPub extends React.Component {
 
 				<SectionText>	
 					<FontAwesomeIcon
-                        	icon={ faCheck }
+                      icon={ faCheck }
                     	size="1x"
                     	color="#d66"
                     /> Sprawdź w tekstach z ilustracją nazwę klasy dla kontenera div ilustracji (class="imagetext")
@@ -436,18 +397,11 @@ class EPub extends React.Component {
                     	color="#d66"
                     /> Sprawdź kod okładek do recenzji.
 				</SectionText>
-				
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Sprawdź wyświetlanie wszystkich grafik przy przeglądaniu ePuba.
-				</SectionText>
+			
 
-				<SectionInfo>
+				<SectionSubtitle>
 					Przygotowanie spisu treści
-				</SectionInfo>
+				</SectionSubtitle>
 
 				<SectionText>	
 					<FontAwesomeIcon
@@ -531,7 +485,7 @@ class EPub extends React.Component {
                     	color="#d66"
                     /> W oknie kodu spisu treści uruchom Find / Replace 
 					<SectionCode>{`Find: <li>`}</SectionCode>
-					<SectionCode>{`Replace <div class=“sgc-toc-level-1”>`}</SectionCode>
+					<SectionCode>{`Replace <div class="sgc-toc-level-1">`}</SectionCode>
 				</SectionText>
 
 				<SectionText>	
@@ -573,9 +527,9 @@ class EPub extends React.Component {
                     /> Sprawdź, czy spis treści działa, i czy jest kompletny. 
 				</SectionText>
 
-				<SectionInfo>
-					Okładka
-				</SectionInfo>
+				<SectionSubtitle>
+					Przypisanie okładki
+				</SectionSubtitle>
 
 				<SectionText>	
 					<FontAwesomeIcon
@@ -591,7 +545,7 @@ class EPub extends React.Component {
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
-                    /> Osadź plik jpg okładki w pliku okładka.html
+                    /> Osadź plik png okładki w pliku okładka.html
 				</SectionText>
 
 				<SectionText>	
@@ -599,8 +553,21 @@ class EPub extends React.Component {
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
-                    /> Zaznacz plik jpg okładki, kliknij na nim prawym (lub lewym)
-                    klawiszem myszy i wybierz opcję "Mark cover.jgp as cover image".
+                    /> Zaznacz plik png okładki, kliknij na nim prawym (lub lewym)
+                    klawiszem myszy i wybierz opcję "Mark ... as cover image".
+				</SectionText>
+
+
+				<SectionSubtitle>
+					Sprawdzenie wydania (Checklist) 
+				</SectionSubtitle>
+
+				<SectionText>	
+					<FontAwesomeIcon
+                    	icon={ faExclamationTriangle }
+                    	size="1"
+                    	color="#f00"
+                    /> ta część opisu jest w trakcie tworzenia
 				</SectionText>
 
 

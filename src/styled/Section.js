@@ -1,14 +1,16 @@
 import styled from 'styled-components';
  
 export const SectionContainer = styled.div`
+	max-width: 1000px;
 	min-height: 100vh;
 	padding: 0 60px 20px 60px;
+	margin: 0 auto;
 `
 
 export const SectionTitle = styled.h1`
 	display: inline-block;
 	width: 100%;
-	font-size: 60px;
+	font-size: 54px;
 	text-align: center;
 	margin-top: 100px;
 `
@@ -16,6 +18,7 @@ export const SectionTitle = styled.h1`
 export const SectionSubtitle = styled.h2`
 	display: inline-block;
 	width: 100%;
+	font-size: 32px;
 	font-weight: 600;
 	margin-top: 100px;
 	margin-bottom: 10px;
@@ -26,7 +29,7 @@ export const SectionInfo = styled.p`
 	font-weight: 100;
 	letter-spacing: 1px;
 	line-height: 32px;
-	margin-top: 30px;
+	margin-top: 80px;
 	margin-bottom: 30px;
 	color: grey;
 `
@@ -83,7 +86,7 @@ export const SectionDimensionsHeight = styled.div`
 	position: absolute
 	width: 300px;
 	font-size: 21px;
-	transform: rotate(90deg) translateX(150px)translateY(-65px);
+	transform: rotate(90deg) translateX(138px)translateY(-62px);
 `
 
 export const SectionDimensionsDpi = styled.div`
