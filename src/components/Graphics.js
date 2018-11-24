@@ -1,4 +1,5 @@
 import React from 'react';
+import DocumentSizesIllustration from './DocumentSizesIllustration';
 
 import {
     SectionContainer,
@@ -36,64 +37,64 @@ class Graphics extends React.Component {
 					Okładka, ilustracja całostronicowa do WS.
 				</SectionInfo>
 
-				<SectionDimensionsContainer >
-					<SectionDimensionsWidth>1240 px</SectionDimensionsWidth>
-					<SectionDimensionsHeight>1754 px</SectionDimensionsHeight>
-					<SectionDimensionsDpi>150 dpi</SectionDimensionsDpi>
-				</SectionDimensionsContainer>
 
-				<SectionDimensionsContainer >
-					<SectionDimensionsWidth>1818 px</SectionDimensionsWidth>
-					<SectionDimensionsHeight>2572 px</SectionDimensionsHeight>
-					<SectionDimensionsDpi>220 dpi</SectionDimensionsDpi>
-				</SectionDimensionsContainer>
+				<DocumentSizesIllustration
+					width="1240"
+					height="1754"
+					dpi="150"
+				/>
+
+				<DocumentSizesIllustration
+					width="1818"
+					height="2572"
+					dpi="220"
+				/>
 
 				<SectionInfo>
 					Ilustracja wewnątrz tekstu
 				</SectionInfo>
 
-				<SectionDimensionsContainer >
-					<SectionDimensionsWidth>1093 px</SectionDimensionsWidth>
-					<SectionDimensionsHeight>1571 px</SectionDimensionsHeight>
-					<SectionDimensionsDpi>150 dpi</SectionDimensionsDpi>
-				</SectionDimensionsContainer>
+				<DocumentSizesIllustration
+					width="1093"
+					height="1571"
+					dpi="150"
+				/>
 
-				<SectionDimensionsContainer >
-					<SectionDimensionsWidth>1600 px</SectionDimensionsWidth>
-					<SectionDimensionsHeight>max. 2300 px</SectionDimensionsHeight>
-					<SectionDimensionsDpi>220 dpi</SectionDimensionsDpi>
-				</SectionDimensionsContainer>
-
+				<DocumentSizesIllustration
+					width="1600"
+					height="max.2300"
+					dpi="220"
+				/>
 
 				<SectionInfo>
 					Ilustracja do Stusłówka
 				</SectionInfo>
 
-				<SectionDimensionsContainer >
-					<SectionDimensionsWidth>1093 px</SectionDimensionsWidth>
-					<SectionDimensionsHeight>max. 957 px</SectionDimensionsHeight>
-					<SectionDimensionsDpi>150 dpi</SectionDimensionsDpi>
-				</SectionDimensionsContainer>
+				<DocumentSizesIllustration
+					width="1093"
+					height="957"
+					dpi="150"
+				/>
 
-				<SectionDimensionsContainer >
-					<SectionDimensionsWidth>1600 px</SectionDimensionsWidth>
-					<SectionDimensionsHeight>max. 1400 px</SectionDimensionsHeight>
-					<SectionDimensionsDpi>220 dpi</SectionDimensionsDpi>
-				</SectionDimensionsContainer>
+				<DocumentSizesIllustration
+					width="1600"
+					height="max.1400"
+					dpi="220"
+				/>
 
 				<SectionInfo>
 					Miniaturka okładki do recenzji
 				</SectionInfo>
 
-				<SectionDimensionsContainer >
-					<SectionDimensionsHeight>400 px</SectionDimensionsHeight>
-					<SectionDimensionsDpi>150 dpi</SectionDimensionsDpi>
-				</SectionDimensionsContainer>
+				<DocumentSizesIllustration
+					height="400"
+					dpi="150"
+				/>
 
-				<SectionDimensionsContainer >
-					<SectionDimensionsHeight>587 px</SectionDimensionsHeight>
-					<SectionDimensionsDpi>220 dpi</SectionDimensionsDpi>
-				</SectionDimensionsContainer>
+				<DocumentSizesIllustration
+					height="587"
+					dpi="220"
+				/>
 
 				<SectionText>
 					    <SectionDownloadButton

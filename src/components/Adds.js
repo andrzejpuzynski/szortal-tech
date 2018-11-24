@@ -1,4 +1,5 @@
 import React from 'react';
+import DocumentSizesIllustration from './DocumentSizesIllustration';
 
 import {
     SectionContainer,
@@ -38,17 +39,17 @@ class Adds extends React.Component {
 					Wymiary reklamy całostronicowej
 				</SectionInfo>
 
-				<SectionDimensionsContainer >
-					<SectionDimensionsWidth>1240 px</SectionDimensionsWidth>
-					<SectionDimensionsHeight>1754 px</SectionDimensionsHeight>
-					<SectionDimensionsDpi>150 dpi</SectionDimensionsDpi>
-				</SectionDimensionsContainer>
+				<DocumentSizesIllustration
+					width="1240"
+					height="1754"
+					dpi="150"
+				/>
 
-				<SectionDimensionsContainer >
-					<SectionDimensionsWidth>1818 px</SectionDimensionsWidth>
-					<SectionDimensionsHeight>2572 px</SectionDimensionsHeight>
-					<SectionDimensionsDpi>220 dpi</SectionDimensionsDpi>
-				</SectionDimensionsContainer>
+				<DocumentSizesIllustration
+					width="1818"
+					height="2572"
+					dpi="220"
+				/>
 
 				<SectionText>
 				W przypadku reklamy zajmującej część strony należy zachować 
