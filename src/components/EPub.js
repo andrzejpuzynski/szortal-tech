@@ -23,7 +23,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faCheck, faExclamationTriangle, faTimes } from '@fortawesome/free-solid-svg-icons';
 
-import workflow from '../img/SzortalNaWynos_Workflow_20181031.svg';
+import workflow from '../img/SzortalNaWynos_Workflow_20181125.svg';
 
 class EPub extends React.Component {
 	render() {
@@ -42,7 +42,11 @@ class EPub extends React.Component {
 					<li>sprawdzanie pliku EPUB (checklist)</li>
 					<li>konwersja formatu EPUB do formatu MOBI</li>
 				</ul>
-				Poniżej aktualny Workflow (2018.10.31).
+				
+				<SectionInfo>
+				Workflow (2018.11.25).
+				</SectionInfo>
+
 				<SectionFullWidthImage src={workflow} alt="workflow" />
 				</SectionText>
 
