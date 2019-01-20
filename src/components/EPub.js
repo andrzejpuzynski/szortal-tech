@@ -566,25 +566,154 @@ class EPub extends React.Component {
 					Sprawdzenie wydania (Checklist) 
 				</SectionSubtitle>
 
+				<SectionInfo>
+				1. Pliki i struktura EPUBa.
+				</SectionInfo>
+
 				<SectionText>	
 					<FontAwesomeIcon
-                    	icon={ faExclamationTriangle }
-                    	size="1"
-                    	color="#f00"
-                    /> ta część opisu jest w trakcie tworzenia
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Metadane pliku EPUB.
 				</SectionText>
+
+				<SectionText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Nazwy plików *.html (*.xhtml) bez polskich znaków i spacji.
+				</SectionText>
+
+				<SectionText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Nazwy plików *.jpg bez polskich znaków i spacji.
+				</SectionText>
+
+				<SectionText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Spis treści - panel w Calibre.
+				</SectionText>
+
+				<SectionText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Sekcja "title" i "head" każdego pliku.
+				</SectionText>
+
+				<SectionInfo>
+				2. Style tekstowe
+				</SectionInfo>
+
+				<SectionText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Wywiad: Imię i nazwisko bohatera wywiadu jako tytuł.
+				</SectionText> 
+
+				<SectionText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Przypisy: spacja po gwiazdkach na początku linijki.
+				</SectionText> 
+
+				<SectionInfo>
+				3. Strona wizualna
+				</SectionInfo>
+
+				<SectionText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Formatowanie tekstu
+				</SectionText> 
+
+				<SectionText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Wyświetlanie grafiki (podpisy do ilustracji)
+				</SectionText> 
+
+				<SectionText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Linki.
+				</SectionText> 
+
+				<SectionText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Spis treści na stronie ze spisem i w panelu spisu treści.
+				</SectionText> 
 
 
 				<SectionSubtitle>
-					Kowersja wydania z formatu EPub do MOBI 
+					Kowersja wydania z formatu EPUB do MOBI 
 				</SectionSubtitle>
 
 				<SectionText>	
 					<FontAwesomeIcon
-                    	icon={ faExclamationTriangle }
-                    	size="1"
-                    	color="#f00"
-                    /> ta część opisu jest w trakcie tworzenia
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Plik EPUB w wersji "gotowy do wydania na stronie www" dodaj do Calibre.
+				</SectionText>
+
+				<SectionText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Zaznacz na liście książek w Calibre tę, którą chcesz konwertować,
+                    	 a następnie z menu wybierz "Konwertuj książkę".
+				</SectionText>
+
+				<SectionText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Otworzy się okno dialogowe, w którym po lewej stronie na górze znajduje się
+                    	 rozwijalna lista z formatami wyjściowymi. Wybierz format "MOBI". Zatwierdź wybór ("OK").
+				</SectionText>
+
+				<SectionText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Po zakończeniu konwersji pozycja na liście książek jest już dostępna
+                    w dwóch formatach. Zapisz teraz na dysku tę książkę i następnię przejdź do tego katalogu.
+				</SectionText>
+
+				<SectionText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> W katalogu znajduje się kilka plików. Skasuj je pozostawiając tylko plik MOBI.
+                    	Po zmianie nazwy tego pliku na taką samą jaką ma EPUB (poza rozszerzeniem MOBI) plik 
+                    	jest "gotowy do wydania na stronie www". 
 				</SectionText>
 
 			</SectionContainer>
