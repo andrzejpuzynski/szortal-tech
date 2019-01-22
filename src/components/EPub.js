@@ -23,7 +23,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faCheck, faExclamationTriangle, faTimes } from '@fortawesome/free-solid-svg-icons';
 
-import workflow from '../img/SzortalNaWynos_Workflow_20181125.svg';
+import workflow from '../img/SzortalNaWynos_Workflow_20190122.svg';
 
 class EPub extends React.Component {
 	render() {
@@ -31,12 +31,12 @@ class EPub extends React.Component {
 			<SectionContainer>
 				<SectionTitle>„Szortal na&nbsp;Wynos” w&nbsp;formacie EPUB</SectionTitle>
 				<SectionText>EPub „Szortal na&nbsp;Wynos” składany jest w edytorze Calibre.
-				Proces przygotowania pliku obejmujenastępujące etapy:
+				Proces przygotowania pliku obejmuje następujące etapy:
 				<ul>
 					<li>aktualizacja pliku makiety</li>
 					<li>import źródłowych tekstów do formatu HTML i ich ostylowanie</li>
 					<li>importu grafik w formacie PNG i ich ostylowanie w kodzie HTML</li>
-					<li>makietowanie wydania w Calibre z wstępnym sprawdzaniem kodu HTML</li>
+					<li>makietowanie wydania w Calibre</li>
 					<li>stworzenie spisu treści</li>
 					<li>przypisanie okładki</li>
 					<li>sprawdzanie pliku EPUB (checklist)</li>
@@ -44,7 +44,7 @@ class EPub extends React.Component {
 				</ul>
 				
 				<SectionInfo>
-				Workflow (2018.11.25).
+				Workflow "Szortal Na Wynos" (aktualizacja 2019.01.22).
 				</SectionInfo>
 
 				<SectionFullWidthImage src={workflow} alt="workflow" />
@@ -144,7 +144,7 @@ class EPub extends React.Component {
 				</SectionText>
 
 				<SectionText>
-					Nazwy plików html nie mogą zawierać spacji.
+					Nazwy plików html nie mogą zawierać spacji oraz polskich znaków.
 				</SectionText>
 
 				<SectionText>
@@ -293,6 +293,14 @@ class EPub extends React.Component {
 					Wybierz z menu komendę: Import files into book.
 				</SectionText>
 
+				<SectionInfo>
+					Nazwy plików PNG
+				</SectionInfo>
+
+				<SectionText>
+					Nazwy plików png nie mogą zawierać spacji oraz polskich znaków.
+				</SectionText>
+
 
 				<SectionInfo>
 					Stylowanie plików graficznych
@@ -367,6 +375,14 @@ class EPub extends React.Component {
                     	size="1x"
                     	color="#d66"
                     /> Popraw ścieżki linkowania plików png, jeśli się nie wyświetlają w oknie Preview.
+				</SectionText>
+
+				<SectionText>	
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Sprawdź czy nazwy plików PNG nie posiadają spacji oraz polskich znaków.
 				</SectionText>
 
 				<SectionText>	
