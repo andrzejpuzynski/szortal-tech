@@ -91,7 +91,7 @@ class App extends Component {
                         </NavLink>
                         <NavLink to="/szortal" onClick={this.handleClick}> 
                             <HeaderButton active={this.state.active === 'szortal'}>
-                                Szortal
+                                O Szortalu
                             </HeaderButton>
                         </NavLink>
 

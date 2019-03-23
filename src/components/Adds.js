@@ -48,14 +48,14 @@ class Adds extends React.Component {
 
 				<SectionText>
 				W przypadku reklamy zajmującej część strony należy zachować 
-				rozmiar wysokości lub szerokości.
+				rozmiar wysokości lub szerokości reklamy całostronicowej.
 				</SectionText> 
 
 
                 <SectionText>
 					    <SectionDownloadButton
-            	    	 	href="download/Szortal na Wynos - specyfikacja reklam.pdf"
-            	    	 	download="Szortal na Wynos - specyfikacja reklam.pdf"
+            	    	 	href="download/Szortal na Wynos - specyfikacja reklam - 2019.pdf"
+            	    	 	download="Szortal na Wynos - specyfikacja reklam - 2019.pdf"
             	    	>
             	    		<FontAwesomeIcon
                                     icon={ faFilePdf }
@@ -63,7 +63,7 @@ class Adds extends React.Component {
                                     color="#777777"
                               />
             	    	</SectionDownloadButton>
-					Kliknij aby ściągnąć tę stronę w formacie PDF.
+					Kliknij aby ściągnąć specyfikację reklam w formacie PDF.
                 </SectionText>
 				
 			
