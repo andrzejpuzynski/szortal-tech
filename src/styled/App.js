@@ -39,9 +39,31 @@ export const HeaderLinks = styled.ul`
 	height: 60px;
 	margin: 0px;
 	line-height: 60px;
+  display: flex;
+  
+  a {
+    text-decoration: none;
+    :hover {
+      &:after {
+        content: "";
+        display: block;
+        transform: translateY(-4px);
+        border-top: white 4px solid;
+        animation-name: dynamic-border;
+        animation-duration: 300ms;
+  
+        @keyframes dynamic-border {
+          0% { margin: 0 50%}
+          100% { margin: 0}
+        }
+      }
+    }
+  }
 `
 export const HeaderButton = styled.li`
-    display: inline-block;
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
     height: 60px;
     font-size: 24px;
     padding: 0px 20px;
@@ -50,11 +72,4 @@ export const HeaderButton = styled.li`
     color: ${props => props.active ? "#fff" : "#ccc"};
     border-bottom: ${props => props.active ? "white 4px solid" : "#b00"};
     background-color: ${props => props.active ? "#c00" : "#b00"};
-
-    :hover {
-        border-bottom: #fff 4px solid;
-        transition: 300ms;
-    }
-
-    }
 `
