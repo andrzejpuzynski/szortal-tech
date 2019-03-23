@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {
   Router,
   Route,
-  Link,
   NavLink
 } from 'react-router-dom';
 import createHistory from "history/createBrowserHistory";
@@ -11,6 +10,7 @@ import Intro from './Intro';
 import Adds from './Adds';
 import Graphics from './Graphics';
 import EPub from './EPub';
+import Szortal from './Szortal';
 
 import logo from '../img/Szortal_logo_vectors_RGB.svg';
 
@@ -52,7 +52,7 @@ class App extends Component {
       });
     }
 
-  render() {
+    render() {
     
     return (
         <AppContainer>
@@ -83,6 +83,11 @@ class App extends Component {
                                 EPub
                             </HeaderButton>
                         </NavLink>
+                        <NavLink to="/szortal" onClick={this.handleClick}> 
+                            <HeaderButton active={this.state.active === 'szortal'}>
+                                Szortal
+                            </HeaderButton>
+                        </NavLink>
 
      	  	       	</HeaderLinks>
      	  	       </HeaderContainer>
@@ -91,6 +96,7 @@ class App extends Component {
                 <Route path="/adds" component={Adds} />
                 <Route path="/graphics" component={Graphics} />
                 <Route path="/epub" component={EPub} />
+                <Route path="/szortal" component={Szortal} />
   
      	      </div>
      	  </Router>

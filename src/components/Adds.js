@@ -4,13 +4,8 @@ import DocumentSizesIllustration from './DocumentSizesIllustration';
 import {
     SectionContainer,
     SectionTitle,
-    SectionSubtitle,
     SectionInfo,
     SectionText,
-    SectionDimensionsContainer,
-    SectionDimensionsWidth,
-    SectionDimensionsHeight,
-    SectionDimensionsDpi,
     SectionDownloadButton
 } from '../styled/Section';
 

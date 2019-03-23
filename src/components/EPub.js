@@ -8,20 +8,11 @@ import {
     SectionText,
     SectionCode,
     SectionFullWidthImage,
-    SectionDimensionsContainer,
-    SectionDimensionsWidth,
-    SectionDimensionsHeight,
-    SectionDimensionsDpi,
     SectionDownloadButton
 } from '../styled/Section';
 
-
-import {
-  Link
-} from 'react-router-dom';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDownload, faCheck, faExclamationTriangle, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faDownload, faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import workflow from '../img/SzortalNaWynos_Workflow_20190122.svg';
 
