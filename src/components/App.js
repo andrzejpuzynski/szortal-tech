@@ -89,11 +89,6 @@ class App extends Component {
                             PDF
                           </HeaderButton>
                         </NavLink>
-                        <NavLink to="/szortal" onClick={this.handleClick}> 
-                            <HeaderButton active={this.state.active === 'szortal'}>
-                                O Szortalu
-                            </HeaderButton>
-                        </NavLink>
 
      	  	       	</HeaderLinks>
      	  	       </HeaderContainer>
