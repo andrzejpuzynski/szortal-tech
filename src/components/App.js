@@ -10,6 +10,7 @@ import Intro from './Intro';
 import Adds from './Adds';
 import Graphics from './Graphics';
 import EPub from './EPub';
+import Pdf from './Pdf';
 import Szortal from './Szortal';
 
 import logo from '../img/Szortal_logo_vectors_RGB.svg';
@@ -83,6 +84,11 @@ class App extends Component {
                                 EPub
                             </HeaderButton>
                         </NavLink>
+                        <NavLink to="/pdf" onClick={this.handleClick}>
+                          <HeaderButton active={this.state.active === 'pdf'}>
+                            PDF
+                          </HeaderButton>
+                        </NavLink>
                         <NavLink to="/szortal" onClick={this.handleClick}> 
                             <HeaderButton active={this.state.active === 'szortal'}>
                                 Szortal
@@ -96,6 +102,7 @@ class App extends Component {
                 <Route path="/adds" component={Adds} />
                 <Route path="/graphics" component={Graphics} />
                 <Route path="/epub" component={EPub} />
+                <Route path="/pdf" component={Pdf} />
                 <Route path="/szortal" component={Szortal} />
   
      	      </div>
