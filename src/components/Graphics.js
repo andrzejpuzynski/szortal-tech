@@ -28,7 +28,7 @@ class Graphics extends React.Component {
 				</SectionText>
 
 				<SectionInfo>
-					Okładka, ilustracja całostronicowa do WS.
+					Okładka.
 				</SectionInfo>
 
 
@@ -50,13 +50,13 @@ class Graphics extends React.Component {
 
 				<DocumentSizesIllustration
 					width="1093"
-					height="1571"
+					height="max. 1571"
 					dpi="150"
 				/>
 
 				<DocumentSizesIllustration
 					width="1600"
-					height="max.2300"
+					height="max. 2300"
 					dpi="220"
 				/>
 
@@ -66,13 +66,13 @@ class Graphics extends React.Component {
 
 				<DocumentSizesIllustration
 					width="1093"
-					height="957"
+					height="max. 957"
 					dpi="150"
 				/>
 
 				<DocumentSizesIllustration
 					width="1600"
-					height="max.1400"
+					height="max. 1400"
 					dpi="220"
 				/>
 
@@ -92,8 +92,8 @@ class Graphics extends React.Component {
 
 				<SectionText>
 					    <SectionDownloadButton
-            	    	 	href="download/Grafiki - bardzo wstepnie.pdf"
-            	    	 	download="Grafiki - bardzo wstepnie.pdf"
+            	    	 	href="download/Szortal na Wynos - specyfikacja grafik - 2019.pdf"
+            	    	 	download="Szortal na Wynos - specyfikacja grafik - 2019.pdf"
             	    	>
             	    		<FontAwesomeIcon
                                     icon={ faFilePdf }
@@ -101,7 +101,7 @@ class Graphics extends React.Component {
                                     color="#777777"
                               />
             	    	</SectionDownloadButton>
-					Kliknij aby ściągnąć tę stronę w formacie PDF.
+					Kliknij aby ściągnąć specyfikację grafik w formacie PDF.
                 </SectionText>			
 			</SectionContainer>
 		)
