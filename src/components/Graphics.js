@@ -98,7 +98,7 @@ class Graphics extends React.Component {
 
 				<SectionText>
 					    <SectionDownloadButton
-            	    	 	href="Grafiki - bardzo wstepnie.pdf"
+            	    	 	href="download/Grafiki - bardzo wstepnie.pdf"
             	    	 	download="Grafiki - bardzo wstepnie.pdf"
             	    	>
             	    		<FontAwesomeIcon

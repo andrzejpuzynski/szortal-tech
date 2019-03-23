@@ -62,7 +62,7 @@ class EPub extends React.Component {
                     /> Ściągnij pustą makietę.
 
 					<SectionDownloadButton
-            	    	 href="makieta.epub"
+            	    	 href="download/makieta.epub"
             	    	 download="makieta_Szortal na wynos (nr 64) październik 2018"
             	    >
             	    	<FontAwesomeIcon

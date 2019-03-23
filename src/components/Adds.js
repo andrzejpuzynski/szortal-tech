@@ -59,7 +59,7 @@ class Adds extends React.Component {
 
                 <SectionText>
 					    <SectionDownloadButton
-            	    	 	href="Szortal na Wynos - specyfikacja reklam.pdf"
+            	    	 	href="download/Szortal na Wynos - specyfikacja reklam.pdf"
             	    	 	download="Szortal na Wynos - specyfikacja reklam.pdf"
             	    	>
             	    		<FontAwesomeIcon
