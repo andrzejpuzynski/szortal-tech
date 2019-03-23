@@ -1,0 +1,269 @@
+{
+  "searches": [
+    {
+      "case_sensitive": false, 
+      "dot_all": false, 
+      "find": "<link[^>]*>|<head>|</head>|<body>|</body>|</html>", 
+      "mode": "regex", 
+      "name": "1. Szortal - clearing tags", 
+      "replace": ""
+    }, 
+    {
+      "case_sensitive": false, 
+      "dot_all": false, 
+      "find": "\\n+\\s+|\\n+", 
+      "mode": "regex", 
+      "name": "2. Szortal - clearing empty lines", 
+      "replace": "\\n"
+    }, 
+    {
+      "case_sensitive": false, 
+      "dot_all": false, 
+      "find": "(?s)^.*<title>", 
+      "mode": "regex", 
+      "name": "3. Szortal - title first", 
+      "replace": "<title>"
+    }, 
+    {
+      "case_sensitive": false, 
+      "dot_all": false, 
+      "find": "(<title>.[^<]*)\\s(.[^<]*</title>)", 
+      "mode": "regex", 
+      "name": "4. Szortal - (x) clearing space in title", 
+      "replace": "\\1\\2"
+    }, 
+    {
+      "case_sensitive": false, 
+      "dot_all": false, 
+      "find": "(<title>[^<]*)ą([^<]*</title>)", 
+      "mode": "regex", 
+      "name": "5. Szortal - (x) changing ą in title", 
+      "replace": "\\1a\\2"
+    }, 
+    {
+      "case_sensitive": false, 
+      "dot_all": false, 
+      "find": "(<title>.[^<]*)ć(.[^<]*</title>)", 
+      "mode": "regex", 
+      "name": "6. Szortal - (x) changing ć in title", 
+      "replace": "\\1c\\2"
+    }, 
+    {
+      "case_sensitive": false, 
+      "dot_all": false, 
+      "find": "(<title>.[^<]*)ę(.[^<]*</title>)", 
+      "mode": "regex", 
+      "name": "7. Szortal - (x) changing ę in title", 
+      "replace": "\\1e\\2"
+    }, 
+    {
+      "case_sensitive": false, 
+      "dot_all": false, 
+      "find": "(<title>.[^<]*)ł(.[^<]*</title>)", 
+      "mode": "regex", 
+      "name": "8. Szortal - (x) changign ł in title", 
+      "replace": "\\1l\\2"
+    }, 
+    {
+      "case_sensitive": false, 
+      "dot_all": false, 
+      "find": "(<title>.[^<]*)ń([^<]*</title>)", 
+      "mode": "regex", 
+      "name": "9. Szortal - (x) changing ń in title", 
+      "replace": "\\1n\\2"
+    }, 
+    {
+      "case_sensitive": false, 
+      "dot_all": false, 
+      "find": "(<title>.[^<]*)ó(.[^<]*</title>)", 
+      "mode": "regex", 
+      "name": "10. Szortal - (x) changing ó in title", 
+      "replace": "\\1o\\2"
+    }, 
+    {
+      "case_sensitive": false, 
+      "dot_all": false, 
+      "find": "(<title>.[^<]*)ś(.[^<]*</title>)", 
+      "mode": "regex", 
+      "name": "11. Szortal - (x) changing ś in title", 
+      "replace": "\\1s\\2"
+    }, 
+    {
+      "case_sensitive": false, 
+      "dot_all": false, 
+      "find": "(<title>.[^<]*)ż(.[^<]*</title>)", 
+      "mode": "regex", 
+      "name": "12. Szortal - (x) changing ż in title", 
+      "replace": "\\1z\\2"
+    }, 
+    {
+      "case_sensitive": false, 
+      "dot_all": false, 
+      "find": "(<title>.[^<]*)ź(.[^<]*</title>)", 
+      "mode": "regex", 
+      "name": "13. Szortal - (x) changing ź in title", 
+      "replace": "\\1z\\2"
+    }, 
+    {
+      "case_sensitive": false, 
+      "dot_all": false, 
+      "find": "(<title>)([^<]*)…([^<]*</title>)", 
+      "mode": "regex", 
+      "name": "14. Szortal - (x) clearing … in title", 
+      "replace": "\\1\\2\\3"
+    }, 
+    {
+      "case_sensitive": false, 
+      "dot_all": false, 
+      "find": "(<title>.[^<]*)–(.[^<]*</title>)", 
+      "mode": "regex", 
+      "name": "15. Szortal - removing after - in title", 
+      "replace": "\\1</title>"
+    }, 
+    {
+      "case_sensitive": false, 
+      "dot_all": false, 
+      "find": "(<title>.[^<]*)(\\.|„|”|:|/)([^<]*</title>)", 
+      "mode": "regex", 
+      "name": "16. Szortal - removing . in title", 
+      "replace": "\\1\\3"
+    }, 
+    {
+      "case_sensitive": false, 
+      "dot_all": false, 
+      "find": "(<title>[^<]*)Ć([^<]*</title>)", 
+      "mode": "regex", 
+      "name": "17. Szortal - (x) chaning Ć in title", 
+      "replace": "\\1C\\2"
+    }, 
+    {
+      "case_sensitive": false, 
+      "dot_all": false, 
+      "find": "(<title>[^<]*)Ł([^<]*</title>)", 
+      "mode": "regex", 
+      "name": "18. Szortal - (x) changing Ł in titile", 
+      "replace": "\\1L\\2"
+    }, 
+    {
+      "case_sensitive": false, 
+      "dot_all": false, 
+      "find": "(<title>[^<]*)Ó([^<]*</title>)", 
+      "mode": "regex", 
+      "name": "19. Szortal - (x) changing Ó in title", 
+      "replace": "\\1O\\2"
+    }, 
+    {
+      "case_sensitive": false, 
+      "dot_all": false, 
+      "find": "(<title>[^<]*)Ś([^<]*</title>)", 
+      "mode": "regex", 
+      "name": "20. Szortal - (x) changing Ś in title", 
+      "replace": "\\1S\\2"
+    }, 
+    {
+      "case_sensitive": false, 
+      "dot_all": false, 
+      "find": "(<title>[^<]*)Ż([^<]*</title>)", 
+      "mode": "regex", 
+      "name": "21. Szortal - (x) changing Ż in title", 
+      "replace": "\\1Z\\2"
+    }, 
+    {
+      "case_sensitive": false, 
+      "dot_all": false, 
+      "find": "(<title>[^<]*)Ź([^<]*</title>)", 
+      "mode": "regex", 
+      "name": "22. Szortal - (x) changing Ź in title", 
+      "replace": "\\1Z\\2"
+    }, 
+    {
+      "case_sensitive": false, 
+      "dot_all": false, 
+      "find": "(?s)^(<title>)(.*)(</title>)(.*)", 
+      "mode": "regex", 
+      "name": "23. Szortal - title as tag", 
+      "replace": "<\\2>\\4</\\2>"
+    }, 
+    {
+      "case_sensitive": false, 
+      "dot_all": false, 
+      "find": "(<h2 class=\"title\">)(.+[^<])(</h2>)", 
+      "mode": "regex", 
+      "name": "101. Szortal - title tag", 
+      "replace": "<title>\\2</title>"
+    }, 
+    {
+      "case_sensitive": false, 
+      "dot_all": false, 
+      "find": "(<p class=\"author\">)(.+[^<])(</p>)", 
+      "mode": "regex", 
+      "name": "102. Szortal - author tag", 
+      "replace": "<author>\\2</author>"
+    }, 
+    {
+      "case_sensitive": false, 
+      "dot_all": false, 
+      "find": "(<p class=\"text\">)(.+[^<])(</p>)", 
+      "mode": "regex", 
+      "name": "103. Szortal - text tag", 
+      "replace": "<text>\\2</text>"
+    }, 
+    {
+      "case_sensitive": false, 
+      "dot_all": false, 
+      "find": "(<p class=\"textcenter\">)(.+[^<])(</p>)", 
+      "mode": "regex", 
+      "name": "104. Szortal - textcenter tag", 
+      "replace": "<textcenter>\\2</textcenter>"
+    }, 
+    {
+      "case_sensitive": false, 
+      "dot_all": false, 
+      "find": "(<p class=\"lead\">)(.+[^<])(</p>)", 
+      "mode": "regex", 
+      "name": "105. Szortal - lead tag", 
+      "replace": "<lead>\\2</lead>"
+    }, 
+    {
+      "case_sensitive": false, 
+      "dot_all": false, 
+      "find": "(<p class=\"review\">)(.+[^<])(</p>)", 
+      "mode": "regex", 
+      "name": "106. Szortal - review tag", 
+      "replace": "<review>\\2</review>"
+    }, 
+    {
+      "case_sensitive": false, 
+      "dot_all": false, 
+      "find": "(<p class=\"author-photo\">)(.+[^<])(</p>)", 
+      "mode": "regex", 
+      "name": "106. Szortal - autor-photo tag", 
+      "replace": "<author-photo>\\2</author-photo>"
+    }, 
+    {
+      "case_sensitive": false, 
+      "dot_all": false, 
+      "find": "(<img).*(src=\"../Images)", 
+      "mode": "regex", 
+      "name": "201. Szortal - image link to file", 
+      "replace": "\\1 href=\"file://Images"
+    }, 
+    {
+      "case_sensitive": false, 
+      "dot_all": false, 
+      "find": ".jpg", 
+      "mode": "regex", 
+      "name": "202. Szortal - changing .jpg to .png", 
+      "replace": ".png"
+    }, 
+    {
+      "case_sensitive": false, 
+      "dot_all": false, 
+      "find": "(?s)^.*<div class=\"fullpage\">(.*)</div>(.*)", 
+      "mode": "regex", 
+      "name": "501. Szortal - fullpage removing", 
+      "replace": "\\1"
+    }
+  ], 
+  "version": 1
+}
