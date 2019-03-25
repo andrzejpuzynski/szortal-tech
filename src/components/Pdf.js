@@ -55,16 +55,75 @@ class Pdf extends React.Component {
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
-                    /> Następnie należy po kolei uruchomić je na wszystkich plikach HTML jednocześnie.
+                    /> Następnie należy po kolei uruchomić je na wszystkich plikach HTML jednocześnie. 
+                    Każdy uruchamia się dotąd, dopóki liczba wyszukań Regex jest równa zero.
 				</SectionText>
 				<SectionText>
 					<FontAwesomeIcon
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
-                    /> Skonwertowane pliki można połączyć w jedną całość lub w kilka mniejszych części,
-					a następnie wyeksportować i zmienić im rozszerzenie na *.xml.
+                    /> Skonwertowane pliki HTML należy połączyć w jeden plik,
+					 następnie wyeksportować i zmienić jego rozszerzenie na *.xml.
 				</SectionText>
+
+				<SectionInfo>
+					Pliki konfiguracyjne
+				</SectionInfo>
+
+				<SectionText>
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Plik konfiguracyjny dodkumentu Indesign (wymaga aktualizacji)
+					<SectionDownloadButton
+            	    	 href="download/Szortal-Indesign-File-Info.xmp"
+            	    	 download="Szortal-Indesign-File-Info.xmp"
+            	    >
+            	    	<FontAwesomeIcon
+                        	icon={ faDownload }
+                        	size="2x"
+                        	color="#777777"
+                        />
+            	    </SectionDownloadButton>
+				</SectionText> 
+				
+				<SectionText>
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Plik konfiguracyjny do zapisu PDFa
+					<SectionDownloadButton
+            	    	 href="download/Szortal-Indesign-printPDF.joboptions"
+            	    	 download="Szortal-Indesign-printPDF.joboptions"
+            	    >
+            	    	<FontAwesomeIcon
+                        	icon={ faDownload }
+                        	size="2x"
+                        	color="#777777"
+                        />
+            	    </SectionDownloadButton>
+				</SectionText> 
+				
+				<SectionText>
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#d66"
+                    /> Plik konfiguracyjny pliku okładki wydania (wymaga aktualizacji)
+					<SectionDownloadButton
+            	    	 href="download/Szortal-PS-Cover-Info.xmp"
+            	    	 download="Szortal-PS-Cover-Info.xmp"
+            	    >
+            	    	<FontAwesomeIcon
+                        	icon={ faDownload }
+                        	size="2x"
+                        	color="#777777"
+                        />
+            	    </SectionDownloadButton>
+				</SectionText> 
 			</SectionContainer>
 		)
 	}
