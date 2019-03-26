@@ -14,7 +14,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
 
-import workflow from '../img/SzortalNaWynos_Workflow_20190122.svg';
+import workflow from '../img/SzortalNaWynos_Workflow_20190326.svg';
 
 class EPub extends React.Component {
 	render() {
@@ -35,7 +35,7 @@ class EPub extends React.Component {
 				</ul>
 				
 				<SectionInfo>
-				Workflow "Szortal Na Wynos" (aktualizacja 2019.01.22).
+				Workflow "Szortal Na Wynos" (aktualizacja 2019.03.26).
 				</SectionInfo>
 
 				<SectionFullWidthImage src={workflow} alt="workflow" />
@@ -50,7 +50,7 @@ class EPub extends React.Component {
                     	icon={ faCheck }
                     	size="1x"
                     	color="#d66"
-                    /> Ściągnij pustą makietę.
+                    /> Pobierz plik makiety.
 
 					<SectionDownloadButton
             	    	 href="download/makieta.epub"
@@ -60,7 +60,7 @@ class EPub extends React.Component {
                         	icon={ faDownload }
                         	size="2x"
                         	color="#777777"
-                        />
+                        /> 
             	    </SectionDownloadButton>
 				</SectionText>
 
@@ -79,13 +79,55 @@ class EPub extends React.Component {
                     	color="#d66"
                     /> Zaktualizuj stronę redakcyjną.
 				</SectionText>
-
+				
 				<SectionSubtitle>
-				Import źródłowych tekstów do formatu HTML i ich stylowanie
+					Pliki HTML
 				</SectionSubtitle>
 
 				<SectionInfo>
-					Import tekstu źródłowego
+					Nazwy plików
+				</SectionInfo>
+
+				<SectionText>	
+					Nazwy plików html do poszczególnych działów rozpoczynamy prefixem według klucza:
+                    <ul>
+                    	<li>"szort_" - Szortownia</li>
+						<li>"stu_" - Stusłówka</li>
+						<li>"rym_" - Rymowisko</li>
+						<li>"zagr_" - Zagraniczniak</li>
+						<li>"pub_" - Publicystyka</li>
+						<li>"wywiad_" - Wywiad</li>
+						<li>"s_" - Subiektywnie</li>
+						<li>"komiks_" - pliki do komiksu</li>
+						<li>"reklama_" - reklama</li>
+						<li>"patronat_" - reklama Partonat</li>
+					</ul>
+				</SectionText>
+
+				<SectionText>
+					Nazwy te nie mogą zawierać spacji oraz polskich znaków.
+				</SectionText>
+
+				<SectionText>
+					<FontAwesomeIcon
+                    	icon={ faTimes }
+                    	size="1x"
+                    	color="#d66"
+                    /> 
+					 &nbsp;szort_Piękny dzień.xhtml 
+				</SectionText>
+
+				<SectionText>
+					<FontAwesomeIcon
+                    	icon={ faCheck }
+                    	size="1x"
+                    	color="#0b0"
+                    />
+					&nbsp;szort_Piekny_dzien.xhtml
+				</SectionText>
+
+				<SectionInfo>
+					Import tekstów źródłowych do Calibre
 				</SectionInfo>
 
 				<SectionText>
@@ -112,50 +154,7 @@ class EPub extends React.Component {
 
 				<SectionText>Replace (dla tekstów do sekcji	Subiektywnie):
 					<SectionCode>{`<p class="review">`}\1\2{`</p>`}</SectionCode>
-				</SectionText>
-				
-				<SectionInfo>
-					Nazwy plików HTML
-				</SectionInfo>
-
-				<SectionText>	
-					Nazwy plików html do poszczególnych działów rozpoczynamy prefixem według klucza:
-                    <ul>
-                    	<li>"szort_" - Szortownia</li>
-						<li>"stu_" - Stusłówka</li>
-						<li>"rym_" - Rymowisko</li>
-						<li>"zagr_" - Zagraniczniak</li>
-						<li>"pub_" - Publicystyka</li>
-						<li>"wywiad_" - Wywiad</li>
-						<li>"s_" - Subiektywnie</li>
-						<li>"komiks_" - pliki do komiksu</li>
-						<li>"reklama_" - reklama</li>
-						<li>"patronat_" - reklama Partonat</li>
-					</ul>
-				</SectionText>
-
-				<SectionText>
-					Nazwy plików html nie mogą zawierać spacji oraz polskich znaków.
-				</SectionText>
-
-				<SectionText>
-					<FontAwesomeIcon
-                    	icon={ faTimes }
-                    	size="1x"
-                    	color="#d66"
-                    /> 
-					 &nbsp;patronat_Skafander i melonik.xhtml 
-				</SectionText>
-
-				<SectionText>
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#0b0"
-                    />
-					&nbsp;patronat_Skafander_i_melonik.xhtml
-				</SectionText>
-			
+				</SectionText>	
 
 				<SectionInfo>
 					Stylowanie plików HTML do działów Szortownia, Stusłówka, Rymowisko, Wywiad.
@@ -254,7 +253,7 @@ class EPub extends React.Component {
 				</SectionText>
 
 				<SectionSubtitle>
-					Import grafik w formacie PNG i ich ostylowanie w kodzie HTML
+					Pliki graficzne
 				</SectionSubtitle>
 
 				<SectionInfo>
@@ -289,7 +288,7 @@ class EPub extends React.Component {
 				</SectionInfo>
 
 				<SectionText>
-					Nazwy plików png nie mogą zawierać spacji oraz polskich znaków.
+					Dla plików graficznych stosujemy te same zasady nazewnictwa, jak w przypadku plików HTML.
 				</SectionText>
 
 
