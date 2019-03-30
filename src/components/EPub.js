@@ -6,6 +6,7 @@ import {
     SectionSubtitle,
     SectionInfo,
     SectionText,
+    SectionTextWithCheck,
     SectionCode,
     SectionFullWidthImage,
     SectionDownloadButton
@@ -45,13 +46,8 @@ class EPub extends React.Component {
 				Aktualizacja pliku makiety
 				</SectionSubtitle>
 
-				<SectionText>
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Pobierz plik makiety.
-
+				<SectionTextWithCheck>
+					Pobierz plik makiety.
 					<SectionDownloadButton
             	    	 href="download/makieta.epub"
             	    	 download="makieta_Szortal na wynos (nr 64) październik 2018"
@@ -62,23 +58,15 @@ class EPub extends React.Component {
                         	color="#777777"
                         /> 
             	    </SectionDownloadButton>
-				</SectionText>
+				</SectionTextWithCheck>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Zaktualizuj metadane pliku: numer wydania, nazwę miesiąca oraz rok.
-				</SectionText>
+				<SectionTextWithCheck>	
+					Zaktualizuj metadane pliku: numer wydania, nazwę miesiąca oraz rok.
+				</SectionTextWithCheck>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Zaktualizuj stronę redakcyjną.
-				</SectionText>
+				<SectionTextWithCheck>	
+					Zaktualizuj stronę redakcyjną.
+				</SectionTextWithCheck>
 				
 				<SectionSubtitle>
 					Pliki HTML
@@ -130,20 +118,13 @@ class EPub extends React.Component {
 					Import tekstów źródłowych do Calibre
 				</SectionInfo>
 
-				<SectionText>
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Dodaj nowy dokument *.html w Calibre. Jednocześnie zaznacz automatyczne załączanie styli.
-				</SectionText>
-				<SectionText>
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Tekst źródłowy wklej pomiędzy tagami body. Następnie otaguj całość przy użyciu komendy
-				Find/Replace. Sprawdź opcje podmiany (Mode: Regex; Current File; Wrap).</SectionText>
+				<SectionTextWithCheck>
+					Dodaj nowy dokument *.html w Calibre. Jednocześnie zaznacz automatyczne załączanie styli.
+				</SectionTextWithCheck>
+				<SectionTextWithCheck>
+					Tekst źródłowy wklej pomiędzy tagami body. Następnie otaguj całość przy użyciu komendy
+					Find/Replace. Sprawdź opcje podmiany (Mode: Regex; Current File; Wrap).
+				</SectionTextWithCheck>
 				<SectionText>Find:
 					<SectionCode>^([\–\-„A-Ż].*)(\b[^\n]*)$</SectionCode>
 				</SectionText>
@@ -318,12 +299,8 @@ class EPub extends React.Component {
 
 
 				<SectionSubtitle>
-					Makietowanie wydania z korektą kodu
+					Makietowanie wydania
 				</SectionSubtitle>
-
-				<SectionInfo>
-					Makietowanie
-				</SectionInfo>
 
 				<SectionText>
 					Kolejność plików HTML w EPUBie odpowiada za wyświetlanie tekstów.
@@ -332,240 +309,131 @@ class EPub extends React.Component {
 			
 
 				<SectionInfo>
-					Sprawdzenie kodu w plikach HTML
+					Korekta kodu przed przygotowaniem spisu treści
 				</SectionInfo>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Sprawdź, czy w sekcji &lt;head&gt; każdego dokumentu zastosowane są tylko tagi &lt;title&gt; i &lt;link&gt;.
-				</SectionText>
+				<SectionTextWithCheck>	
+					Uruchom z Menu: TOOLS: Fix HTML (all files).
+				</SectionTextWithCheck>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Uruchom z Menu: TOOLS: Fix HTML - all files.
-				</SectionText>
+				<SectionTextWithCheck>	
+					Uruchom z Menu: TOOLS: Beautify all files.
+				</SectionTextWithCheck>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Uruchom z Menu: TOOLS: Beautify all files.
-				</SectionText>
+				<SectionTextWithCheck>	
+					Popraw nazwy plików PNG i HTML, jeśli posiadają spacje oraz polskie znaki.
+				</SectionTextWithCheck>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Popraw ścieżki linkowania plików png, jeśli się nie wyświetlają w oknie Preview.
-				</SectionText>
+				<SectionTextWithCheck>	
+					Popraw ścieżki linkowania plików PNG, jeśli się nie wyświetlają w oknie Preview.
+				</SectionTextWithCheck>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Sprawdź czy nazwy plików PNG nie posiadają spacji oraz polskich znaków.
-				</SectionText>
+				<SectionTextWithCheck>	
+					Sprawdź czy ilustracje do tekstów znajdują się w tym samym pliku co tekst.
+				</SectionTextWithCheck>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Sprawdź na stronach z reklamą i komiksem nazwę klasy (class="fullpage") w tagu div
-.				</SectionText>
-
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Sprawdź czy ilustracje do tekstów znajdują się w tym samym pliku co tekst.
-				</SectionText>
-
-				<SectionText>	
-					<FontAwesomeIcon
-                      icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Sprawdź w tekstach z ilustracją nazwę klasy dla kontenera div ilustracji (class="imagetext")
+				<SectionTextWithCheck>	
+					Sprawdź w tekstach z ilustracją nazwę klasy dla kontenera div ilustracji (class="imagetext")
                     i uzupełnij autora ilustracji oraz uzupełnij nazwę klasy dla tagu p (class="author-photo").
-				</SectionText>
+				</SectionTextWithCheck>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Sprawdź kod okładek do recenzji.
-				</SectionText>
+				<SectionTextWithCheck>	
+					Sprawdź na stronach z reklamą, patronatem i komiksem nazwę klasy (class="fullpage") w tagu div
+.				</SectionTextWithCheck>
 			
 
-				<SectionSubtitle>
+				<SectionInfo>
 					Przygotowanie spisu treści
-				</SectionSubtitle>
+				</SectionInfo>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Jeśli w dokumencie znajduje się jakiś spis treści to go usuń. 
-				</SectionText>
+				<SectionTextWithCheck>	
+					Jeśli w dokumencie znajduje się jakiś spis treści to go usuń. 
+				</SectionTextWithCheck>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Uruchom z Menu: TOOLS > TABLE OF CONTENTS > Edit Table of Contents.
-				</SectionText>
+				<SectionTextWithCheck>	
+					Uruchom z Menu: TOOLS > TABLE OF CONTENTS > Edit Table of Contents.
+				</SectionTextWithCheck>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Wyczyść aktualny spis treści (po prawej stronie) a następnie uruchom: Generate TOC from all headings.
-				</SectionText>
+				<SectionTextWithCheck>	
+					Wyczyść aktualny spis treści (po prawej stronie) a następnie uruchom: Generate TOC from all headings.
+				</SectionTextWithCheck>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Przejdź na koniec spisu treści i dodaj pozycję (New entry below this entry). 
+				<SectionTextWithCheck>	
+					Przejdź na koniec spisu treści i dodaj pozycję (New entry below this entry). 
                     Z listy wybierz okładkę html komiksu. W okienku "Name of the TOC entry" wpisz "Komiks".
-				</SectionText>
+				</SectionTextWithCheck>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Uruchom z Menu: TOOLS > TABLE OF CONTENTS > Instert inline Table of Contents. 
-				</SectionText>
+				<SectionTextWithCheck>	
+					Uruchom z Menu: TOOLS > TABLE OF CONTENTS > Instert inline Table of Contents. 
+				</SectionTextWithCheck>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Przesuń w makiecie spis treści za stronę redakcyjną. 
-				</SectionText>
+				<SectionTextWithCheck>	
+					Przesuń w makiecie spis treści za stronę redakcyjną. 
+				</SectionTextWithCheck>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Sprawdź, czy spis treści działa, i czy jest kompletny. 
-				</SectionText>
+				<SectionTextWithCheck>	
+					Sprawdź, czy spis treści działa, i czy jest kompletny. 
+				</SectionTextWithCheck>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> W sekcji head spisu treści usuń całą definicję sytles i w to miejsce wstaw 
+				<SectionTextWithCheck>	
+					W sekcji head spisu treści usuń całą definicję sytles i w to miejsce wstaw 
 					<SectionCode>{`<link rel="stylesheet" href="OEBPS/stylesheet.css"/>`}</SectionCode>
-				</SectionText>
+				</SectionTextWithCheck>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Zamień linijkę z tytułem na 
+				<SectionTextWithCheck>	
+					Zamień linijkę z tytułem na 
 					<SectionCode>{`<h2 class="title">Treściospis</h2>`}</SectionCode>
-				</SectionText>
+				</SectionTextWithCheck>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> W oknie kodu spisu treści uruchom Find / Replace 
+				<SectionTextWithCheck>	
+					W oknie kodu spisu treści uruchom Find / Replace 
 					<SectionCode>{`Find: <li>`}</SectionCode>
 					<SectionCode>{`Replace <div class="sgc-toc-level-1">`}</SectionCode>
-				</SectionText>
+				</SectionTextWithCheck>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> W oknie kodu spisu treści uruchom Find / Replace 
+				<SectionTextWithCheck>	
+					W oknie kodu spisu treści uruchom Find / Replace 
 					<SectionCode>{`Find: </li>`}</SectionCode>
 					<SectionCode>{`Replace: </div>`}</SectionCode>
-				</SectionText>
+				</SectionTextWithCheck>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Usuń z kodu linie 
+				<SectionTextWithCheck>	
+					Usuń z kodu linie 
 					<SectionCode>{`<ul>`}</SectionCode>
 					<SectionCode>{`</ul>`}</SectionCode>
-				</SectionText>
+				</SectionTextWithCheck>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> w każdej linijce wpisz podwójną spację,
-                     a następnie imię i nazwisko autora tekstu
-                    pomiędzy tagami /a /div
+				<SectionTextWithCheck>	
+					w każdej linijce wpisz podwójną spację,a następnie imię i nazwisko
+					autora tekstu pomiędzy tagami /a /div
 					<SectionCode>{`</a>  Imię Nazwisko</div>`}</SectionCode> 
-				</SectionText>
+				</SectionTextWithCheck>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Sprawdź, czy spis treści działa, i czy jest kompletny. 
-				</SectionText>
+				<SectionTextWithCheck>	
+					Sprawdź, czy spis treści działa, i czy jest kompletny. 
+				</SectionTextWithCheck>
 
-				<SectionSubtitle>
+				<SectionInfo>
 					Przypisanie okładki
-				</SectionSubtitle>
+				</SectionInfo>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Zaimportuj plik okładki o nazwie podobnej do wzorca: 
-                    Szortal-na-wynos-nr60-czerwiec-2018.jpg (łączniki w nazwie).
-				</SectionText>
+				<SectionTextWithCheck>	
+					Zaimportuj plik okładki o nazwie podobnej do wzorca: 
+                    Szortal-na-wynos-nr60-czerwiec-2018.png (łączniki w nazwie).
+				</SectionTextWithCheck>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Osadź plik png okładki w pliku okładka.html
-				</SectionText>
+				<SectionTextWithCheck>	
+					Osadź plik png okładki w pliku okładka.html
+				</SectionTextWithCheck>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Zaznacz plik png okładki, kliknij na nim prawym (lub lewym)
-                    klawiszem myszy i wybierz opcję "Mark ... as cover image".
-				</SectionText>
+				<SectionTextWithCheck>	
+					Z oryginalnego pliku okładki utwórz kopię o nazwie cover.png. Zmniejsz wymiary tego pliku
+					tak, by wysokość wynosiła 500px. Następnie zaimportuj ten plik do wydania.
+				</SectionTextWithCheck>
+
+				<SectionTextWithCheck>	
+					Zaznacz plik cover.png  "Mark cover.png as cover image".
+				</SectionTextWithCheck>
 
 
 				<SectionSubtitle>
@@ -576,151 +444,87 @@ class EPub extends React.Component {
 				1. Pliki i struktura EPUBa.
 				</SectionInfo>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Metadane pliku EPUB.
-				</SectionText>
+				<SectionTextWithCheck>	
+					Metadane pliku EPUB.
+				</SectionTextWithCheck>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Nazwy plików *.html (*.xhtml) bez polskich znaków i spacji.
-				</SectionText>
+				<SectionTextWithCheck>	
+					Nazwy plików *.html (*.xhtml) bez polskich znaków i spacji.
+				</SectionTextWithCheck>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Nazwy plików *.jpg bez polskich znaków i spacji.
-				</SectionText>
+				<SectionTextWithCheck>	
+					Nazwy plików *.jpg bez polskich znaków i spacji.
+				</SectionTextWithCheck>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Spis treści - panel w Calibre.
-				</SectionText>
+				<SectionTextWithCheck>	
+					Spis treści - panel w Calibre.
+				</SectionTextWithCheck>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Sekcja "title" i "head" każdego pliku.
-				</SectionText>
+				<SectionTextWithCheck>	
+					Sekcja "title" i "head" każdego pliku.
+				</SectionTextWithCheck>
 
 				<SectionInfo>
 				2. Style tekstowe
 				</SectionInfo>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Wywiad: Imię i nazwisko bohatera wywiadu jako tytuł.
-				</SectionText> 
+				<SectionTextWithCheck>	
+					Wywiad: Imię i nazwisko bohatera wywiadu jako tytuł.
+				</SectionTextWithCheck> 
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Przypisy: spacja po gwiazdkach na początku linijki.
-				</SectionText> 
+				<SectionTextWithCheck>	
+					Przypisy: spacja po gwiazdkach na początku linijki.
+				</SectionTextWithCheck> 
 
 				<SectionInfo>
 				3. Strona wizualna
 				</SectionInfo>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Formatowanie tekstu
-				</SectionText> 
+				<SectionTextWithCheck>	
+					Formatowanie tekstu
+				</SectionTextWithCheck> 
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Wyświetlanie grafiki (podpisy do ilustracji)
-				</SectionText> 
+				<SectionTextWithCheck>	
+					Wyświetlanie grafiki (podpisy do ilustracji)
+				</SectionTextWithCheck> 
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Linki.
-				</SectionText> 
+				<SectionTextWithCheck>	
+					Linki.
+				</SectionTextWithCheck> 
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Spis treści na stronie ze spisem i w panelu spisu treści.
-				</SectionText> 
+				<SectionTextWithCheck>	
+					Spis treści na stronie ze spisem i w panelu spisu treści.
+				</SectionTextWithCheck> 
 
 
 				<SectionSubtitle>
 					Kowersja wydania z formatu EPUB do MOBI 
 				</SectionSubtitle>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Plik EPUB w wersji "gotowy do wydania na stronie www" dodaj do Calibre.
-				</SectionText>
+				<SectionTextWithCheck>	
+					Plik EPUB w wersji "gotowy do wydania na stronie www" dodaj do Calibre.
+				</SectionTextWithCheck>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Zaznacz na liście książek w Calibre tę, którą chcesz konwertować,
-                    	 a następnie z menu wybierz "Konwertuj książkę".
-				</SectionText>
+				<SectionTextWithCheck>	
+					Zaznacz na liście książek w Calibre tę, którą chcesz konwertować,
+                   	a następnie z menu wybierz "Konwertuj książkę".
+				</SectionTextWithCheck>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Otworzy się okno dialogowe, w którym po lewej stronie na górze znajduje się
-                    	 rozwijalna lista z formatami wyjściowymi. Wybierz format "MOBI". Zatwierdź wybór ("OK").
-				</SectionText>
+				<SectionTextWithCheck>	
+					Otworzy się okno dialogowe, w którym po lewej stronie na górze znajduje się
+                    rozwijalna lista z formatami wyjściowymi. Wybierz format "MOBI". Zatwierdź wybór ("OK").
+				</SectionTextWithCheck>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> Po zakończeniu konwersji pozycja na liście książek jest już dostępna
+				<SectionTextWithCheck>	
+					Po zakończeniu konwersji pozycja na liście książek jest już dostępna
                     w dwóch formatach. Zapisz teraz na dysku tę książkę i następnię przejdź do tego katalogu.
-				</SectionText>
+				</SectionTextWithCheck>
 
-				<SectionText>	
-					<FontAwesomeIcon
-                    	icon={ faCheck }
-                    	size="1x"
-                    	color="#d66"
-                    /> W katalogu znajduje się kilka plików. Skasuj je pozostawiając tylko plik MOBI.
-                    	Po zmianie nazwy tego pliku na taką samą jaką ma EPUB (poza rozszerzeniem MOBI) plik 
-                    	jest "gotowy do wydania na stronie www". 
-				</SectionText>
+				<SectionTextWithCheck>	
+					W katalogu znajduje się kilka plików. Skasuj je pozostawiając tylko plik MOBI.
+                    Po zmianie nazwy tego pliku na taką samą jaką ma EPUB (poza rozszerzeniem MOBI) plik 
+                    jest "gotowy do wydania na stronie www". 
+				</SectionTextWithCheck>
 
 			</SectionContainer>
 

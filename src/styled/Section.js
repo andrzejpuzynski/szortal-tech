@@ -40,6 +40,21 @@ export const SectionText = styled.p`
 	margin-bottom: 30px;
 `
 
+export const SectionTextWithCheck = styled.p`
+	font-size: 21px;
+	line-height: 32px;
+	margin-bottom: 30px;
+	margin-left: 30px;
+	::before {
+		font-family: "Font Awesome 5 Free";
+		font-weight: 900;
+		content: "\f00c";
+		color: #d66;
+		margin-left: -30px;
+		margin-right: 9px;
+	}
+`
+
 export const SectionCode = styled.pre`
 	display: inline-block;
 	white-spaces: normal;
