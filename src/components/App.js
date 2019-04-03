@@ -16,13 +16,21 @@ import Szortal from './Szortal';
 import logo from '../img/Szortal_logo_vectors_RGB.svg';
 
 import {
-    AppContainer,
+  AppContainer,
 	HeaderContainer,
 	HeaderLogoContainer,
 	HeaderLogo,
 	HeaderLinks,
     HeaderButton
 } from '../styled/App';
+
+import { injectGlobal } from "styled-components";
+injectGlobal`
+  body {
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+    font-family: 'Open+Sans', sans-serif;
+  }
+`
  
 class App extends Component {
     constructor(props) {

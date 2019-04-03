@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Workflow from './Workflow';
+
 import {
     SectionContainer,
     SectionTitle,
@@ -38,6 +40,8 @@ class EPub extends React.Component {
 				<SectionInfo>
 				Workflow "Szortal Na Wynos" (aktualizacja 2019.03.26).
 				</SectionInfo>
+
+				<Workflow/>
 
 				<SectionFullWidthImage src={workflow} alt="workflow" />
 				</SectionText>
