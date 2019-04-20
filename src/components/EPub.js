@@ -17,34 +17,13 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
 
-import workflow from '../img/SzortalNaWynos_Workflow_20190326.svg';
-
 class EPub extends React.Component {
 	render() {
 		return (
 			<SectionContainer>
 				<SectionTitle>„Szortal na&nbsp;Wynos” w&nbsp;formacie EPUB</SectionTitle>
-				<SectionText>EPub „Szortal na&nbsp;Wynos” składany jest w edytorze Calibre.
-				Proces przygotowania pliku obejmuje następujące etapy:
-				<ul>
-					<li>aktualizacja pliku makiety</li>
-					<li>import źródłowych tekstów do formatu HTML i ich ostylowanie</li>
-					<li>importu grafik w formacie PNG i ich ostylowanie w kodzie HTML</li>
-					<li>makietowanie wydania w Calibre</li>
-					<li>stworzenie spisu treści</li>
-					<li>przypisanie okładki</li>
-					<li>sprawdzanie pliku EPUB (checklist)</li>
-					<li>konwersja formatu EPUB do formatu MOBI</li>
-				</ul>
-				
-				<SectionInfo>
-				Workflow "Szortal Na Wynos" (aktualizacja 2019.03.26).
-				</SectionInfo>
 
 				<Workflow/>
-
-				<SectionFullWidthImage src={workflow} alt="workflow" />
-				</SectionText>
 
 				<SectionSubtitle>
 				Aktualizacja pliku makiety

@@ -91,6 +91,14 @@ export const WorkflowStepArrow = styled.div`
 	`}
 `
 
+export const WorkflowInfo = styled.div`
+	grid-area: ${props => props.area} / span 3;
+	color: #888;
+	font-size: 1rem;
+	line-height: 1.4rem;
+	align-self: start;
+`
+
 export const WorkflowLegend = styled.div`
 	grid-area: ${props => props.area};
 	font-size: 1rem;

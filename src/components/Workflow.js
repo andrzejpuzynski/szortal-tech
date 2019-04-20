@@ -4,6 +4,7 @@ import {
     WorkflowContainer,
     WorkflowStep,
     WorkflowStepArrow,
+    WorkflowInfo,
     WorkflowLegend,
     WorkflowLegendItem,
     WorkflowWwwItem,
@@ -116,6 +117,12 @@ class Workflow extends React.Component {
 					> export PNG i XML
 					<WorkflowStepArrow top dtp/>
 				</WorkflowStep>
+
+				<WorkflowInfo area="ac">
+					Schemat ilustruje proces składu miesięcznika "Szortal na Wynos".
+					 Z materiałów źródłowych powstaje wydanie formacie EPUB (MOBI). 
+					 Wydanie w formacie PDF jest przygotowane po konwersji kodu EPUB do XML.
+				</WorkflowInfo>
 
 				<WorkflowWwwItem area="bc">
 				</WorkflowWwwItem>

@@ -47,7 +47,7 @@ export const SectionTextWithCheck = styled.p`
 	margin-left: 30px;
 	::before {
 		font-family: "Font Awesome 5 Free";
-		font-weight: 900;
+		font-weight: 700;
 		content: "\f00c";
 		color: #d66;
 		margin-left: -30px;
