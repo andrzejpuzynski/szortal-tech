@@ -1,4 +1,5 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+import { css } from 'styled-components';
 
 export const WorkflowContainer = styled.div`
 	display: grid;
@@ -24,7 +25,7 @@ export const WorkflowContainer = styled.div`
 
 export const WorkflowStep = styled.div`
 	position: relative;
-	// padding: 16px;
+	padding: 12px;
 	font-size: 1rem;
 	font-weight: 300;
 	font-family: 'Open Sans', sans-serif;
@@ -32,14 +33,18 @@ export const WorkflowStep = styled.div`
 	text-align: center;
 	border-width: 2px;
 	border-style: solid;
-	border-color: ${props => props.processplace === "editor" ? "#f44" : props.processplace === "dtp" ? "#0cc" : "#0af"};
+	border-color: ${props =>
+		props.editor ? "#f44" :
+		props.dtp ? "#0cc" :
+		"#0af"};
 	border-radius: 8px;
 	grid-area: ${props => props.area};
 	color: white;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	z-index: 100;
+	z-index: 2;
+
 	::after {
 		content: "${props => props.application}";
 		position: absolute;
@@ -50,4 +55,46 @@ export const WorkflowStep = styled.div`
 		line-height: 1rem;
 		color: #888;
 	}
+
+	:hover {
+		cursor: pointer;
+		box-shadow: 0px 0px 20px ${props => props.editor ? "#f44" :
+									props.dtp ? "#0cc" :
+									"#0af"};
+		transform: scale(1.01);
+	}
 `
+
+export const WorkflowStepArrow = styled.div`
+	position: absolute;
+	border: 12px solid transparent;
+	${props => props.top && `
+		border-bottom: 20px solid ${props.editor ? "#f44" :
+									props.dtp ? "#0cc" :
+									"#0af"};
+		top: 0;
+		transform: translate(0, -100%);
+	`}
+	${props => props.right && `
+		border-left: 20px solid ${props.editor ? "#f44" :
+									props.dtp ? "#0cc" :
+									"#0af"};
+		right: 0;
+		transform: translate(100%, 0);
+	`}
+		${props => props.bottom && `
+		border-top: 20px solid ${props.editor ? "#f44" :
+									props.dtp ? "#0cc" :
+									"#0af"};
+		bottom: 0;
+		transform: translate(0, 100%);
+	`}
+`
+
+
+
+
+
+
+
+
