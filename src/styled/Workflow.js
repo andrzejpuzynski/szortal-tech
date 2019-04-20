@@ -11,10 +11,10 @@ export const WorkflowContainer = styled.div`
 		"aa ab ac ad ae"
 		"ba bb bc bd be"
 		"ca cb cc cd ce"
-		"da db dc dd de"
-		"ea eb ec ed ee"
-		"fa fb fc fd fe"
-		"ga gb gc gd ge";
+		"legend db dc dd de"
+		"legend eb ec ed ee"
+		"legend fb fc fd fe"
+		"legend gb gc gd ge";
 	justify-content: center;
 
 	//to remove
@@ -89,6 +89,71 @@ export const WorkflowStepArrow = styled.div`
 		bottom: 0;
 		transform: translate(0, 100%);
 	`}
+`
+
+export const WorkflowLegend = styled.div`
+	grid-area: ${props => props.area};
+	font-size: 1rem;
+	line-height: 1rem;
+	align-self: end;
+	color: #888;
+`
+
+export const WorkflowLegendItem = styled.p`
+	line-height: .5rem;
+	margin-bottom: 3px;
+
+	::before {
+		content: "";
+		display: inline-block;
+		width: 10px;
+		height: 10px;
+		margin-right: 5px;
+		border-radius: 20%;
+		background-color: ${props =>
+							props.editor ? "#f44" :
+							props.dtp ? "#0cc" :
+							"#0af"};
+	}
+`
+
+export const WorkflowWwwItem = styled.div`
+ 	grid-column: 3 / span 3;
+ 	grid-row: 2 / span 2;
+ 	position: relative;
+	border: 2px solid #888;
+	border-radius: 8px;
+	background-color: #333;
+
+	::before {
+		content: "http://www.szortal.com/nawynos";
+		position: absolute;
+  		left: 5px;
+  		right: 5px;
+  		height: 1rem;
+  		padding: 4px 10px;
+  		top: 8px;
+  		text-align: left;
+  		font-size: 1rem;
+  		line-height: 1rem;
+  		color: #000;
+  		background-color: #fff;
+  		border-radius: 10px;
+	}
+`
+
+export const WorkflowWwwIcon = styled.div`
+	grid-area: ${props => props.area};
+	background-image: url(${props =>
+		props.epub ? "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto/gigs/99337071/original/51afaa5b6b8b3582d66941c1783b8752c252f5d9/convert-your-word-document-to-epub.png" :
+		props.mobi ? "https://i2.wp.com/bezwarunkowawartosc.pl/wp-content/uploads/2018/06/mobi_icon.png?fit=300%2C388&ssl=1" :
+		"https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PDF_file_icon.svg/833px-PDF_file_icon.svg.png"
+	});
+	background-size: contain;
+  	background-repeat: no-repeat;
+  	background-position: center;
+	z-index: 10;
+	transform: translateY(-20px);
 `
 
 

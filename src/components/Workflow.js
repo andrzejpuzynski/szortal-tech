@@ -4,6 +4,10 @@ import {
     WorkflowContainer,
     WorkflowStep,
     WorkflowStepArrow,
+    WorkflowLegend,
+    WorkflowLegendItem,
+    WorkflowWwwItem,
+    WorkflowWwwIcon,
 } from '../styled/Workflow';
 
 class Workflow extends React.Component {
@@ -112,6 +116,20 @@ class Workflow extends React.Component {
 					> export PNG i XML
 					<WorkflowStepArrow top dtp/>
 				</WorkflowStep>
+
+				<WorkflowWwwItem area="bc">
+				</WorkflowWwwItem>
+
+				<WorkflowWwwIcon area="cc" epub/>
+				<WorkflowWwwIcon area="cd" mobi/>
+				<WorkflowWwwIcon area="ce" pdf/>
+
+				<WorkflowLegend area="legend">
+					<h4>LEGENDA</h4>
+					<WorkflowLegendItem editor>Redakcja</WorkflowLegendItem>
+					<WorkflowLegendItem dtp>DTP</WorkflowLegendItem>
+					<WorkflowLegendItem>wymiana plików</WorkflowLegendItem>
+				</WorkflowLegend>
 
 			</WorkflowContainer>
 		)
