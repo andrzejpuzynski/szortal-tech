@@ -40,6 +40,9 @@ class App extends Component {
 
         this.state = {
             active: this.initialHistory,
+            showInfoBox: {
+              workflowConvertToMobi: false,
+            }
         };
         this.handleClick = this.handleClick.bind(this);
     }
@@ -61,12 +64,19 @@ class App extends Component {
       });
     }
 
+    toggleInfoBox = step => {
+      const showInfoBox = { ...this.state.showInfoBox };
+      showInfoBox[step] = !showInfoBox[step];
+      this.setState({showInfoBox});
+      console.log("Done")
+    }
+
     render() {
     
     return (
         <AppContainer>
     	   <Router history={this.history}>
-    	       <div>
+    	       <React.Fragment>
      	  	       <HeaderContainer>
      	  	       	<HeaderLogoContainer>
      	  	       		<NavLink to="/" onClick={this.handleClick}>
@@ -102,13 +112,12 @@ class App extends Component {
      	  	       </HeaderContainer>
   
      	  	    <Route exact path="/" component={Intro} />
-                <Route path="/adds" component={Adds} />
-                <Route path="/graphics" component={Graphics} />
-                <Route path="/epub" component={EPub} />
-                <Route path="/pdf" component={Pdf} />
-                <Route path="/szortal" component={Szortal} />
+              <Route path="/adds" component={Adds} />
+              <Route path="/graphics" component={Graphics} />
+              <Route path="/epub" render={() => (<EPub showInfoBox={this.state.showInfoBox} toggleInfoBox={this.toggleInfoBox}/>)} />
+              <Route path="/pdf" component={Pdf} />
   
-     	      </div>
+     	      </React.Fragment>
      	  </Router>
      	</AppContainer>
     );

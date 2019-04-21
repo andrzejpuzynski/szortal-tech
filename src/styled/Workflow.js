@@ -56,13 +56,15 @@ export const WorkflowStep = styled.div`
 		color: #888;
 	}
 
-	:hover {
-		cursor: pointer;
-		box-shadow: 0px 0px 20px ${props => props.editor ? "#f44" :
-									props.dtp ? "#0cc" :
-									"#0af"};
-		transform: scale(1.01);
-	}
+	${props => props.onClick && css`
+		:hover {
+			cursor: pointer;
+			box-shadow: 0px 0px 20px ${props => props.editor ? "#f44" :
+										props.dtp ? "#0cc" :
+										"#0af"};
+			transform: scale(1.01);
+		}
+	`}
 `
 
 export const WorkflowStepArrow = styled.div`
@@ -160,7 +162,7 @@ export const WorkflowWwwIcon = styled.div`
 	background-size: contain;
   	background-repeat: no-repeat;
   	background-position: center;
-	z-index: 10;
+	z-index: 2;
 	transform: translateY(-20px);
 `
 

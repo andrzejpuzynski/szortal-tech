@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Workflow from './Workflow';
+import WorkflowConvertToMobi from './WorkflowConvertToMobi';
 
 import {
     SectionContainer,
@@ -23,7 +24,12 @@ class EPub extends React.Component {
 			<SectionContainer>
 				<SectionTitle>„Szortal na&nbsp;Wynos” w&nbsp;formacie EPUB</SectionTitle>
 
-				<Workflow/>
+				<Workflow toggleInfoBox={this.props.toggleInfoBox}/>
+
+				<WorkflowConvertToMobi
+					show={this.props.showInfoBox.workflowConvertToMobi}
+					toggleInfoBox={this.props.toggleInfoBox}
+				/>
 
 				<SectionSubtitle>
 				Aktualizacja pliku makiety
@@ -478,36 +484,6 @@ class EPub extends React.Component {
 				<SectionTextWithCheck>	
 					Spis treści na stronie ze spisem i w panelu spisu treści.
 				</SectionTextWithCheck> 
-
-
-				<SectionSubtitle>
-					Kowersja wydania z formatu EPUB do MOBI 
-				</SectionSubtitle>
-
-				<SectionTextWithCheck>	
-					Plik EPUB w wersji "gotowy do wydania na stronie www" dodaj do Calibre.
-				</SectionTextWithCheck>
-
-				<SectionTextWithCheck>	
-					Zaznacz na liście książek w Calibre tę, którą chcesz konwertować,
-                   	a następnie z menu wybierz "Konwertuj książkę".
-				</SectionTextWithCheck>
-
-				<SectionTextWithCheck>	
-					Otworzy się okno dialogowe, w którym po lewej stronie na górze znajduje się
-                    rozwijalna lista z formatami wyjściowymi. Wybierz format "MOBI". Zatwierdź wybór ("OK").
-				</SectionTextWithCheck>
-
-				<SectionTextWithCheck>	
-					Po zakończeniu konwersji pozycja na liście książek jest już dostępna
-                    w dwóch formatach. Zapisz teraz na dysku tę książkę i następnię przejdź do tego katalogu.
-				</SectionTextWithCheck>
-
-				<SectionTextWithCheck>	
-					W katalogu znajduje się kilka plików. Skasuj je pozostawiając tylko plik MOBI.
-                    Po zmianie nazwy tego pliku na taką samą jaką ma EPUB (poza rozszerzeniem MOBI) plik 
-                    jest "gotowy do wydania na stronie www". 
-				</SectionTextWithCheck>
 
 			</SectionContainer>
 

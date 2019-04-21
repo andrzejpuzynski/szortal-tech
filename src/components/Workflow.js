@@ -12,6 +12,7 @@ import {
 } from '../styled/Workflow';
 
 class Workflow extends React.Component {
+
 	render() {
 		return (
 			<WorkflowContainer>
@@ -57,7 +58,7 @@ class Workflow extends React.Component {
 					<WorkflowStepArrow editor right/>
 				</WorkflowStep>
 
-				<WorkflowStep area="dd" editor application="Calibre"
+				<WorkflowStep area="dd" editor application="Calibre" onClick={() => this.props.toggleInfoBox("workflowConvertToMobi")}
 					> konwersja do MOBI
 					<WorkflowStepArrow editor top/>
 				</WorkflowStep>
