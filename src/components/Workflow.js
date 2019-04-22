@@ -47,7 +47,7 @@ class Workflow extends React.Component {
 					<WorkflowStepArrow editor bottom/>
 				</WorkflowStep>
 
-				<WorkflowStep area="db" editor application="Calibre"
+				<WorkflowStep area="db" editor application="Calibre" onClick={() => this.props.toggleInfoBox("workflowFormatting")}
 					> makietowanie
 					<WorkflowStepArrow editor bottom/>
 				</WorkflowStep>

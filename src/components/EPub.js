@@ -1,9 +1,10 @@
 import React from 'react';
 
 import Workflow from './Workflow';
-import WorkflowConvertToMobi from './Workflow/WorkflowConvertToMobi';
 import WorkflowMockupUpdate from './Workflow/WorkflowMockupUpdate';
+import WorkflowFormatting from './Workflow/WorkflowFormatting';
 import WorkflowDtpChecklist from './Workflow/WorkflowDtpChecklist';
+import WorkflowConvertToMobi from './Workflow/WorkflowConvertToMobi';
 
 import {
     SectionContainer,
@@ -33,13 +34,18 @@ class EPub extends React.Component {
 					toggleInfoBox={this.props.toggleInfoBox}
 				/>
 
-				<WorkflowConvertToMobi
-					show={this.props.showInfoBox.workflowConvertToMobi}
+				<WorkflowFormatting
+					show={this.props.showInfoBox.workflowFormatting}
 					toggleInfoBox={this.props.toggleInfoBox}
 				/>
 
 				<WorkflowDtpChecklist
 					show={this.props.showInfoBox.workflowDtpChecklist}
+					toggleInfoBox={this.props.toggleInfoBox}
+				/>
+
+				<WorkflowConvertToMobi
+					show={this.props.showInfoBox.workflowConvertToMobi}
 					toggleInfoBox={this.props.toggleInfoBox}
 				/>
 				
@@ -271,144 +277,6 @@ class EPub extends React.Component {
 					{`</p>`}</SectionCode>
 				</SectionText>
 
-
-
-				<SectionSubtitle>
-					Makietowanie wydania
-				</SectionSubtitle>
-
-				<SectionText>
-					Kolejność plików HTML w EPUBie odpowiada za wyświetlanie tekstów.
-					Makietowanie polega na ustawieniu plików HTML we właściwej kolejności.
-				</SectionText>
-			
-
-				<SectionInfo>
-					Korekta kodu przed przygotowaniem spisu treści
-				</SectionInfo>
-
-				<SectionTextWithCheck>	
-					Uruchom z Menu: TOOLS: Fix HTML (all files).
-				</SectionTextWithCheck>
-
-				<SectionTextWithCheck>	
-					Uruchom z Menu: TOOLS: Beautify all files.
-				</SectionTextWithCheck>
-
-				<SectionTextWithCheck>	
-					Popraw nazwy plików PNG i HTML, jeśli posiadają spacje oraz polskie znaki.
-				</SectionTextWithCheck>
-
-				<SectionTextWithCheck>	
-					Popraw ścieżki linkowania plików PNG, jeśli się nie wyświetlają w oknie Preview.
-				</SectionTextWithCheck>
-
-				<SectionTextWithCheck>	
-					Sprawdź czy ilustracje do tekstów znajdują się w tym samym pliku co tekst.
-				</SectionTextWithCheck>
-
-				<SectionTextWithCheck>	
-					Sprawdź w tekstach z ilustracją nazwę klasy dla kontenera div ilustracji (class="imagetext")
-                    i uzupełnij autora ilustracji oraz uzupełnij nazwę klasy dla tagu p (class="author-photo").
-				</SectionTextWithCheck>
-
-				<SectionTextWithCheck>	
-					Sprawdź na stronach z reklamą, patronatem i komiksem nazwę klasy (class="fullpage") w tagu div
-.				</SectionTextWithCheck>
-			
-
-				<SectionInfo>
-					Przygotowanie spisu treści
-				</SectionInfo>
-
-				<SectionTextWithCheck>	
-					Jeśli w dokumencie znajduje się jakiś spis treści to go usuń. 
-				</SectionTextWithCheck>
-
-				<SectionTextWithCheck>	
-					Uruchom z Menu: TOOLS > TABLE OF CONTENTS > Edit Table of Contents.
-				</SectionTextWithCheck>
-
-				<SectionTextWithCheck>	
-					Wyczyść aktualny spis treści (po prawej stronie) a następnie uruchom: Generate TOC from all headings.
-				</SectionTextWithCheck>
-
-				<SectionTextWithCheck>	
-					Przejdź na koniec spisu treści i dodaj pozycję (New entry below this entry). 
-                    Z listy wybierz okładkę html komiksu. W okienku "Name of the TOC entry" wpisz "Komiks".
-				</SectionTextWithCheck>
-
-				<SectionTextWithCheck>	
-					Uruchom z Menu: TOOLS > TABLE OF CONTENTS > Instert inline Table of Contents. 
-				</SectionTextWithCheck>
-
-				<SectionTextWithCheck>	
-					Przesuń w makiecie spis treści za stronę redakcyjną. 
-				</SectionTextWithCheck>
-
-				<SectionTextWithCheck>	
-					Sprawdź, czy spis treści działa, i czy jest kompletny. 
-				</SectionTextWithCheck>
-
-				<SectionTextWithCheck>	
-					W sekcji head spisu treści usuń całą definicję sytles i w to miejsce wstaw 
-					<SectionCode>{`<link rel="stylesheet" href="OEBPS/stylesheet.css"/>`}</SectionCode>
-				</SectionTextWithCheck>
-
-				<SectionTextWithCheck>	
-					Zamień linijkę z tytułem na 
-					<SectionCode>{`<h2 class="title">Treściospis</h2>`}</SectionCode>
-				</SectionTextWithCheck>
-
-				<SectionTextWithCheck>	
-					W oknie kodu spisu treści uruchom Find / Replace 
-					<SectionCode>{`Find: <li>`}</SectionCode>
-					<SectionCode>{`Replace <div class="sgc-toc-level-1">`}</SectionCode>
-				</SectionTextWithCheck>
-
-				<SectionTextWithCheck>	
-					W oknie kodu spisu treści uruchom Find / Replace 
-					<SectionCode>{`Find: </li>`}</SectionCode>
-					<SectionCode>{`Replace: </div>`}</SectionCode>
-				</SectionTextWithCheck>
-
-				<SectionTextWithCheck>	
-					Usuń z kodu linie 
-					<SectionCode>{`<ul>`}</SectionCode>
-					<SectionCode>{`</ul>`}</SectionCode>
-				</SectionTextWithCheck>
-
-				<SectionTextWithCheck>	
-					w każdej linijce wpisz podwójną spację,a następnie imię i nazwisko
-					autora tekstu pomiędzy tagami /a /div
-					<SectionCode>{`</a>  Imię Nazwisko</div>`}</SectionCode> 
-				</SectionTextWithCheck>
-
-				<SectionTextWithCheck>	
-					Sprawdź, czy spis treści działa, i czy jest kompletny. 
-				</SectionTextWithCheck>
-
-				<SectionInfo>
-					Przypisanie okładki
-				</SectionInfo>
-
-				<SectionTextWithCheck>	
-					Zaimportuj plik okładki o nazwie podobnej do wzorca: 
-                    Szortal-na-wynos-nr60-czerwiec-2018.png (łączniki w nazwie).
-				</SectionTextWithCheck>
-
-				<SectionTextWithCheck>	
-					Osadź plik png okładki w pliku okładka.html
-				</SectionTextWithCheck>
-
-				<SectionTextWithCheck>	
-					Z oryginalnego pliku okładki utwórz kopię o nazwie cover.png. Zmniejsz wymiary tego pliku
-					tak, by wysokość wynosiła 500px. Następnie zaimportuj ten plik do wydania.
-				</SectionTextWithCheck>
-
-				<SectionTextWithCheck>	
-					Zaznacz plik cover.png  "Mark cover.png as cover image".
-				</SectionTextWithCheck>
 
 			</SectionContainer>
 

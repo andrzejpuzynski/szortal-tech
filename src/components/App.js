@@ -41,9 +41,10 @@ class App extends Component {
         this.state = {
             active: this.initialHistory,
             showInfoBox: {
-              workflowConvertToMobi: false,
               workflowMockupUpdate: false,
+              workflowFormatting: false,
               workflowDtpChecklist: false,
+              workflowConvertToMobi: false,
             }
         };
         this.handleClick = this.handleClick.bind(this);
