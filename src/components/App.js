@@ -43,6 +43,7 @@ class App extends Component {
             showInfoBox: {
               workflowConvertToMobi: false,
               workflowMockupUpdate: false,
+              workflowDtpChecklist: false,
             }
         };
         this.handleClick = this.handleClick.bind(this);

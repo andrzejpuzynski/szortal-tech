@@ -98,7 +98,7 @@ class Workflow extends React.Component {
 					<WorkflowStepArrow top dtp/>
 				</WorkflowStep>
 
-				<WorkflowStep area="gb" dtp application="Calibre"
+				<WorkflowStep area="gb" dtp application="Calibre" onClick={() => this.props.toggleInfoBox("workflowDtpChecklist")}
 					> sprawdzenie (checklist)
 					<WorkflowStepArrow right dtp/>
 				</WorkflowStep>

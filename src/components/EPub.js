@@ -3,6 +3,7 @@ import React from 'react';
 import Workflow from './Workflow';
 import WorkflowConvertToMobi from './Workflow/WorkflowConvertToMobi';
 import WorkflowMockupUpdate from './Workflow/WorkflowMockupUpdate';
+import WorkflowDtpChecklist from './Workflow/WorkflowDtpChecklist';
 
 import {
     SectionContainer,
@@ -34,6 +35,11 @@ class EPub extends React.Component {
 
 				<WorkflowConvertToMobi
 					show={this.props.showInfoBox.workflowConvertToMobi}
+					toggleInfoBox={this.props.toggleInfoBox}
+				/>
+
+				<WorkflowDtpChecklist
+					show={this.props.showInfoBox.workflowDtpChecklist}
 					toggleInfoBox={this.props.toggleInfoBox}
 				/>
 				
@@ -403,67 +409,6 @@ class EPub extends React.Component {
 				<SectionTextWithCheck>	
 					Zaznacz plik cover.png  "Mark cover.png as cover image".
 				</SectionTextWithCheck>
-
-
-				<SectionSubtitle>
-					Sprawdzenie wydania (Checklist) 
-				</SectionSubtitle>
-
-				<SectionInfo>
-				1. Pliki i struktura EPUBa.
-				</SectionInfo>
-
-				<SectionTextWithCheck>	
-					Metadane pliku EPUB.
-				</SectionTextWithCheck>
-
-				<SectionTextWithCheck>	
-					Nazwy plików *.html (*.xhtml) bez polskich znaków i spacji.
-				</SectionTextWithCheck>
-
-				<SectionTextWithCheck>	
-					Nazwy plików *.jpg bez polskich znaków i spacji.
-				</SectionTextWithCheck>
-
-				<SectionTextWithCheck>	
-					Spis treści - panel w Calibre.
-				</SectionTextWithCheck>
-
-				<SectionTextWithCheck>	
-					Sekcja "title" i "head" każdego pliku.
-				</SectionTextWithCheck>
-
-				<SectionInfo>
-				2. Style tekstowe
-				</SectionInfo>
-
-				<SectionTextWithCheck>	
-					Wywiad: Imię i nazwisko bohatera wywiadu jako tytuł.
-				</SectionTextWithCheck> 
-
-				<SectionTextWithCheck>	
-					Przypisy: spacja po gwiazdkach na początku linijki.
-				</SectionTextWithCheck> 
-
-				<SectionInfo>
-				3. Strona wizualna
-				</SectionInfo>
-
-				<SectionTextWithCheck>	
-					Formatowanie tekstu
-				</SectionTextWithCheck> 
-
-				<SectionTextWithCheck>	
-					Wyświetlanie grafiki (podpisy do ilustracji)
-				</SectionTextWithCheck> 
-
-				<SectionTextWithCheck>	
-					Linki.
-				</SectionTextWithCheck> 
-
-				<SectionTextWithCheck>	
-					Spis treści na stronie ze spisem i w panelu spisu treści.
-				</SectionTextWithCheck> 
 
 			</SectionContainer>
 

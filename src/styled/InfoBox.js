@@ -32,7 +32,8 @@ export const InfoBoxContainer = styled.div`
 	position: fixed;
 	visibility: ${props => props.show ? "visible" : "hidden"};
 	top: 60px;
-	height: 100vh;
+	bottom: 0px;
+	max-height: 100%;
 	left: 0;
 	right: 0;
 	background-color: #fff;
@@ -40,7 +41,7 @@ export const InfoBoxContainer = styled.div`
 	color: #fff;
 	font-size: 2rem;
 	padding: 50px 30px;
-	overflow: inherit;
+	overflow-y: scroll;
 	display: grid;
 	grid-template-columns: minmax(200px, 800px);
 	justify-content: center;
