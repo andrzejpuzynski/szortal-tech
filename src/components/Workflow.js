@@ -22,8 +22,8 @@ class Workflow extends React.Component {
 					<WorkflowStepArrow editor right/>
 				</WorkflowStep>
 
-				<WorkflowStep area="ab" editor application="Calibre"
-					> aktualizacja metadanych
+				<WorkflowStep area="ab" editor application="Calibre" onClick={() => this.props.toggleInfoBox("workflowMockupUpdate")}
+					> aktualizacja makiety
 					<WorkflowStepArrow editor bottom/>
 				</WorkflowStep>
 

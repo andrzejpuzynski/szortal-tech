@@ -1,7 +1,8 @@
 import React from 'react';
 
 import Workflow from './Workflow';
-import WorkflowConvertToMobi from './WorkflowConvertToMobi';
+import WorkflowConvertToMobi from './Workflow/WorkflowConvertToMobi';
+import WorkflowMockupUpdate from './Workflow/WorkflowMockupUpdate';
 
 import {
     SectionContainer,
@@ -26,36 +27,15 @@ class EPub extends React.Component {
 
 				<Workflow toggleInfoBox={this.props.toggleInfoBox}/>
 
+				<WorkflowMockupUpdate
+					show={this.props.showInfoBox.workflowMockupUpdate}
+					toggleInfoBox={this.props.toggleInfoBox}
+				/>
+
 				<WorkflowConvertToMobi
 					show={this.props.showInfoBox.workflowConvertToMobi}
 					toggleInfoBox={this.props.toggleInfoBox}
 				/>
-
-				<SectionSubtitle>
-				Aktualizacja pliku makiety
-				</SectionSubtitle>
-
-				<SectionTextWithCheck>
-					Pobierz plik makiety.
-					<SectionDownloadButton
-            	    	 href="download/makieta.epub"
-            	    	 download="makieta_Szortal na wynos (nr 64) październik 2018"
-            	    >
-            	    	<FontAwesomeIcon
-                        	icon={ faDownload }
-                        	size="2x"
-                        	color="#777777"
-                        /> 
-            	    </SectionDownloadButton>
-				</SectionTextWithCheck>
-
-				<SectionTextWithCheck>	
-					Zaktualizuj metadane pliku: numer wydania, nazwę miesiąca oraz rok.
-				</SectionTextWithCheck>
-
-				<SectionTextWithCheck>	
-					Zaktualizuj stronę redakcyjną.
-				</SectionTextWithCheck>
 				
 				<SectionSubtitle>
 					Pliki HTML

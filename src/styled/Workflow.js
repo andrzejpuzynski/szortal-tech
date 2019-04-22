@@ -44,6 +44,7 @@ export const WorkflowStep = styled.div`
 	align-items: center;
 	justify-content: center;
 	z-index: 2;
+	background-color: #000;
 
 	::after {
 		content: "${props => props.application}";

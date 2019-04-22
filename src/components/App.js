@@ -21,7 +21,7 @@ import {
 	HeaderLogoContainer,
 	HeaderLogo,
 	HeaderLinks,
-    HeaderButton
+  HeaderButton
 } from '../styled/App';
 
 import { injectGlobal } from "styled-components";
@@ -42,6 +42,7 @@ class App extends Component {
             active: this.initialHistory,
             showInfoBox: {
               workflowConvertToMobi: false,
+              workflowMockupUpdate: false,
             }
         };
         this.handleClick = this.handleClick.bind(this);

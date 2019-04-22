@@ -5,7 +5,7 @@ import {
 	InfoBoxContainer,
 	InfoBoxTitle,
 	InfoBoxText,
-} from '../styled/InfoBox';
+} from '../../styled/InfoBox';
 
 class WorkflowConvertToMobi extends React.Component {
 	render() {
