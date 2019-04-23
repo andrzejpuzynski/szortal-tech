@@ -42,7 +42,7 @@ class Workflow extends React.Component {
 					<WorkflowStepArrow editor right/>
 				</WorkflowStep>
 
-				<WorkflowStep area="cb" editor application="Calibre"
+				<WorkflowStep area="cb" editor application="Calibre" onClick={() => this.props.toggleInfoBox("workflowPngImport")}
 					> import grafik
 					<WorkflowStepArrow editor bottom/>
 				</WorkflowStep>

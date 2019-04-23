@@ -2,6 +2,7 @@ import React from 'react';
 
 import Workflow from './Workflow';
 import WorkflowMockupUpdate from './Workflow/WorkflowMockupUpdate';
+import WorkflowPngImport from './Workflow/WorkflowPngImport';
 import WorkflowFormatting from './Workflow/WorkflowFormatting';
 import WorkflowDtpChecklist from './Workflow/WorkflowDtpChecklist';
 import WorkflowConvertToMobi from './Workflow/WorkflowConvertToMobi';
@@ -31,6 +32,11 @@ class EPub extends React.Component {
 
 				<WorkflowMockupUpdate
 					show={this.props.showInfoBox.workflowMockupUpdate}
+					toggleInfoBox={this.props.toggleInfoBox}
+				/>
+
+				<WorkflowPngImport
+					show={this.props.showInfoBox.workflowPngImport}
 					toggleInfoBox={this.props.toggleInfoBox}
 				/>
 
@@ -212,69 +218,6 @@ class EPub extends React.Component {
 					{`  <p class="text">linijka tekstu</p>\n`}
 					{`  <p class="text">linijka tekstu</p>\n`}
 					{`</div>`}</SectionCode>
-				</SectionText>
-
-				<SectionSubtitle>
-					Pliki graficzne
-				</SectionSubtitle>
-
-				<SectionInfo>
-					Konwersja źródłowych grafik do formatu PNG
-				</SectionInfo>
-
-				<SectionText>Niezależnie od tego w jakim formacie dostarczony jest źródłowy
-				plik grafiki (ilustracja, zdjęcie, reklama, okładka książki), pierwszym krokiem
-				jest konwersja tego pliku do formatu PNG. W trakcie tej konwersji można jednocześnie
-				zmienić docelowy wymiar grafiki (szerokość, wysokość).</SectionText>
-				<SectionText>Docelowe wymiary:
-					<ul>
-						<li>Reklama, okładka główna: szerokość (width) 1818px</li>
-						<li>Okładki do recenzji: wysokość (height) 587px</li>
-						<li>Pozostałe ilustracje: szerokość (width) 1200px</li>
-					</ul>
-				Pliki można konwertować wraz z jednoczesną zmianą rozmiarów 
-				na stronie <a href="https://imageresize.org/" target="blank">
-				Imageresize.</a> przy ustawieniu - Quality: Best.
-				</SectionText>
-
-				<SectionInfo>
-					Import plików PNG do Calibre
-				</SectionInfo>
-
-				<SectionText>
-					Wybierz z menu komendę: Import files into book.
-				</SectionText>
-
-				<SectionInfo>
-					Nazwy plików PNG
-				</SectionInfo>
-
-				<SectionText>
-					Dla plików graficznych stosujemy te same zasady nazewnictwa, jak w przypadku plików HTML.
-				</SectionText>
-
-
-				<SectionInfo>
-					Stylowanie plików graficznych
-				</SectionInfo>
-
-				<SectionText>Reklama całostronicowa, komiks
-					<SectionCode>{`<div class="fullpage">\n`}
-					{`  <img src="../Images/nazwa_pliku.jpg" alt="nazwa_pliku.jpg" />\n`}
-					{`</div>`}</SectionCode>
-				</SectionText>
-
-				<SectionText>Ilustracja do tekstu
-					<SectionCode>{`<div class="imagetext">\n`}
-					{`  <img src="../Images/nazwa_pliku.jpg" alt="nazwa_pliku.jpg" />\n`}
-					{`  <p class="author-photo">Ilustracja: Autor ilustracji</p>\n`}
-					{`</div>`}</SectionCode>
-				</SectionText>
-
-				<SectionText>Okładka do recenzji
-					<SectionCode>{`<p>\n`}
-					{`  <img src="../Images/nazwa_pliku.jpg" alt="nazwa_pliku.jpg" />\n`}
-					{`</p>`}</SectionCode>
 				</SectionText>
 
 

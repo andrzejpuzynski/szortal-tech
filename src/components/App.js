@@ -42,6 +42,7 @@ class App extends Component {
             active: this.initialHistory,
             showInfoBox: {
               workflowMockupUpdate: false,
+              workflowPngImport: false,
               workflowFormatting: false,
               workflowDtpChecklist: false,
               workflowConvertToMobi: false,
