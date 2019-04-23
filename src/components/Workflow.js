@@ -27,23 +27,23 @@ class Workflow extends React.Component {
 					<WorkflowStepArrow editor bottom/>
 				</WorkflowStep>
 
-				<WorkflowStep area="ba" editor
-					> teksty źródłowe
+				<WorkflowStep area="ba" editor application="Calibre" onClick={() => this.props.toggleInfoBox("workflowTextImport")}
+					> import tekstów
 					<WorkflowStepArrow editor right/>
 				</WorkflowStep>
 
-				<WorkflowStep area="bb" editor application="Calibre"
-					> Regex, stylowanie
+				<WorkflowStep area="bb" editor application="Calibre" onClick={() => this.props.toggleInfoBox("workflowTextStyling")}
+					> stylowanie tekstów
 					<WorkflowStepArrow editor bottom/>
 				</WorkflowStep>
 
-				<WorkflowStep area="ca" editor
-					> grafiki źródłowe
+				<WorkflowStep area="ca" editor onClick={() => this.props.toggleInfoBox("workflowGraphicImport")}
+					> import grafik
 					<WorkflowStepArrow editor right/>
 				</WorkflowStep>
 
-				<WorkflowStep area="cb" editor application="Calibre" onClick={() => this.props.toggleInfoBox("workflowPngImport")}
-					> import grafik
+				<WorkflowStep area="cb" editor application="Calibre" onClick={() => this.props.toggleInfoBox("workflowGraphicStyling")}
+					> stylowanie grafik
 					<WorkflowStepArrow editor bottom/>
 				</WorkflowStep>
 

@@ -22,12 +22,12 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload, faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
 
-class WorkflowPngImport extends React.Component {
+class WorkflowGraphicImport extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
 				<InfoBoxContainer show={this.props.show}>
-					<InfoBoxCloseButton onClick={() => this.props.toggleInfoBox("workflowPngImport")}/>
+					<InfoBoxCloseButton onClick={() => this.props.toggleInfoBox("workflowGraphicImport")}/>
 						<InfoBoxTitle>
 							Pliki graficzne
 						</InfoBoxTitle>
@@ -64,32 +64,20 @@ class WorkflowPngImport extends React.Component {
 							Nazwy plików PNG
 						</SectionInfo>
 		
-						<InfoBoxText>
-							Dla plików graficznych stosujemy te same zasady nazewnictwa, jak w przypadku plików HTML.
-						</InfoBoxText>
-		
-		
-						<SectionInfo>
-							Stylowanie plików graficznych
-						</SectionInfo>
-		
-						<InfoBoxText>Reklama całostronicowa, komiks
-							<SectionCode>{`<div class="fullpage">\n`}
-							{`  <img src="../Images/nazwa_pliku.jpg" alt="nazwa_pliku.jpg" />\n`}
-							{`</div>`}</SectionCode>
-						</InfoBoxText>
-		
-						<InfoBoxText>Ilustracja do tekstu
-							<SectionCode>{`<div class="imagetext">\n`}
-							{`  <img src="../Images/nazwa_pliku.jpg" alt="nazwa_pliku.jpg" />\n`}
-							{`  <p class="author-photo">Ilustracja: Autor ilustracji</p>\n`}
-							{`</div>`}</SectionCode>
-						</InfoBoxText>
-		
-						<InfoBoxText>Okładka do recenzji
-							<SectionCode>{`<p>\n`}
-							{`  <img src="../Images/nazwa_pliku.jpg" alt="nazwa_pliku.jpg" />\n`}
-							{`</p>`}</SectionCode>
+						<InfoBoxText>	
+							Nazwy plików html do poszczególnych działów rozpoczynamy prefixem według klucza:
+                		    <ul>
+                		    	<li>"szort_" - Szortownia</li>
+								<li>"stu_" - Stusłówka</li>
+								<li>"rym_" - Rymowisko</li>
+								<li>"zagr_" - Zagraniczniak</li>
+								<li>"pub_" - Publicystyka</li>
+								<li>"wywiad_" - Wywiad</li>
+								<li>"s_" - Subiektywnie</li>
+								<li>"komiks_" - pliki do komiksu</li>
+								<li>"reklama_" - reklama</li>
+								<li>"patronat_" - reklama Partonat</li>
+							</ul>
 						</InfoBoxText>
 
 				</InfoBoxContainer>
@@ -98,4 +86,4 @@ class WorkflowPngImport extends React.Component {
 	}
 }
 
-export default WorkflowPngImport;
+export default WorkflowGraphicImport;
