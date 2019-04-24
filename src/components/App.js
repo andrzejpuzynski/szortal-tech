@@ -6,12 +6,10 @@ import {
 } from 'react-router-dom';
 import createHistory from "history/createBrowserHistory";
 
-import Intro from './Intro';
+import Workflow from './Workflow';
 import Adds from './Adds';
 import Graphics from './Graphics';
-import EPub from './EPub';
-import Pdf from './Pdf';
-import Szortal from './Szortal';
+import About from './About';
 
 import logo from '../img/Szortal_logo_vectors_RGB.svg';
 
@@ -41,6 +39,7 @@ class App extends Component {
         this.state = {
             active: this.initialHistory,
             showInfoBox: {
+              workflowMockupSource: false,
               workflowMockupUpdate: false,
               workflowTextImport: false,
               workflowTextStyling: false,
@@ -49,6 +48,8 @@ class App extends Component {
               workflowFormatting: false,
               workflowDtpChecklist: false,
               workflowConvertToMobi: false,
+              workflowPdfFormatting: false,
+              workflowHtmlToXml: false,
             }
         };
         this.handleClick = this.handleClick.bind(this);
@@ -104,25 +105,19 @@ class App extends Component {
                             </HeaderButton>
                         </NavLink>
 
-                        <NavLink to="/epub" onClick={this.handleClick}> 
-                            <HeaderButton active={this.state.active === 'epub'}>
-                                EPub
-                            </HeaderButton>
-                        </NavLink>
-                        <NavLink to="/pdf" onClick={this.handleClick}>
-                          <HeaderButton active={this.state.active === 'pdf'}>
-                            PDF
+                        <NavLink to="/about" onClick={this.handleClick}>
+                          <HeaderButton active={this.state.active === 'about'}>
+                            O stronie
                           </HeaderButton>
                         </NavLink>
 
      	  	       	</HeaderLinks>
      	  	       </HeaderContainer>
   
-     	  	    <Route exact path="/" component={Intro} />
+     	  	    <Route exact path="/" render={() => (<Workflow showInfoBox={this.state.showInfoBox} toggleInfoBox={this.toggleInfoBox}/>)} />
               <Route path="/adds" component={Adds} />
               <Route path="/graphics" component={Graphics} />
-              <Route path="/epub" render={() => (<EPub showInfoBox={this.state.showInfoBox} toggleInfoBox={this.toggleInfoBox}/>)} />
-              <Route path="/pdf" component={Pdf} />
+              <Route path="/about" component={About} />
   
      	      </React.Fragment>
      	  </Router>

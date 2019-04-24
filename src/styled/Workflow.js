@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { css } from 'styled-components';
 
 export const WorkflowContainer = styled.div`
@@ -18,9 +18,7 @@ export const WorkflowContainer = styled.div`
 	justify-content: center;
 
 	//to remove
-	padding: 10px;
-	border: 1px solid black;
-	background-color: black;
+	background-color: #212121;
 `
 
 export const WorkflowStep = styled.div`
@@ -44,7 +42,7 @@ export const WorkflowStep = styled.div`
 	align-items: center;
 	justify-content: center;
 	z-index: 2;
-	background-color: #000;
+	background-color: #161616;
 
 	::after {
 		content: "${props => props.application}";
@@ -96,9 +94,10 @@ export const WorkflowStepArrow = styled.div`
 
 export const WorkflowInfo = styled.div`
 	grid-area: ${props => props.area} / span 3;
-	color: #888;
+	color: #bbb;
 	font-size: 1rem;
-	line-height: 1.4rem;
+	font-weight: 100;
+	line-height: 1.5rem;
 	align-self: start;
 `
 
@@ -134,7 +133,7 @@ export const WorkflowWwwItem = styled.div`
  	position: relative;
 	border: 2px solid #888;
 	border-radius: 8px;
-	background-color: #333;
+	background-color: #444;
 
 	::before {
 		content: "http://www.szortal.com/nawynos";

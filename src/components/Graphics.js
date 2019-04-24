@@ -98,10 +98,10 @@ class Graphics extends React.Component {
             	    		<FontAwesomeIcon
                                     icon={ faFilePdf }
                                     size="2x"
-                                    color="#777777"
+                                    color="#d22"
                               />
             	    	</SectionDownloadButton>
-					Kliknij aby ściągnąć specyfikację grafik w formacie PDF.
+					Kliknij, aby ściągnąć specyfikację grafik w formacie PDF.
                 </SectionText>			
 			</SectionContainer>
 		)

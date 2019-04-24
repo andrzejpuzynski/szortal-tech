@@ -60,10 +60,10 @@ class Adds extends React.Component {
             	    		<FontAwesomeIcon
                                     icon={ faFilePdf }
                                     size="2x"
-                                    color="#777777"
+                                    color="#d22"
                               />
             	    	</SectionDownloadButton>
-					Kliknij aby ściągnąć specyfikację reklam w formacie PDF.
+					Kliknij, aby ściągnąć specyfikację reklam w formacie PDF.
                 </SectionText>
 				
 			

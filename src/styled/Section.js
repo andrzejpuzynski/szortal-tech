@@ -10,9 +10,12 @@ export const SectionContainer = styled.div`
 export const SectionTitle = styled.h1`
 	display: inline-block;
 	width: 100%;
-	font-size: 54px;
+	font-size: 3.6rem;
+	font-weight: 400;
 	text-align: center;
-	margin-top: 100px;
+	margin-top: 110px;
+	margin-bottom: 50px;
+	color: #bbb;
 `
 
 export const SectionSubtitle = styled.h2`
@@ -22,6 +25,7 @@ export const SectionSubtitle = styled.h2`
 	font-weight: 600;
 	margin-top: 100px;
 	margin-bottom: 10px;
+	color: #efefef;
 `
 
 export const SectionInfo = styled.p`
@@ -29,15 +33,16 @@ export const SectionInfo = styled.p`
 	font-weight: 100;
 	letter-spacing: 1px;
 	line-height: 32px;
-	margin-top: 80px;
+	margin-top: 60px;
 	margin-bottom: 30px;
-	color: grey;
+	color: #f22;
 `
 
 export const SectionText = styled.p`
 	font-size: 21px;
 	line-height: 32px;
 	margin-bottom: 30px;
+	color: #efefef;
 `
 
 export const SectionTextWithCheck = styled.p`
@@ -58,9 +63,10 @@ export const SectionTextWithCheck = styled.p`
 export const SectionCode = styled.pre`
 	display: inline-block;
 	white-spaces: normal;
-	background-color: #edd;
+	background-color: #222;
+	border: 2px solid #888;
 	border-radius: 8px;
-	color: #d66;
+	color: #ddd;
 	width: 100%;
 	padding: 10px;
 	font-size: 21px;
@@ -85,7 +91,7 @@ export const SectionDimensionsContainer = styled.div`
 	height: 300px;
 	background-color: #d66;
 	font-size: 32px;
-	color: #000;
+	color: #efefef;
 	text-align: center;
 	margin: 30px 40px;
 `

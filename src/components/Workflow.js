@@ -1,147 +1,89 @@
 import React from 'react';
 
+import WorkflowGraph from './WorkflowGraph';
+import WorkflowMockupSource from './Workflow/WorkflowMockupSource';
+import WorkflowMockupUpdate from './Workflow/WorkflowMockupUpdate';
+import WorkflowTextImport from './Workflow/WorkflowTextImport';
+import WorkflowTextStyling from './Workflow/WorkflowTextStyling';
+import WorkflowGraphicImport from './Workflow/WorkflowGraphicImport';
+import WorkflowGraphicStyling from './Workflow/WorkflowGraphicStyling';
+import WorkflowFormatting from './Workflow/WorkflowFormatting';
+import WorkflowDtpChecklist from './Workflow/WorkflowDtpChecklist';
+import WorkflowConvertToMobi from './Workflow/WorkflowConvertToMobi';
+import WorkflowPdfFormatting from './Workflow/WorkflowPdfFormatting';
+import WorkflowHtmlToXml from './Workflow/WorkflowHtmlToXml';
+
 import {
-    WorkflowContainer,
-    WorkflowStep,
-    WorkflowStepArrow,
-    WorkflowInfo,
-    WorkflowLegend,
-    WorkflowLegendItem,
-    WorkflowWwwItem,
-    WorkflowWwwIcon,
-} from '../styled/Workflow';
+    SectionContainer,
+    SectionTitle,
+} from '../styled/Section';
 
-class Workflow extends React.Component {
-
+class EPub extends React.Component {
 	render() {
 		return (
-			<WorkflowContainer>
+			<SectionContainer>
+				<SectionTitle>„Szortal na&nbsp;Wynos” workflow</SectionTitle>
 
-				<WorkflowStep area="aa" editor
-					> makieta źródłowa
-					<WorkflowStepArrow editor right/>
-				</WorkflowStep>
+				<WorkflowGraph toggleInfoBox={this.props.toggleInfoBox}/>
 
-				<WorkflowStep area="ab" editor application="Calibre" onClick={() => this.props.toggleInfoBox("workflowMockupUpdate")}
-					> aktualizacja makiety
-					<WorkflowStepArrow editor bottom/>
-				</WorkflowStep>
+				<WorkflowMockupSource
+					show={this.props.showInfoBox.workflowMockupSource}
+					toggleInfoBox={this.props.toggleInfoBox}
+				/>
 
-				<WorkflowStep area="ba" editor application="Calibre" onClick={() => this.props.toggleInfoBox("workflowTextImport")}
-					> import tekstów
-					<WorkflowStepArrow editor right/>
-				</WorkflowStep>
+				<WorkflowMockupUpdate
+					show={this.props.showInfoBox.workflowMockupUpdate}
+					toggleInfoBox={this.props.toggleInfoBox}
+				/>
 
-				<WorkflowStep area="bb" editor application="Calibre" onClick={() => this.props.toggleInfoBox("workflowTextStyling")}
-					> stylowanie tekstów
-					<WorkflowStepArrow editor bottom/>
-				</WorkflowStep>
+				<WorkflowTextImport
+					show={this.props.showInfoBox.workflowTextImport}
+					toggleInfoBox={this.props.toggleInfoBox}
+				/>
 
-				<WorkflowStep area="ca" editor onClick={() => this.props.toggleInfoBox("workflowGraphicImport")}
-					> import grafik
-					<WorkflowStepArrow editor right/>
-				</WorkflowStep>
+				<WorkflowTextStyling
+					show={this.props.showInfoBox.workflowTextStyling}
+					toggleInfoBox={this.props.toggleInfoBox}
+				/>
 
-				<WorkflowStep area="cb" editor application="Calibre" onClick={() => this.props.toggleInfoBox("workflowGraphicStyling")}
-					> stylowanie grafik
-					<WorkflowStepArrow editor bottom/>
-				</WorkflowStep>
+				<WorkflowGraphicImport
+					show={this.props.showInfoBox.workflowGraphicImport}
+					toggleInfoBox={this.props.toggleInfoBox}
+				/>				
 
-				<WorkflowStep area="db" editor application="Calibre" onClick={() => this.props.toggleInfoBox("workflowFormatting")}
-					> makietowanie
-					<WorkflowStepArrow editor bottom/>
-				</WorkflowStep>
+				<WorkflowGraphicStyling
+					show={this.props.showInfoBox.workflowGraphicStyling}
+					toggleInfoBox={this.props.toggleInfoBox}
+				/>
 
-				<WorkflowStep area="dc" editor application="Calibre"
-					> końcowe sprawdzanie
-					<WorkflowStepArrow editor top/>
-					<WorkflowStepArrow editor right/>
-				</WorkflowStep>
+				<WorkflowFormatting
+					show={this.props.showInfoBox.workflowFormatting}
+					toggleInfoBox={this.props.toggleInfoBox}
+				/>
 
-				<WorkflowStep area="dd" editor application="Calibre" onClick={() => this.props.toggleInfoBox("workflowConvertToMobi")}
-					> konwersja do MOBI
-					<WorkflowStepArrow editor top/>
-				</WorkflowStep>
+				<WorkflowDtpChecklist
+					show={this.props.showInfoBox.workflowDtpChecklist}
+					toggleInfoBox={this.props.toggleInfoBox}
+				/>
 
-				<WorkflowStep area="de" editor application="Acrobat"
-					> końcowe sprawdzanie
-					<WorkflowStepArrow editor top/>
-				</WorkflowStep>
+				<WorkflowConvertToMobi
+					show={this.props.showInfoBox.workflowConvertToMobi}
+					toggleInfoBox={this.props.toggleInfoBox}
+				/>
 
-				<WorkflowStep area="eb"
-					> epub
-					<WorkflowStepArrow bottom/>
-				</WorkflowStep>
+				<WorkflowPdfFormatting
+					show={this.props.showInfoBox.workflowPdfFormatting}
+					toggleInfoBox={this.props.toggleInfoBox}
+				/>
 
-				<WorkflowStep area="ec"
-					> epub
-					<WorkflowStepArrow top/>
-				</WorkflowStep>
+				<WorkflowHtmlToXml
+					show={this.props.showInfoBox.workflowHtmlToXml}
+					toggleInfoBox={this.props.toggleInfoBox}
+				/>
 
-				<WorkflowStep area="ee"
-					> epub
-					<WorkflowStepArrow top/>
-				</WorkflowStep>
-
-				<WorkflowStep area="fb" dtp application="Sigil"
-					> otwórz i zapisz
-					<WorkflowStepArrow bottom dtp/>
-				</WorkflowStep>
-
-				<WorkflowStep area="fc" dtp application="Calibre"
-					> konwersja grafik do jpg
-					<WorkflowStepArrow top dtp/>
-				</WorkflowStep>
-
-				<WorkflowStep area="fe" dtp application="Indesign"
-					> skład PDF
-					<WorkflowStepArrow top dtp/>
-				</WorkflowStep>
-
-				<WorkflowStep area="gb" dtp application="Calibre" onClick={() => this.props.toggleInfoBox("workflowDtpChecklist")}
-					> sprawdzenie (checklist)
-					<WorkflowStepArrow right dtp/>
-				</WorkflowStep>
-
-				<WorkflowStep area="gc" dtp application="Calibre"
-					> kopia makiety
-					<WorkflowStepArrow right dtp/>
-					<WorkflowStepArrow top dtp/>
-				</WorkflowStep>
-
-				<WorkflowStep area="gd" dtp application="Calibre"
-					> konwersja HTML do XML
-					<WorkflowStepArrow right dtp/>
-				</WorkflowStep>
-
-				<WorkflowStep area="ge" dtp application="Calibre"
-					> export PNG i XML
-					<WorkflowStepArrow top dtp/>
-				</WorkflowStep>
-
-				<WorkflowInfo area="ac">
-					Schemat ilustruje proces składu miesięcznika "Szortal na Wynos".
-					 Z materiałów źródłowych powstaje wydanie formacie EPUB (MOBI). 
-					 Wydanie w formacie PDF jest przygotowane po konwersji kodu EPUB do XML.
-				</WorkflowInfo>
-
-				<WorkflowWwwItem area="bc">
-				</WorkflowWwwItem>
-
-				<WorkflowWwwIcon area="cc" epub/>
-				<WorkflowWwwIcon area="cd" mobi/>
-				<WorkflowWwwIcon area="ce" pdf/>
-
-				<WorkflowLegend area="legend">
-					<h4>LEGENDA</h4>
-					<WorkflowLegendItem editor>Redakcja</WorkflowLegendItem>
-					<WorkflowLegendItem dtp>DTP</WorkflowLegendItem>
-					<WorkflowLegendItem>wymiana plików</WorkflowLegendItem>
-				</WorkflowLegend>
-
-			</WorkflowContainer>
+			</SectionContainer>
 		)
 	}
 }
 
-export default Workflow;
+export default EPub;

@@ -1,13 +1,12 @@
 import styled from 'styled-components';
-import { css } from 'styled-components';
 
 export const InfoBoxCloseButton = styled.button`
 	position: fixed;
-	top: 80px;
+	top: 90px;
 	right: 30px;
 	width: 100px;
 	height: 40px;
-	background-color: #fff;
+	background-color: #212121;
 	border: 2px solid #888;
 	border-radius: 8px;
 
@@ -15,16 +14,11 @@ export const InfoBoxCloseButton = styled.button`
 		content: "Zamknij";
 		font-size: 1rem;
 		text-transform: uppercase;
-		color: #444;
+		color: #efefef ;
 	}
 
 	:hover {
-		background-color: #000;
-		border-width: 0;
-		
-		::before {
-			color: #fff;
-		}
+		box-shadow: 0px 0px 10px #fff;
 	}
 `
 
@@ -36,7 +30,7 @@ export const InfoBoxContainer = styled.div`
 	max-height: 100%;
 	left: 0;
 	right: 0;
-	background-color: #fff;
+	background-color: #212121;
 	z-index: 100;
 	color: #fff;
 	font-size: 2rem;
@@ -49,24 +43,26 @@ export const InfoBoxContainer = styled.div`
 `
 
 export const InfoBoxTitle = styled.h2`
-	font-size: 2rem;
-	margin-bottom: 10px;
-	color: #000;
+	font-size: 2.6rem;
+	font-weight: 700;
+	margin-bottom: 20px;
+	color: #d22;
 	text-align: center;
 `
 
 export const InfoBoxText = styled.p`
-	color: #000;
-	font-size: 1.2rem;
-	line-height: 1.8rem;
-	margin-bottom: 0.5rem;
+	color: #ccc;
+	font-size: 1.5rem;
+	font-weight: 300;
+	line-height: 2.4rem;
+	margin-bottom: 0.3rem;
 	margin-left: 2rem;
 	
 	::before {
 		font-family: "Font Awesome 5 Free";
 		font-weight: 700;
 		content: "\f00c";
-		color: #d66;
+		color: #f22;
 		margin-left: -2rem;
 		margin-right: 9px;
 	}

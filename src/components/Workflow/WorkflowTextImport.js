@@ -8,19 +8,12 @@ import {
 } from '../../styled/InfoBox';
 
 import {
-    SectionContainer,
-    SectionTitle,
-    SectionSubtitle,
     SectionInfo,
-    SectionText,
-    SectionTextWithCheck,
     SectionCode,
-    SectionFullWidthImage,
-    SectionDownloadButton
 } from '../../styled/Section';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDownload, faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 class WorkflowTextImport extends React.Component {
 	render() {
