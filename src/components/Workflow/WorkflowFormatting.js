@@ -43,6 +43,10 @@ class WorkflowFormatting extends React.Component {
 						<InfoBoxText>	
 							Popraw nazwy plików PNG i HTML, jeśli posiadają spacje oraz polskie znaki.
 						</InfoBoxText>
+
+						<InfoBoxText>	
+							Ustaw w sekcji HEAD recenzji, tag title na tytuł i autora recenzji.
+						</InfoBoxText>
 		
 						<InfoBoxText>	
 							Popraw ścieżki linkowania plików PNG, jeśli się nie wyświetlają w oknie Preview.
@@ -148,13 +152,30 @@ class WorkflowFormatting extends React.Component {
 		
 						<InfoBoxText>	
 							Z oryginalnego pliku okładki utwórz kopię o nazwie cover.png. Zmniejsz wymiary tego pliku
-							tak, by wysokość wynosiła 500px. Następnie zaimportuj ten plik do wydania.
+							tak, by wysokość wynosiła 500px.
 						</InfoBoxText>
 		
 						<InfoBoxText>	
-							Zaznacz plik cover.png  "Mark cover.png as cover image".
+							W głównym panelu Calibre otwórz edycję metadanych makiety, wyczyść istniejący plik okładki,
+							a następnie przypisz aktualny plik cover.png 
 						</InfoBoxText>
-	
+
+						<InfoBoxText>	
+							Zatwierdź wybór - OK. Po wejściu w edycję pliku makiety, cover.png pojawi się na liście 
+							plików graficznych.
+						</InfoBoxText>
+
+						<SectionInfo>
+							Końcowe automatyczne sprawdzenie EPUBa.
+						</SectionInfo>
+
+						<InfoBoxText>
+							Otwórz EPUB w edytorze. Wybierz z menu automatyczne wyszukiwanie błędów (F7)
+						</InfoBoxText>	
+
+						<InfoBoxText>
+							Jeśli pojawią się błędy, popraw te ozanczone na czerwono.
+						</InfoBoxText>
 
 				</InfoBoxContainer>
 			</React.Fragment>
